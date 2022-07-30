@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+
 namespace FP2ISW_411.Datos
 {
     internal class Conexion
@@ -12,6 +14,8 @@ namespace FP2ISW_411.Datos
         public Conexion()
         {
             conn = new SqlConnection("Data Source=LAPTOP-DRHB9J1B;Initial Catalog=Hotel;Integrated Security=True");
+            //conn = new SqlConnection("Data Source=GUERREROPC\GUERREROPC;Initial Catalog=Hotel;Integrated Security=True");
+            //conn = new SqlConnection("Data Source=Cris;Initial Catalog=Hotel;Integrated Security=True");
         }
         public SqlConnection Conectar()
         {
@@ -22,7 +26,7 @@ namespace FP2ISW_411.Datos
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.ToString(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
                 
             }
@@ -36,6 +40,7 @@ namespace FP2ISW_411.Datos
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }

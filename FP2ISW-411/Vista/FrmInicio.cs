@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FP2ISW_411
 {
-    public partial class Form1 : Form
+    public partial class FrmInicio : Form
     {
-        public Form1()
+        public FrmInicio()
         {
             InitializeComponent();
         }
