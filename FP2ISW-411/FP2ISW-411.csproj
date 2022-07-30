@@ -66,6 +66,8 @@
   <ItemGroup>
     <Compile Include="Datos\Counsultas.cs" />
     <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="Modelos\usuario.cs" />
+    <Compile Include="Procesos\encriptar.cs" />
     <Compile Include="Procesos\procesos.cs" />
     <Compile Include="Vista\FrmInicio.cs">
       <SubType>Form</SubType>

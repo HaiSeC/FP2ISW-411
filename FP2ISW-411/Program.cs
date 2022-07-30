@@ -16,7 +16,11 @@ namespace FP2ISW_411
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new FrmLogIn());
+=======
+            Application.Run(new registrar());
+>>>>>>> registro a medias
         }
     }
 }

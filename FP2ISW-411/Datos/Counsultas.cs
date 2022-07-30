@@ -51,6 +51,50 @@ namespace FP2ISW_411.Datos
             }
             return tarifa;
         }
+
+        public List<string> puestos()
+        {
+            List<string> tipos = new List<string>();
+            try
+            {
+                string sql = "SELECT nombre FROM dbo.tb_roles;";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    tipos.Add(dr.GetString(0));
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                tipos = null;
+                conex.Desconectar();
+            }
+            return tipos;
+        }
+
+        public int codigo_puesto(string t_h)
+        {
+            int tarifa = 0;
+            try
+            {
+                string sql = "SELECT identificador FROM dbo.roles WHERE nombre='"+t_h+"';";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    tarifa = dr.GetInt32(0);
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                tarifa = 0;
+                conex.Desconectar();
+            }
+            return tarifa;
+        }
     }
     
 }

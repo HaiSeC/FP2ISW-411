@@ -19,5 +19,15 @@ namespace FP2ISW_411.Procesos
             double tarifa=c.tarifa(tipo_hab);
             return tarifa;
         }
+        public List<string> tipo_puestos()
+        {
+            List<string> tipos = c.puestos();
+            return tipos;
+        }
+        public int codigo_puest(string T)
+        {
+            int P = c.codigo_puesto(T);
+            return P;
+        }
     }
 }
