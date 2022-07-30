@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using FP2ISW_411.Modelos;
 namespace FP2ISW_411.Datos
 {
     internal class Counsultas
@@ -57,7 +58,7 @@ namespace FP2ISW_411.Datos
             List<string> tipos = new List<string>();
             try
             {
-                string sql = "SELECT nombre FROM dbo.tb_roles;";
+                string sql = "SELECT nombre FROM dbo.tb_roles ORDER BY nombre";
                 SqlCommand comando = new SqlCommand(sql, conex.Conectar());
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())
@@ -79,7 +80,7 @@ namespace FP2ISW_411.Datos
             int tarifa = 0;
             try
             {
-                string sql = "SELECT identificador FROM dbo.roles WHERE nombre='"+t_h+"';";
+                string sql = "SELECT identificador FROM dbo.tb_roles WHERE nombre='"+t_h+"';";
                 SqlCommand comando = new SqlCommand(sql, conex.Conectar());
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())
@@ -95,6 +96,53 @@ namespace FP2ISW_411.Datos
             }
             return tarifa;
         }
+        public usuario info_usu(long id)
+        {
+            usuario U = null;
+            try
+            {
+                string sql = "SELECT nombre,apellido1,apellido2,edad,fecha_nacimiento,fecha_contratacion,user_type,pais,provincia,canton,direccion, activo FROM dbo.tb_usuarios,dbo.tb_direcciones WHERE dbo.tb_usuarios.identificador="+id+";";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    
+                    U = new usuario(id, dr.GetString(0), dr.GetString(1), dr.GetString(2), "", dr.GetInt32(3), Convert.ToDateTime(dr.GetValue(4)), dr.GetString(7), dr.GetString(8), dr.GetString(9), dr.GetString(10), Convert.ToDateTime(dr.GetValue(5)), dr.GetInt32(6),Convert.ToInt32(dr.GetValue(11)));
+
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                U = null;
+                conex.Desconectar();
+            }
+            return U;
+        }
+
+        public string nombre_puesto(int t_h)
+        {
+            string n = "";
+            try
+            {
+                string sql = "SELECT nombre FROM dbo.tb_roles WHERE identificador='" + t_h + "';";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    n = dr.GetString(0);
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                n= "";
+                conex.Desconectar();
+            }
+            return n;
+        }
+
     }
-    
+
+
 }

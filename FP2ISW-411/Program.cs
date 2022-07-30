@@ -16,7 +16,7 @@ namespace FP2ISW_411
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogIn());
+            Application.Run(new registrar());
         }
     }
 }
