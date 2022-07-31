@@ -11,6 +11,7 @@ namespace FP2ISW_411.Procesos
     {
         Counsultas c = new Counsultas();
         inserciones inser = new inserciones();
+        updates up= new updates();
         public List<string> tipos_habi()
         {
             List<string> tipos = c.tipos_habi();
@@ -51,6 +52,15 @@ namespace FP2ISW_411.Procesos
         public string nombre_puesto(int i)
         {
             return c.nombre_puesto(i);
+        }
+        public bool desac_usu(long id)
+        {
+            return up.desactivar_usu(id);
+        }
+
+        public bool modi_info(usuario u)
+        {
+            return (up.modificar_usu(u) && up.modificar_direct(u));
         }
     }
 }

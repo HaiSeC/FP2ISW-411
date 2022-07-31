@@ -56,6 +56,7 @@
             this.BtnE = new System.Windows.Forms.Button();
             this.act = new System.Windows.Forms.Label();
             this.BtnClear = new System.Windows.Forms.Button();
+            this.checkBox_act = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // LblCed
@@ -306,11 +307,12 @@
             this.LblCan.AutoSize = true;
             this.LblCan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCan.ForeColor = System.Drawing.Color.Gray;
-            this.LblCan.Location = new System.Drawing.Point(12, 311);
+            this.LblCan.Location = new System.Drawing.Point(26, 311);
             this.LblCan.Name = "LblCan";
             this.LblCan.Size = new System.Drawing.Size(63, 21);
             this.LblCan.TabIndex = 21;
             this.LblCan.Text = "Cantón:";
+            this.LblCan.Click += new System.EventHandler(this.LblCan_Click);
             // 
             // BtnS
             // 
@@ -377,12 +379,25 @@
             this.BtnClear.UseVisualStyleBackColor = false;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
+            // checkBox_act
+            // 
+            this.checkBox_act.AutoSize = true;
+            this.checkBox_act.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_act.ForeColor = System.Drawing.Color.White;
+            this.checkBox_act.Location = new System.Drawing.Point(407, 311);
+            this.checkBox_act.Name = "checkBox_act";
+            this.checkBox_act.Size = new System.Drawing.Size(96, 29);
+            this.checkBox_act.TabIndex = 28;
+            this.checkBox_act.Text = "Activo";
+            this.checkBox_act.UseVisualStyleBackColor = true;
+            // 
             // FrmReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(886, 507);
+            this.Controls.Add(this.checkBox_act);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.act);
             this.Controls.Add(this.BtnE);
@@ -415,6 +430,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmReg";
             this.Text = "registrar";
+            this.Load += new System.EventHandler(this.FrmReg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,5 +466,6 @@
         private System.Windows.Forms.Button BtnE;
         private System.Windows.Forms.Label act;
         private System.Windows.Forms.Button BtnClear;
+        private System.Windows.Forms.CheckBox checkBox_act;
     }
 }

@@ -21,15 +21,16 @@ namespace FP2ISW_411.Vista
         {
             InitializeComponent();
             FillCBox();
-            DPN.MaxDate = DateTime.Now-(DateTime.Now.AddYears(18)-DateTime.Now) ;
+            DPN.MaxDate = DateTime.Now - (DateTime.Now.AddYears(18) - DateTime.Now);
             vainaDeBotones();
+            checkBox_act.Enabled = false;
         }
         public void vainaDeBotones()//Que hace esto???
         {
             BtnS.Enabled = Id;
             BtnReg.Enabled = (Id && N && C && A1 && A2 && Pa && Pro && Can && D);
-            BtnDel.Enabled = (Id && N && C && A1 && A2 && Pa && Pro && Can && D);
-            BtnE.Enabled = (Id && N && C && A1 && A2 && Pa && Pro && Can && D);
+            BtnDel.Enabled = (Id && N && A1 && A2 && Pa && Pro && Can && D);
+            BtnE.Enabled = (Id && N && A1 && A2 && Pa && Pro && Can && D);
         }
         public void FillCBox()
         {
@@ -45,7 +46,8 @@ namespace FP2ISW_411.Vista
         {
             try
             {
-                int edad = Convert.ToInt32((DateTime.Now.Subtract(DPN.Value).TotalDays)/365);
+                double e1 = (DateTime.Now.Subtract(DPN.Value).TotalDays) / 365;
+                int edad = Convert.ToInt32(Convert.ToString(e1).Split(',')[0]);
                 encriptar E = new encriptar();
                 usuario usu = new usuario(Convert.ToInt64(TxtCed.Text),TxtName.Text,TxtApe1.Text,TxtApe2.Text,E.Encriptar(TxtPassword.Text),edad,DPN.Value,TxtPais.Text,TxtProvin.Text,TxtCan.Text,TxtDir.Text,DateTime.Now,P.codigo_puest(CBoxRol.Text),1);
                 if (P.insert_usuario(usu)&& P.insert_direc(usu))
@@ -67,7 +69,6 @@ namespace FP2ISW_411.Vista
 
         public void Clear()
         {
-            TxtCed.Text = "";
             TxtName.Text = "";
             TxtApe1.Text = "";
             TxtApe2.Text = "";
@@ -76,7 +77,8 @@ namespace FP2ISW_411.Vista
             TxtCan.Text = "";
             TxtPais.Text = "";
             TxtProvin.Text = "";
-            act.Text = "";
+            checkBox_act.Enabled = false;
+            checkBox_act.Checked = false;
         }
         
         private void TxtCed_TextChanged(object sender, EventArgs e)
@@ -90,7 +92,7 @@ namespace FP2ISW_411.Vista
                 this.Id = true;
             }
             vainaDeBotones();
-            //Clear();
+            Clear();
         }
 
         private void BtnReg_Click(object sender, EventArgs e)
@@ -223,11 +225,13 @@ namespace FP2ISW_411.Vista
                     TxtDir.Text = U.Direccion;
                     if (U.Activo == 1)
                     {
-                        act.Text = "Activo";
+                        checkBox_act.Checked = true;
+                        checkBox_act.Enabled = true;
                     }
                     else
                     {
-                        act.Text = "Inactivo";
+                        checkBox_act.Checked = false;
+                        checkBox_act.Enabled = true;
                     }
                     CBoxRol.SelectedItem = P.nombre_puesto(U.Puesto);
                 }
@@ -240,17 +244,58 @@ namespace FP2ISW_411.Vista
 
         private void BtnDel_Click(object sender, EventArgs e)
         {
-
+            if (P.desac_usu(Convert.ToInt64(TxtCed.Text)))
+            {
+                MessageBox.Show("Se ha eliminado correctamente.");
+                TxtCed.Text = "";
+                Clear();
+            }
+            else
+            {
+                MessageBox.Show("Verifique la información");
+            }
         }
 
         private void BtnE_Click(object sender, EventArgs e)
         {
-
+            int act=0;
+            if (checkBox_act.Checked)
+            {
+                act = 1;
+            }
+            else
+            {
+                act = 0;
+            }
+            double e1 = (DateTime.Now.Subtract(DPN.Value).TotalDays) / 365;
+            int edad = Convert.ToInt32(Convert.ToString(e1).Split(',')[0]);
+            usuario usu = new usuario(Convert.ToInt64(TxtCed.Text), TxtName.Text, TxtApe1.Text, TxtApe2.Text, "", edad, DPN.Value, TxtPais.Text, TxtProvin.Text, TxtCan.Text, TxtDir.Text, DateTime.Now, P.codigo_puest(CBoxRol.Text), act);
+            if (P.modi_info(usu))
+            {
+                MessageBox.Show("Se modifico la información exitosamente");
+                TxtCed.Text = "";
+                Clear();
+            }
+            else
+            {
+                MessageBox.Show("Verifique la información.");
+            }
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
+            TxtCed.Text = "";
             Clear();
+        }
+
+        private void FrmReg_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblCan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

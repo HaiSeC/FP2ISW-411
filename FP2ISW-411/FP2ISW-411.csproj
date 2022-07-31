@@ -67,6 +67,7 @@
     <Compile Include="Datos\Counsultas.cs" />
     <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Datos\inserciones.cs" />
+    <Compile Include="Datos\updates.cs" />
     <Compile Include="Modelos\usuario.cs" />
     <Compile Include="Procesos\encriptar.cs" />
     <Compile Include="Procesos\procesos.cs" />
