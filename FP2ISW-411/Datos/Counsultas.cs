@@ -101,7 +101,8 @@ namespace FP2ISW_411.Datos
             usuario U = null;
             try
             {
-                string sql = "SELECT nombre,apellido1,apellido2,edad,fecha_nacimiento,fecha_contratacion,user_type,pais,provincia,canton,direccion, activo FROM dbo.tb_usuarios,dbo.tb_direcciones WHERE dbo.tb_usuarios.identificador="+id+";";
+                string sql = "SELECT nombre,apellido1,apellido2,edad,fecha_nacimiento,fecha_contratacion,user_type,pais,provincia,canton,direccion, activo FROM dbo.tb_usuarios,dbo.tb_direcciones WHERE dbo.tb_usuarios.identificador = " + id + " AND dbo.tb_direcciones.id_user = " + id + "";
+
                 SqlCommand comando = new SqlCommand(sql, conex.Conectar());
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())

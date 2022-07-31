@@ -20,7 +20,7 @@ namespace FP2ISW_411.Vista
         public FrmReg()
         {
             InitializeComponent();
-            //FillCBox();
+            FillCBox();
             DPN.MaxDate = DateTime.Now-(DateTime.Now.AddYears(18)-DateTime.Now) ;
             vainaDeBotones();
         }
@@ -90,7 +90,7 @@ namespace FP2ISW_411.Vista
                 this.Id = true;
             }
             vainaDeBotones();
-            Clear();
+            //Clear();
         }
 
         private void BtnReg_Click(object sender, EventArgs e)

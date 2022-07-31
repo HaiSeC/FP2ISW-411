@@ -61,24 +61,28 @@ namespace FP2ISW_411.Vista
                 if (U == null)
                 {
                     MessageBox.Show("El usuario " + TxtUser.Text + " no esta registrado.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TxtUser.Text = "";
+                    TxtPass.Text = "";
                 }
-                if (U.Password == TxtPass.Text)
+                if (U.Password == E.Encriptar(TxtPass.Text))
                 {
                     FrmPrin FP = new FrmPrin();
                     FP.Visible = true;
                     this.Dispose(false);
                     E.Encriptar(TxtPass.Text);
+                    Console.WriteLine(E.Encriptar(TxtPass.Text));
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TxtPass.Text = "";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw null;
-            }
-            
-            
-            
-            
+                TxtUser.Text = "";
+                TxtPass.Text = "";
+            }          
         }
     }
 }
