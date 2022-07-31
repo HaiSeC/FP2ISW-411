@@ -16,7 +16,7 @@ namespace FP2ISW_411.Datos
             try
             {
                 Conexion conex = new Conexion();
-                string sql = "INSERT INTO dbo.tb_usuarios VALUES("+e.Cedula+",'"+e.nombre+"','"+e.Apellido1+"','"+e.Apellido2+"',"+e.Edad+ ",CAST('"+e.Fecha_nac.Year+"-"+e.Fecha_nac.Month+"-"+e.Fecha_nac.Day+"' AS date),CAST('"+ e.Fecha_contratacion.Year+"-"+e.Fecha_contratacion.Month+"-"+e.Fecha_contratacion.Day+"' AS date)," + e.Puesto+",'"+e.Contraseña+"',1)";
+                string sql = "INSERT INTO dbo.tb_usuarios VALUES("+e.Cedula+",'"+e.nombre+"','"+e.Apellido1+"','"+e.Apellido2+"',"+e.Edad+ ",CAST('"+e.Fecha_nac.Year+"-"+e.Fecha_nac.Month+"-"+e.Fecha_nac.Day+"' AS date),CAST('"+ e.Fecha_contratacion.Year+"-"+e.Fecha_contratacion.Month+"-"+e.Fecha_contratacion.Day+"' AS date)," + e.Puesto+",'"+e.Password+"',1)";
                 SqlCommand comando = new
                 SqlCommand(sql, conex.Conectar());
                 int cantidad = comando.ExecuteNonQuery();

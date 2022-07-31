@@ -119,7 +119,29 @@ namespace FP2ISW_411.Datos
             }
             return U;
         }
+        public usuario admin(long id)
+        {
+            usuario U = null;
+            try
+            {
+                string sql = "SELECT nombre, apellido1, passwor, user_type FROM dbo.tb_usuarios WHERE identificador = " + id + "AND activo = 1 AND user_type = 1";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
 
+                    U = new usuario(id, dr.GetString(0), dr.GetString(1), null, dr.GetString(2),0, DateTime.Now, null, null, null, null, DateTime.Now, dr.GetInt32(3), 1);
+
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                U = null;
+                conex.Desconectar();
+            }
+            return U;
+        }
         public string nombre_puesto(int t_h)
         {
             string n = "";

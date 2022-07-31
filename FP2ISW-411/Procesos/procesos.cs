@@ -44,6 +44,10 @@ namespace FP2ISW_411.Procesos
         {
             return c.info_usu(i);
         }
+        public usuario admin(long i)
+        {
+            return c.admin(i);
+        }
         public string nombre_puesto(int i)
         {
             return c.nombre_puesto(i);

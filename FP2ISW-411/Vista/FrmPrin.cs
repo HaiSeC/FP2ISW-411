@@ -98,5 +98,10 @@ namespace FP2ISW_411.Vista
                 this.Dispose(false);
             }           
         }
+
+        private void BtnReg_Click(object sender, EventArgs e)
+        {
+            ChildForms(new FrmReg());
+        }
     }
 }

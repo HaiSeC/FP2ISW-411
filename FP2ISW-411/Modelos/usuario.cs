@@ -12,7 +12,7 @@ namespace FP2ISW_411.Modelos
         string Nombre;
         string apellido1;
         string apellido2;
-        string contraseña;
+        string password;
         int edad;
         DateTime fecha_nac;
         string direccion;
@@ -22,7 +22,7 @@ namespace FP2ISW_411.Modelos
         DateTime fecha_contratacion;
         int puesto;
         int activo;
-        public usuario(long cedula, string noombre, string apellido1,string apellido2, string contraseña, int edad, DateTime fecha_nac,string pais, string provincia,string canton,string direccion, DateTime fecha_contratacion, int puesto,int activo)
+        public usuario(long cedula, string noombre, string apellido1,string apellido2, string password, int edad, DateTime fecha_nac,string pais, string provincia,string canton,string direccion, DateTime fecha_contratacion, int puesto,int activo)
         {
             this.Cedula = cedula;
             this.Nombre = noombre;
@@ -32,7 +32,7 @@ namespace FP2ISW_411.Modelos
             this.Direccion = direccion;
             this.Fecha_contratacion = fecha_contratacion;
             this.Puesto = puesto;
-            this.contraseña = contraseña;
+            this.password = password;
             this.Canton = canton;
             this.Pais=pais;
             this.Provincia = provincia;
@@ -44,7 +44,7 @@ namespace FP2ISW_411.Modelos
         public string nombre { get => Nombre; set => Nombre = value; }
         public string Apellido1 { get => apellido1; set => apellido1 = value; }
         public string Apellido2 { get => apellido2; set => apellido2 = value; }
-        public string Contraseña { get => contraseña; set => contraseña = value; }
+        public string Password { get => password; set => password = value; }//No use letras que no existen en ingles
         public int Edad { get => edad; set => edad = value; }
         public DateTime Fecha_nac { get => fecha_nac; set => fecha_nac = value; }
         public string Direccion { get => direccion; set => direccion = value; }

@@ -96,11 +96,11 @@
     <Compile Include="Vista\FrmRes.Designer.cs">
       <DependentUpon>FrmRes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\registrar.cs">
+    <Compile Include="Vista\FrmReg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\registrar.Designer.cs">
-      <DependentUpon>registrar.cs</DependentUpon>
+    <Compile Include="Vista\FrmReg.Designer.cs">
+      <DependentUpon>FrmReg.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -123,8 +123,8 @@
     <EmbeddedResource Include="Vista\FrmRes.resx">
       <DependentUpon>FrmRes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\registrar.resx">
-      <DependentUpon>registrar.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\FrmReg.resx">
+      <DependentUpon>FrmReg.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

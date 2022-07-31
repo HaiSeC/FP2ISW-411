@@ -13,8 +13,8 @@ namespace FP2ISW_411.Datos
         SqlConnection conn;
         public Conexion()
         {
-            conn = new SqlConnection("Data Source=LAPTOP-DRHB9J1B;Initial Catalog=Hotel;Integrated Security=True");
-            //conn = new SqlConnection("Data Source=GUERREROPC\GUERREROPC;Initial Catalog=Hotel;Integrated Security=True");
+            //conn = new SqlConnection("Data Source=LAPTOP-DRHB9J1B;Initial Catalog=Hotel;Integrated Security=True");
+            conn = new SqlConnection("Data Source=GUERREROPC\\GDB;Initial Catalog=Hotel;Integrated Security=True");
             //conn = new SqlConnection("Data Source=Cris;Initial Catalog=Hotel;Integrated Security=True");
         }
         public SqlConnection Conectar()

@@ -35,10 +35,11 @@
             this.PBMax = new System.Windows.Forms.PictureBox();
             this.PBClose = new System.Windows.Forms.PictureBox();
             this.PlnMenu = new System.Windows.Forms.Panel();
+            this.BtnReg = new System.Windows.Forms.Button();
+            this.BtnLogOut = new System.Windows.Forms.Button();
             this.PBHome = new System.Windows.Forms.PictureBox();
             this.BtnRes = new System.Windows.Forms.Button();
             this.PlnMain = new System.Windows.Forms.Panel();
-            this.BtnLogOut = new System.Windows.Forms.Button();
             this.PlnHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBRes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMini)).BeginInit();
@@ -115,6 +116,7 @@
             // PlnMenu
             // 
             this.PlnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.PlnMenu.Controls.Add(this.BtnReg);
             this.PlnMenu.Controls.Add(this.BtnLogOut);
             this.PlnMenu.Controls.Add(this.PBHome);
             this.PlnMenu.Controls.Add(this.BtnRes);
@@ -123,6 +125,32 @@
             this.PlnMenu.Name = "PlnMenu";
             this.PlnMenu.Size = new System.Drawing.Size(188, 546);
             this.PlnMenu.TabIndex = 1;
+            // 
+            // BtnReg
+            // 
+            this.BtnReg.BackColor = System.Drawing.Color.Gray;
+            this.BtnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReg.Location = new System.Drawing.Point(0, 228);
+            this.BtnReg.Name = "BtnReg";
+            this.BtnReg.Size = new System.Drawing.Size(188, 23);
+            this.BtnReg.TabIndex = 2;
+            this.BtnReg.Text = "button1";
+            this.BtnReg.UseVisualStyleBackColor = false;
+            this.BtnReg.Click += new System.EventHandler(this.BtnReg_Click);
+            // 
+            // BtnLogOut
+            // 
+            this.BtnLogOut.BackColor = System.Drawing.Color.Gray;
+            this.BtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogOut.Location = new System.Drawing.Point(0, 520);
+            this.BtnLogOut.Name = "BtnLogOut";
+            this.BtnLogOut.Size = new System.Drawing.Size(188, 23);
+            this.BtnLogOut.TabIndex = 1;
+            this.BtnLogOut.Text = "Cerrar Sesión";
+            this.BtnLogOut.UseVisualStyleBackColor = false;
+            this.BtnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
             // 
             // PBHome
             // 
@@ -156,19 +184,6 @@
             this.PlnMain.Name = "PlnMain";
             this.PlnMain.Size = new System.Drawing.Size(902, 546);
             this.PlnMain.TabIndex = 2;
-            // 
-            // BtnLogOut
-            // 
-            this.BtnLogOut.BackColor = System.Drawing.Color.Gray;
-            this.BtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLogOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLogOut.Location = new System.Drawing.Point(0, 520);
-            this.BtnLogOut.Name = "BtnLogOut";
-            this.BtnLogOut.Size = new System.Drawing.Size(188, 23);
-            this.BtnLogOut.TabIndex = 1;
-            this.BtnLogOut.Text = "Cerrar Sesión";
-            this.BtnLogOut.UseVisualStyleBackColor = false;
-            this.BtnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
             // 
             // FrmPrin
             // 
@@ -206,5 +221,6 @@
         private System.Windows.Forms.Button BtnRes;
         private System.Windows.Forms.PictureBox PBHome;
         private System.Windows.Forms.Button BtnLogOut;
+        private System.Windows.Forms.Button BtnReg;
     }
 }

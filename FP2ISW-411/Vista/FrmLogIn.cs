@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FP2ISW_411.Modelos;
+using FP2ISW_411.Procesos;
 
 namespace FP2ISW_411.Vista
 {
     public partial class FrmLogIn : Form
     {
+        procesos P = new procesos();
+        encriptar E = new encriptar();
         bool drag = false;
         int mX = 0;
         int mY = 0;
@@ -51,10 +55,30 @@ namespace FP2ISW_411.Vista
 
         private void BtnLog_Click(object sender, EventArgs e)
         {
-            FrmPrin FP = new FrmPrin();
-            FP.Visible = true;
-            this.Dispose(false);
-
+            try
+            {
+                usuario U = P.admin(Convert.ToInt64(TxtUser.Text));
+                if (U == null)
+                {
+                    MessageBox.Show("El usuario " + TxtUser.Text + " no esta registrado.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                if (U.Password == TxtPass.Text)
+                {
+                    FrmPrin FP = new FrmPrin();
+                    FP.Visible = true;
+                    this.Dispose(false);
+                    E.Encriptar(TxtPass.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw null;
+            }
+            
+            
+            
+            
         }
     }
 }
