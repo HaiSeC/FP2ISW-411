@@ -118,16 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PBRes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gceBjMpvHsvbQAAALVJREFU
-        SEvtlr0KwjAUhfOqvsI9AdOiu7urvkehU5dO+gAu7kUHBXc9+aEoFgNNu0gOfC33DueDDE3VewywL4Dn
-        VJRAE6p9uGzJuRTZpFKIHCm4hGqfIKjCmBQKtk5gRNYcagdw4/vaz2PQevEhsA8Wd+QwAXfSfgs42GVq
-        WF5lwc9kQTRZEE0WRPM3ggexn+5uLoG9tPzlA6xmO6I+TsCl0XqZCntOQ4KGy8HfjlGI7EI1o9QLiXb2
-        SC5YD4cAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="PBMini.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -137,18 +127,6 @@
         iZ4gZaPwpdzocWOiJ70ZUGK/VnrcmOhJ7yGgUT0OQHsGjp5tn36BcwLLmmqb5gA+1DYATLRNn7+BKQ0B
         H1UP+PvvOgPGCw7e4ADfVLBAo5GzzOl7nfUsmfDeChZmpCUcYGrXoo8rV856fH6dLNjAQAS4XQV4dyT5
         Bs5NufKHuRB3JXqohInoicQAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="PBMax.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gceBjEqF0QcVQAAAUNJREFU
-        SEu9lb1OwzAUhTMhJFR+BG/GxMbEVlWyI8fu4vfg7yX6AjDQt6jYYCtL93K/ypFo5Ti1E3Gkk8bXvt9x
-        rKip/HR6brV+cVr/iLcp+9nssgqaK3UfW3PoSi6vYbARr1JmM4FfWaVuY2vEX+K9gLV445y7Dr3Fquv6
-        TFhvLRwTwM1nWFMsY8xEjvoDXvj9Hi3g786Bc5QwGQ8OiMGpw6Q2KKALjmBSLw5IwRFM5ooC+uAIJvPZ
-        AcCApuBI5u7ED1kB7Hyu9XvoWXbB93RsQBEcHRNQAm+a5sJae9UbULpzmPQkA4qPRQSTvs6AIXAEk95o
-        wOEfVy4cJQO89ydSW4izd94KJuxoAJKQU54kDLPVGzBU/xow2iezldb6ZscUduWUeiYpFGIf8RLD2gr7
-        cfdKyvv+JAWehKAxvAZujJn8AtidELaLo3HpAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="PBClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -120,7 +120,7 @@
             this.DPN.Location = new System.Drawing.Point(597, 134);
             this.DPN.Name = "DPN";
             this.DPN.Size = new System.Drawing.Size(267, 29);
-            this.DPN.TabIndex = 5;
+            this.DPN.TabIndex = 7;
             // 
             // LblPass
             // 
@@ -141,7 +141,7 @@
             this.TxtCed.Location = new System.Drawing.Point(115, 90);
             this.TxtCed.Name = "TxtCed";
             this.TxtCed.Size = new System.Drawing.Size(266, 29);
-            this.TxtCed.TabIndex = 7;
+            this.TxtCed.TabIndex = 0;
             this.TxtCed.TextChanged += new System.EventHandler(this.TxtCed_TextChanged);
             // 
             // TxtName
@@ -152,7 +152,7 @@
             this.TxtName.Location = new System.Drawing.Point(115, 132);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(266, 29);
-            this.TxtName.TabIndex = 8;
+            this.TxtName.TabIndex = 1;
             this.TxtName.TextChanged += new System.EventHandler(this.TxtName_TextChanged);
             // 
             // TxtApe1
@@ -163,7 +163,7 @@
             this.TxtApe1.Location = new System.Drawing.Point(115, 220);
             this.TxtApe1.Name = "TxtApe1";
             this.TxtApe1.Size = new System.Drawing.Size(266, 29);
-            this.TxtApe1.TabIndex = 9;
+            this.TxtApe1.TabIndex = 3;
             this.TxtApe1.TextChanged += new System.EventHandler(this.TxtApe1_TextChanged);
             // 
             // TxtDir
@@ -186,7 +186,7 @@
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '*';
             this.TxtPassword.Size = new System.Drawing.Size(266, 29);
-            this.TxtPassword.TabIndex = 11;
+            this.TxtPassword.TabIndex = 2;
             this.TxtPassword.TextChanged += new System.EventHandler(this.TxtPass_TextChanged);
             // 
             // BtnReg
@@ -198,7 +198,7 @@
             this.BtnReg.Location = new System.Drawing.Point(187, 356);
             this.BtnReg.Name = "BtnReg";
             this.BtnReg.Size = new System.Drawing.Size(101, 36);
-            this.BtnReg.TabIndex = 12;
+            this.BtnReg.TabIndex = 11;
             this.BtnReg.Text = "Registrar";
             this.BtnReg.UseVisualStyleBackColor = false;
             this.BtnReg.Click += new System.EventHandler(this.BtnReg_Click);
@@ -223,7 +223,7 @@
             this.CBoxRol.Location = new System.Drawing.Point(597, 178);
             this.CBoxRol.Name = "CBoxRol";
             this.CBoxRol.Size = new System.Drawing.Size(267, 29);
-            this.CBoxRol.TabIndex = 14;
+            this.CBoxRol.TabIndex = 8;
             // 
             // TxtApe2
             // 
@@ -233,7 +233,7 @@
             this.TxtApe2.Location = new System.Drawing.Point(597, 90);
             this.TxtApe2.Name = "TxtApe2";
             this.TxtApe2.Size = new System.Drawing.Size(267, 29);
-            this.TxtApe2.TabIndex = 16;
+            this.TxtApe2.TabIndex = 6;
             this.TxtApe2.TextChanged += new System.EventHandler(this.TxtApe2_TextChanged);
             // 
             // LblApe2
@@ -255,7 +255,7 @@
             this.TxtPais.Location = new System.Drawing.Point(597, 220);
             this.TxtPais.Name = "TxtPais";
             this.TxtPais.Size = new System.Drawing.Size(267, 29);
-            this.TxtPais.TabIndex = 18;
+            this.TxtPais.TabIndex = 9;
             this.TxtPais.TextChanged += new System.EventHandler(this.TxtPais_TextChanged);
             // 
             // LblPais
@@ -277,7 +277,7 @@
             this.TxtProvin.Location = new System.Drawing.Point(115, 264);
             this.TxtProvin.Name = "TxtProvin";
             this.TxtProvin.Size = new System.Drawing.Size(266, 29);
-            this.TxtProvin.TabIndex = 20;
+            this.TxtProvin.TabIndex = 4;
             this.TxtProvin.TextChanged += new System.EventHandler(this.TxtProvin_TextChanged);
             // 
             // LblProvin
@@ -299,7 +299,7 @@
             this.TxtCan.Location = new System.Drawing.Point(115, 307);
             this.TxtCan.Name = "TxtCan";
             this.TxtCan.Size = new System.Drawing.Size(266, 29);
-            this.TxtCan.TabIndex = 22;
+            this.TxtCan.TabIndex = 5;
             this.TxtCan.TextChanged += new System.EventHandler(this.TxtCan_TextChanged);
             // 
             // LblCan
@@ -323,7 +323,7 @@
             this.BtnS.Location = new System.Drawing.Point(648, 356);
             this.BtnS.Name = "BtnS";
             this.BtnS.Size = new System.Drawing.Size(101, 36);
-            this.BtnS.TabIndex = 23;
+            this.BtnS.TabIndex = 12;
             this.BtnS.Text = "Buscar";
             this.BtnS.UseVisualStyleBackColor = false;
             this.BtnS.Click += new System.EventHandler(this.BtnS_Click);
@@ -337,7 +337,7 @@
             this.BtnDel.Location = new System.Drawing.Point(187, 398);
             this.BtnDel.Name = "BtnDel";
             this.BtnDel.Size = new System.Drawing.Size(101, 36);
-            this.BtnDel.TabIndex = 24;
+            this.BtnDel.TabIndex = 14;
             this.BtnDel.Text = "Eliminar";
             this.BtnDel.UseVisualStyleBackColor = false;
             this.BtnDel.Click += new System.EventHandler(this.BtnDel_Click);
@@ -351,7 +351,7 @@
             this.BtnE.Location = new System.Drawing.Point(648, 398);
             this.BtnE.Name = "BtnE";
             this.BtnE.Size = new System.Drawing.Size(101, 36);
-            this.BtnE.TabIndex = 25;
+            this.BtnE.TabIndex = 13;
             this.BtnE.Text = "Modificar";
             this.BtnE.UseVisualStyleBackColor = false;
             this.BtnE.Click += new System.EventHandler(this.BtnE_Click);
@@ -374,7 +374,7 @@
             this.BtnClear.Location = new System.Drawing.Point(80, 398);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(101, 36);
-            this.BtnClear.TabIndex = 27;
+            this.BtnClear.TabIndex = 15;
             this.BtnClear.Text = "Limpiar";
             this.BtnClear.UseVisualStyleBackColor = false;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
@@ -387,7 +387,7 @@
             this.checkBox_act.Location = new System.Drawing.Point(407, 311);
             this.checkBox_act.Name = "checkBox_act";
             this.checkBox_act.Size = new System.Drawing.Size(96, 29);
-            this.checkBox_act.TabIndex = 28;
+            this.checkBox_act.TabIndex = 16;
             this.checkBox_act.Text = "Activo";
             this.checkBox_act.UseVisualStyleBackColor = true;
             // 

@@ -67,7 +67,7 @@ namespace FP2ISW_411.Vista
                 }
                 if (U.Password == E.Encriptar(TxtPass.Text))
                 {
-                    FrmPrin FP = new FrmPrin();
+                    FrmPrin FP = new FrmPrin(U.nombre + " " +U.Apellido1);
                     FP.Visible = true;
                     this.Dispose(false);
                     E.Encriptar(TxtPass.Text);

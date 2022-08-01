@@ -21,16 +21,16 @@ namespace FP2ISW_411.Vista
             ChildForms(new FrmInicio());
         }
 
+        public FrmPrin(string name)
+        {
+            InitializeComponent();
+            LblUser.Text = LblUser.Text + " " + name;
+            ChildForms(new FrmInicio());
+        }
+
         private void PBClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void PBMax_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            PBMax.Visible = false;
-            PBRes.Visible = true;
         }
 
         private void PBMini_Click(object sender, EventArgs e)
@@ -38,12 +38,6 @@ namespace FP2ISW_411.Vista
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void PBRes_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            PBMax.Visible = true;
-            PBRes.Visible = false;
-        }
         private void ChildForms(object FrmChild)
         {
             if (this.PlnMain.Controls.Count > 0)                          
@@ -107,6 +101,39 @@ namespace FP2ISW_411.Vista
         private void BtnCRUDH_Click(object sender, EventArgs e)
         {
             ChildForms(new FrmCRUDH());
+        }
+
+        private void FrmTarifas_Click(object sender, EventArgs e)
+        {
+            ChildForms(new FrmTarifa());
+        }
+
+        private void BtnCRUDs_Click(object sender, EventArgs e)
+        {
+            if(PlnCRUDs.Visible == false)
+            {
+                PlnCRUDs.Visible = true;
+                BtnRes.Visible = false;
+            }
+            else if (PlnCRUDs.Visible == true)
+            {
+                PlnCRUDs.Visible = false;
+                BtnRes.Visible = true;
+            }
+        }
+
+        private void PlnMenu_Click(object sender, EventArgs e)
+        {
+            if (PlnCRUDs.Visible == true)
+            {
+                PlnCRUDs.Visible = false;
+                BtnRes.Visible = true;
+            }
+        }
+
+        private void FrmPrin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
