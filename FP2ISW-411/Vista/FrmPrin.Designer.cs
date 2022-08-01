@@ -40,6 +40,7 @@
             this.PBHome = new System.Windows.Forms.PictureBox();
             this.BtnRes = new System.Windows.Forms.Button();
             this.PlnMain = new System.Windows.Forms.Panel();
+            this.BtnCRUDH = new System.Windows.Forms.Button();
             this.PlnHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBRes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMini)).BeginInit();
@@ -116,6 +117,7 @@
             // PlnMenu
             // 
             this.PlnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.PlnMenu.Controls.Add(this.BtnCRUDH);
             this.PlnMenu.Controls.Add(this.BtnReg);
             this.PlnMenu.Controls.Add(this.BtnLogOut);
             this.PlnMenu.Controls.Add(this.PBHome);
@@ -128,23 +130,23 @@
             // 
             // BtnReg
             // 
-            this.BtnReg.BackColor = System.Drawing.Color.Gray;
+            this.BtnReg.BackColor = System.Drawing.Color.DimGray;
             this.BtnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReg.Location = new System.Drawing.Point(0, 228);
+            this.BtnReg.Location = new System.Drawing.Point(0, 143);
             this.BtnReg.Name = "BtnReg";
-            this.BtnReg.Size = new System.Drawing.Size(188, 23);
+            this.BtnReg.Size = new System.Drawing.Size(188, 32);
             this.BtnReg.TabIndex = 2;
-            this.BtnReg.Text = "button1";
+            this.BtnReg.Text = "CRUD Usuarios";
             this.BtnReg.UseVisualStyleBackColor = false;
             this.BtnReg.Click += new System.EventHandler(this.BtnReg_Click);
             // 
             // BtnLogOut
             // 
-            this.BtnLogOut.BackColor = System.Drawing.Color.Gray;
+            this.BtnLogOut.BackColor = System.Drawing.Color.DimGray;
             this.BtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLogOut.Location = new System.Drawing.Point(0, 520);
+            this.BtnLogOut.Location = new System.Drawing.Point(0, 523);
             this.BtnLogOut.Name = "BtnLogOut";
             this.BtnLogOut.Size = new System.Drawing.Size(188, 23);
             this.BtnLogOut.TabIndex = 1;
@@ -165,14 +167,14 @@
             // 
             // BtnRes
             // 
-            this.BtnRes.BackColor = System.Drawing.Color.Gray;
+            this.BtnRes.BackColor = System.Drawing.Color.DimGray;
             this.BtnRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRes.Location = new System.Drawing.Point(0, 158);
+            this.BtnRes.Location = new System.Drawing.Point(0, 219);
             this.BtnRes.Name = "BtnRes";
-            this.BtnRes.Size = new System.Drawing.Size(188, 23);
+            this.BtnRes.Size = new System.Drawing.Size(188, 32);
             this.BtnRes.TabIndex = 0;
-            this.BtnRes.Text = "BtnRes";
+            this.BtnRes.Text = "Reservaciones";
             this.BtnRes.UseVisualStyleBackColor = false;
             this.BtnRes.Click += new System.EventHandler(this.BtnRes_Click);
             // 
@@ -184,6 +186,19 @@
             this.PlnMain.Name = "PlnMain";
             this.PlnMain.Size = new System.Drawing.Size(902, 546);
             this.PlnMain.TabIndex = 2;
+            // 
+            // BtnCRUDH
+            // 
+            this.BtnCRUDH.BackColor = System.Drawing.Color.DimGray;
+            this.BtnCRUDH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCRUDH.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCRUDH.Location = new System.Drawing.Point(0, 181);
+            this.BtnCRUDH.Name = "BtnCRUDH";
+            this.BtnCRUDH.Size = new System.Drawing.Size(188, 32);
+            this.BtnCRUDH.TabIndex = 3;
+            this.BtnCRUDH.Text = "CRUD Hoteles";
+            this.BtnCRUDH.UseVisualStyleBackColor = false;
+            this.BtnCRUDH.Click += new System.EventHandler(this.BtnCRUDH_Click);
             // 
             // FrmPrin
             // 
@@ -222,5 +237,6 @@
         private System.Windows.Forms.PictureBox PBHome;
         private System.Windows.Forms.Button BtnLogOut;
         private System.Windows.Forms.Button BtnReg;
+        private System.Windows.Forms.Button BtnCRUDH;
     }
 }

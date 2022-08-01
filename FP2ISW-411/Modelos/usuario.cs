@@ -44,7 +44,7 @@ namespace FP2ISW_411.Modelos
         public string nombre { get => Nombre; set => Nombre = value; }
         public string Apellido1 { get => apellido1; set => apellido1 = value; }
         public string Apellido2 { get => apellido2; set => apellido2 = value; }
-        public string Password { get => password; set => password = value; }//No use letras que no existen en ingles
+        public string Password { get => password; set => password = value; }
         public int Edad { get => edad; set => edad = value; }
         public DateTime Fecha_nac { get => fecha_nac; set => fecha_nac = value; }
         public string Direccion { get => direccion; set => direccion = value; }

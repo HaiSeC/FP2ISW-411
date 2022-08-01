@@ -25,7 +25,7 @@ namespace FP2ISW_411.Vista
             vainaDeBotones();
             checkBox_act.Enabled = false;
         }
-        public void vainaDeBotones()//Que hace esto???
+        public void vainaDeBotones()
         {
             BtnS.Enabled = Id;
             BtnReg.Enabled = (Id && N && C && A1 && A2 && Pa && Pro && Can && D);
@@ -269,6 +269,7 @@ namespace FP2ISW_411.Vista
             }
             double e1 = (DateTime.Now.Subtract(DPN.Value).TotalDays) / 365;
             int edad = Convert.ToInt32(Convert.ToString(e1).Split(',')[0]);
+            //int edad = Convert.ToInt32(Convert.ToString(e1).Split('.')[0]);//Esta linea la tengo que usar por algo de la region de Windows xd
             usuario usu = new usuario(Convert.ToInt64(TxtCed.Text), TxtName.Text, TxtApe1.Text, TxtApe2.Text, "", edad, DPN.Value, TxtPais.Text, TxtProvin.Text, TxtCan.Text, TxtDir.Text, DateTime.Now, P.codigo_puest(CBoxRol.Text), act);
             if (P.modi_info(usu))
             {

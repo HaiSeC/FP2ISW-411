@@ -103,5 +103,10 @@ namespace FP2ISW_411.Vista
         {
             ChildForms(new FrmReg());
         }
+
+        private void BtnCRUDH_Click(object sender, EventArgs e)
+        {
+            ChildForms(new FrmCRUDH());
+        }
     }
 }

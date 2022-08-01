@@ -68,9 +68,16 @@
     <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Datos\inserciones.cs" />
     <Compile Include="Datos\updates.cs" />
+    <Compile Include="Modelos\Hoteles.cs" />
     <Compile Include="Modelos\usuario.cs" />
     <Compile Include="Procesos\encriptar.cs" />
     <Compile Include="Procesos\procesos.cs" />
+    <Compile Include="Vista\FrmCRUDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmCRUDH.Designer.cs">
+      <DependentUpon>FrmCRUDH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +119,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\FrmCRUDH.resx">
+      <DependentUpon>FrmCRUDH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>

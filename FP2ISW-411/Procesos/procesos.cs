@@ -45,6 +45,12 @@ namespace FP2ISW_411.Procesos
         {
             return c.info_usu(i);
         }
+
+        public Hoteles GetH(long i)
+        {
+            return c.SelH(i);
+        }
+
         public usuario admin(long i)
         {
             return c.admin(i);

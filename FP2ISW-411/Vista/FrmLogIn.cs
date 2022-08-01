@@ -22,6 +22,7 @@ namespace FP2ISW_411.Vista
         public FrmLogIn()
         {
             InitializeComponent();
+            TxtUser.Focus();
         }
 
         private void PBClose_Click(object sender, EventArgs e)

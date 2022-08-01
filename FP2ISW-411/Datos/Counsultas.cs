@@ -143,6 +143,29 @@ namespace FP2ISW_411.Datos
             }
             return U;
         }
+
+        public Hoteles SelH(long id)
+        {
+            Hoteles H = null;
+            try
+            {
+                string sql = "SELECT nombre, localidad, cantidad from dbo.tb_hoteles WHERE identificador = " + id;
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    H = new Hoteles(id, dr.GetString(0), dr.GetString(1), dr.GetInt32(2));                   
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                H = null;
+                conex.Desconectar();
+            }
+            return H;
+        }
+
         public string nombre_puesto(int t_h)
         {
             string n = "";

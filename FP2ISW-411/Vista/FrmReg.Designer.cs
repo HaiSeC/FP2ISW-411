@@ -383,7 +383,7 @@
             // 
             this.checkBox_act.AutoSize = true;
             this.checkBox_act.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_act.ForeColor = System.Drawing.Color.White;
+            this.checkBox_act.ForeColor = System.Drawing.Color.Gray;
             this.checkBox_act.Location = new System.Drawing.Point(407, 311);
             this.checkBox_act.Name = "checkBox_act";
             this.checkBox_act.Size = new System.Drawing.Size(96, 29);
