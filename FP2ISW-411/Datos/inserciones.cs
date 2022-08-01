@@ -61,5 +61,30 @@ namespace FP2ISW_411.Datos
                 return false;
             }
         }
+        public bool registrar_Tarifa(int cod_hotel,int cod_T_Hbitacion,double precio)
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "INSERT INTO dbo.tb_tarifas_de_hotel VALUES("+cod_hotel+","+precio+","+cod_T_Hbitacion+");" ;
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

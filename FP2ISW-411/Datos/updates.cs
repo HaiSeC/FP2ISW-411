@@ -87,5 +87,30 @@ namespace FP2ISW_411.Datos
                 return false;
             }
         }
+        public bool modificar_Tarifa(int cod_hotel, int cod_Thabi,double precio)
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "UPDATE dbo.tb_tarifas_de_hotel SET precio="+precio+" WHERE codigo_hotel="+cod_hotel+" AND hab_type="+cod_Thabi+";";
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

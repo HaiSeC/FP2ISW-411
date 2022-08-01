@@ -75,6 +75,7 @@ namespace FP2ISW_411.Datos
             return tipos;
         }
 
+
         public int codigo_puesto(string t_h)
         {
             int tarifa = 0;
@@ -188,6 +189,91 @@ namespace FP2ISW_411.Datos
             return n;
         }
 
+        public List<string> nombre_hoteles()
+        {
+            List<string> tipos = new List<string>();
+            try
+            {
+                string sql = "SELECT nombre FROM dbo.tb_hoteles;";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    tipos.Add(dr.GetString(0));
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                tipos = null;
+                conex.Desconectar();
+            }
+            return tipos;
+        }
+        public int codigo_Hotel(string t_h)
+        {
+            int codigo = 0;
+            try
+            {
+                string sql = "SELECT identificador FROM dbo.tb_hoteles WHERE nombre='" + t_h + "';";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    codigo = dr.GetInt32(0);
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                codigo = 0;
+                conex.Desconectar();
+            }
+            return codigo;
+        }
+        public int codigo_Tipo_habi(string t_h)
+        {
+            int codigo = 0;
+            try
+            {
+                string sql = "SELECT id_type FROM dbo.tb_hab_type WHERE descripcion='" + t_h + "';";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    codigo = dr.GetInt32(0);
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                codigo = 0;
+                conex.Desconectar();
+            }
+            return codigo;
+        }
+
+        public double precio_tarifa(int hotel,int T_habitacion)
+        {
+            double codigo = 0;
+            try
+            {
+                string sql = "SELECT precio FROM dbo.tb_tarifas_de_hotel WHERE codigo_hotel="+hotel+" AND hab_type="+T_habitacion+";";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    codigo = dr.GetDouble(0);
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                codigo = 0;
+                conex.Desconectar();
+            }
+            return codigo;
+        }
     }
 
 

@@ -27,6 +27,10 @@ namespace FP2ISW_411.Procesos
             List<string> tipos = c.puestos();
             return tipos;
         }
+        public List<string> nombre_hoteles()
+        {
+            return c.nombre_hoteles();
+        }
         public int codigo_puest(string T)
         {
             int P = c.codigo_puesto(T);
@@ -67,6 +71,28 @@ namespace FP2ISW_411.Procesos
         public bool modi_info(usuario u)
         {
             return (up.modificar_usu(u) && up.modificar_direct(u));
+        }
+
+        public int cod_Hotel(string T)
+        {
+            return c.codigo_Hotel(T);
+        }
+        public int cod_T_habi(string T)
+        {
+            return c.codigo_Tipo_habi(T);
+        }
+
+        public void insert_tarifa(string T_habi,string hotel,double precio)
+        {
+            inser.registrar_Tarifa(cod_Hotel(hotel),cod_T_habi(T_habi),precio);
+        }
+        public double prec_tarifa(string Hot, string t_habi)
+        {
+            return c.precio_tarifa(cod_Hotel(Hot), cod_T_habi(t_habi));
+        }
+        public bool modi_tarifa(string T_habi, string hotel, double precio)
+        {
+            return up.modificar_Tarifa(cod_Hotel(hotel),cod_T_habi(T_habi),precio);
         }
     }
 }
