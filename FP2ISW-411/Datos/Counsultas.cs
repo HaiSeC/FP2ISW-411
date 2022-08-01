@@ -255,7 +255,7 @@ namespace FP2ISW_411.Datos
 
         public double precio_tarifa(int hotel,int T_habitacion)
         {
-            double codigo = 0;
+            double codigo = -1;
             try
             {
                 string sql = "SELECT precio FROM dbo.tb_tarifas_de_hotel WHERE codigo_hotel="+hotel+" AND hab_type="+T_habitacion+";";
@@ -269,7 +269,7 @@ namespace FP2ISW_411.Datos
             }
             catch
             {
-                codigo = 0;
+                codigo = -1;
                 conex.Desconectar();
             }
             return codigo;

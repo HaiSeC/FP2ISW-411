@@ -43,13 +43,13 @@ namespace FP2ISW_411.Vista
         public void registrar()
         {
             double pre = P.prec_tarifa(comboBox_Hoteles.Text, comboBox_Thabitacion.Text);
-            if (pre == 0 || pre < 1)
+            if (pre < 0)
             {
                 try
                 {
                     double x = Convert.ToDouble(text_precio.Text);
                     P.insert_tarifa(comboBox_Thabitacion.Text, comboBox_Hoteles.Text, x);
-                    MessageBox.Show("Se ha insertado correctamente");
+                    MessageBox.Show("Se ha registrado correctamente");
                 }
                 catch
                 {
@@ -83,7 +83,7 @@ namespace FP2ISW_411.Vista
         private void button3_Click(object sender, EventArgs e)
         {
             double pre = P.prec_tarifa(comboBox_Hoteles.Text, comboBox_Thabitacion.Text);
-            if (pre==0 || pre<1)
+            if (pre<0)
             {
                 MessageBox.Show("No hay una tarifa asignada");
             }
@@ -96,7 +96,7 @@ namespace FP2ISW_411.Vista
         private void button_Modi_Click(object sender, EventArgs e)
         {
             double pre = P.prec_tarifa(comboBox_Hoteles.Text, comboBox_Thabitacion.Text);
-            if (pre == 0 || pre < 1)
+            if ( pre < 0)
             {
                 MessageBox.Show("No hay una tarifa asignada,\nSe procederá a registrarla");
                 registrar();
