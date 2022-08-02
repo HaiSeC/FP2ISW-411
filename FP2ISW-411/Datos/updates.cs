@@ -16,7 +16,59 @@ namespace FP2ISW_411.Datos
             try
             {
                 Conexion conex = new Conexion();
-                string sql = "UPDATE dbo.tb_usuarios SET activo = 0 WHERE identificador= "+id+";";
+                string sql = "UPDATE dbo.tb_usuarios SET activo = 0 WHERE identificador= " + id + ";";
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool desactivar_hotel(long id)
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "UPDATE dbo.tb_hoteles SET activo = 0 WHERE identificador = " + id + ";";
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool modificar_hoteles(Hoteles H)
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "UPDATE dbo.tb_hoteles SET nombre = '"+ H.Nombre +"', localidad = '"+ H.Localidad +"', cantidad = "+ H.CantidadHab +", activo = " + H.Activo + " WHERE identificador = " + H.Identificador + "";
                 SqlCommand comando = new
                 SqlCommand(sql, conex.Conectar());
                 int cantidad = comando.ExecuteNonQuery();

@@ -247,13 +247,13 @@ namespace FP2ISW_411.Vista
         {
             if (P.desac_usu(Convert.ToInt64(TxtCed.Text)))
             {
-                MessageBox.Show("Se ha eliminado correctamente.");
+                MessageBox.Show("Se ha eliminado exitosamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 TxtCed.Text = "";
                 Clear();
             }
             else
             {
-                MessageBox.Show("Verifique la información");
+                MessageBox.Show("Verifique la información.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -274,13 +274,13 @@ namespace FP2ISW_411.Vista
             usuario usu = new usuario(Convert.ToInt64(TxtCed.Text), TxtName.Text, TxtApe1.Text, TxtApe2.Text, "", edad, DPN.Value, TxtPais.Text, TxtProvin.Text, TxtCan.Text, TxtDir.Text, DateTime.Now, P.codigo_puest(CBoxRol.Text), act);
             if (P.modi_info(usu))
             {
-                MessageBox.Show("Se modifico la información exitosamente");
+                MessageBox.Show("Se ha modificado la información exitosamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 TxtCed.Text = "";
                 Clear();
             }
             else
             {
-                MessageBox.Show("Verifique la información.");
+                MessageBox.Show("Verifique la información.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

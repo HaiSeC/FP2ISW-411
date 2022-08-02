@@ -44,6 +44,10 @@ namespace FP2ISW_411.Procesos
         {
             return inser.registrar_direccion(U);
         }
+        public bool insert_hotel(Hoteles h)
+        {
+            return inser.registrar_hotel(h);
+        }
 
         public usuario info_usu (long i)
         {
@@ -55,9 +59,9 @@ namespace FP2ISW_411.Procesos
             return c.SelH(i);
         }
 
-        public usuario admin(long i)
+        public usuario user(long i)
         {
-            return c.admin(i);
+            return c.user(i);
         }
         public string nombre_puesto(int i)
         {
@@ -67,10 +71,19 @@ namespace FP2ISW_411.Procesos
         {
             return up.desactivar_usu(id);
         }
+        public bool desac_hot(long id)
+        {
+            return up.desactivar_hotel(id);
+        }
 
         public bool modi_info(usuario u)
         {
             return (up.modificar_usu(u) && up.modificar_direct(u));
+        }
+
+        public bool modi_hot(Hoteles h)
+        {
+            return (up.modificar_hoteles(h));
         }
 
         public int cod_Hotel(string T)

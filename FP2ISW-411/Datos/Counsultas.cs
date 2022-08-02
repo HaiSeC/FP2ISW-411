@@ -121,12 +121,12 @@ namespace FP2ISW_411.Datos
             }
             return U;
         }
-        public usuario admin(long id)
+        public usuario user(long id)
         {
             usuario U = null;
             try
             {
-                string sql = "SELECT nombre, apellido1, passwor, user_type FROM dbo.tb_usuarios WHERE identificador = " + id + "AND activo = 1 AND user_type = 1";
+                string sql = "SELECT nombre, apellido1, passwor, user_type FROM dbo.tb_usuarios WHERE identificador = " + id + "AND activo = 1";
                 SqlCommand comando = new SqlCommand(sql, conex.Conectar());
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())
@@ -150,12 +150,12 @@ namespace FP2ISW_411.Datos
             Hoteles H = null;
             try
             {
-                string sql = "SELECT nombre, localidad, cantidad from dbo.tb_hoteles WHERE identificador = " + id;
+                string sql = "SELECT nombre, localidad, cantidad, activo from dbo.tb_hoteles WHERE identificador = " + id;
                 SqlCommand comando = new SqlCommand(sql, conex.Conectar());
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())
                 {
-                    H = new Hoteles(id, dr.GetString(0), dr.GetString(1), dr.GetInt32(2));                   
+                    H = new Hoteles(id, dr.GetString(0), dr.GetString(1), dr.GetInt32(2), Convert.ToInt32(dr.GetValue(3)));
                 }
                 conex.Desconectar();
             }

@@ -1,6 +1,6 @@
 ﻿namespace FP2ISW_411.Vista
 {
-    partial class FrmPrin
+    partial class FrmCl
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCl));
             this.PlnHead = new System.Windows.Forms.Panel();
             this.LblUser = new System.Windows.Forms.Label();
             this.PBMini = new System.Windows.Forms.PictureBox();
@@ -73,9 +73,9 @@
             this.LblUser.ForeColor = System.Drawing.Color.DimGray;
             this.LblUser.Location = new System.Drawing.Point(3, 3);
             this.LblUser.Name = "LblUser";
-            this.LblUser.Size = new System.Drawing.Size(177, 20);
+            this.LblUser.Size = new System.Drawing.Size(134, 20);
             this.LblUser.TabIndex = 3;
-            this.LblUser.Text = "Bienvenidx Adminstradxr,";
+            this.LblUser.Text = "Bienvenidx Cliente,";
             // 
             // PBMini
             // 
@@ -225,7 +225,7 @@
             this.PlnMain.Size = new System.Drawing.Size(902, 546);
             this.PlnMain.TabIndex = 2;
             // 
-            // FrmPrin
+            // FrmCl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -235,7 +235,7 @@
             this.Controls.Add(this.PlnHead);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmPrin";
+            this.Name = "FrmCl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrin";
             this.Load += new System.EventHandler(this.FrmPrin_Load);
@@ -256,7 +256,6 @@
         private System.Windows.Forms.PictureBox PBMini;
         private System.Windows.Forms.PictureBox PBClose;
         private System.Windows.Forms.Panel PlnMenu;
-        private System.Windows.Forms.Panel PlnMain;
         private System.Windows.Forms.Button BtnRes;
         private System.Windows.Forms.PictureBox PBHome;
         private System.Windows.Forms.Button BtnLogOut;
@@ -265,6 +264,7 @@
         private System.Windows.Forms.Button FrmTarifas;
         private System.Windows.Forms.Button BtnCRUDs;
         private System.Windows.Forms.Panel PlnCRUDs;
-        private System.Windows.Forms.Label LblUser;       
+        private System.Windows.Forms.Label LblUser;
+        private System.Windows.Forms.Panel PlnMain;
     }
 }

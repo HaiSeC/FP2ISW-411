@@ -58,7 +58,7 @@ namespace FP2ISW_411.Vista
         {
             try
             {
-                usuario U = P.admin(Convert.ToInt64(TxtUser.Text));
+                usuario U = P.user(Convert.ToInt64(TxtUser.Text));
                 if (U == null)
                 {
                     MessageBox.Show("El usuario " + TxtUser.Text + " no esta registrado.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -67,11 +67,19 @@ namespace FP2ISW_411.Vista
                 }
                 if (U.Password == E.Encriptar(TxtPass.Text))
                 {
-                    FrmPrin FP = new FrmPrin(U.nombre + " " +U.Apellido1);
-                    FP.Visible = true;
-                    this.Dispose(false);
-                    E.Encriptar(TxtPass.Text);
-                    Console.WriteLine(E.Encriptar(TxtPass.Text));
+                    
+                    if (U.Puesto == 1)
+                    {
+                        FrmPrin FP = new FrmPrin(U.nombre + " " + U.Apellido1);
+                        FP.Visible = true;
+                        this.Dispose(false);
+                    }
+                    else if(U.Puesto == 2)
+                    {
+                        FrmCl CL = new FrmCl(U.nombre + " " + U.Apellido1);
+                        CL.Visible = true;
+                        this.Dispose(false);
+                    } 
                 }
                 else
                 {

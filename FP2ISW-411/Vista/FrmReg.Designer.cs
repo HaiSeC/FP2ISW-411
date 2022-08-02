@@ -195,7 +195,7 @@
             this.BtnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReg.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnReg.Location = new System.Drawing.Point(187, 356);
+            this.BtnReg.Location = new System.Drawing.Point(301, 398);
             this.BtnReg.Name = "BtnReg";
             this.BtnReg.Size = new System.Drawing.Size(101, 36);
             this.BtnReg.TabIndex = 11;
@@ -334,7 +334,7 @@
             this.BtnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnDel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnDel.Location = new System.Drawing.Point(187, 398);
+            this.BtnDel.Location = new System.Drawing.Point(194, 398);
             this.BtnDel.Name = "BtnDel";
             this.BtnDel.Size = new System.Drawing.Size(101, 36);
             this.BtnDel.TabIndex = 14;
@@ -371,7 +371,7 @@
             this.BtnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnClear.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnClear.Location = new System.Drawing.Point(80, 398);
+            this.BtnClear.Location = new System.Drawing.Point(87, 398);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(101, 36);
             this.BtnClear.TabIndex = 15;
