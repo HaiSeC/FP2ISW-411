@@ -56,34 +56,43 @@ namespace FP2ISW_411.Vista
 
         private void BtnLog_Click(object sender, EventArgs e)
         {
+            Login();  
+        }
+        
+        public void Login()
+        {
             try
             {
+                if (System.Text.RegularExpressions.Regex.IsMatch(TxtUser.Text, "^[a-zA-Z ]*$"))
+                {
+                    MessageBox.Show("No se permiten espacios o letras en la identificaión", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 usuario U = P.user(Convert.ToInt64(TxtUser.Text));
                 if (U == null)
                 {
-                    MessageBox.Show("El usuario " + TxtUser.Text + " no esta registrado.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El usuario " + TxtUser.Text + " no esta registrado.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     TxtUser.Text = "";
                     TxtPass.Text = "";
                 }
                 if (U.Password == E.Encriptar(TxtPass.Text))
                 {
-                    
+
                     if (U.Puesto == 1)
                     {
                         FrmPrin FP = new FrmPrin(P.info_usu(U.Cedula));
                         FP.Visible = true;
                         this.Dispose(false);
                     }
-                    else if(U.Puesto == 2)
+                    else if (U.Puesto == 2)
                     {
                         FrmCl CL = new FrmCl(P.info_usu(U.Cedula));
                         CL.Visible = true;
                         this.Dispose(false);
-                    } 
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Contraseña incorrecta", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Contraseña incorrecta", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     TxtPass.Text = "";
                 }
             }
@@ -91,7 +100,20 @@ namespace FP2ISW_411.Vista
             {
                 TxtUser.Text = "";
                 TxtPass.Text = "";
-            }          
+            }
+        }
+
+        private void TxtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login();
+            }
+        }
+
+        private void TxtPass_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

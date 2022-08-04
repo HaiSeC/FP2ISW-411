@@ -132,6 +132,8 @@
             this.TxtPass.PasswordChar = '*';
             this.TxtPass.Size = new System.Drawing.Size(173, 25);
             this.TxtPass.TabIndex = 4;
+            this.TxtPass.TextChanged += new System.EventHandler(this.TxtPass_TextChanged);
+            this.TxtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPass_KeyDown);
             // 
             // LblPass
             // 

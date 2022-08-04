@@ -16,7 +16,7 @@ namespace FP2ISW_411.Vista
     {
         usuario usuario;
         procesos P = new procesos();
-        public FrmRes(usuario usuario)
+        public FrmRes(usuario usuario, int r, int g, int b)
         {
             this.usuario = usuario;
             InitializeComponent();
@@ -27,6 +27,7 @@ namespace FP2ISW_411.Vista
             UpdatePrice();
             update_disponibles();
             text_ced.Enabled=des_ced();
+            this.BackColor = Color.FromArgb(r, g, b);
         }
         public bool des_ced()
         {
@@ -118,7 +119,7 @@ namespace FP2ISW_411.Vista
         {
             if (CantA.Value <= 0)
             {
-                MessageBox.Show("Digite la cantidad de personas", "Atención",MessageBoxButtons.OK ,MessageBoxIcon.Warning);
+                MessageBox.Show("Digite la cantidad de personas", "Atención",MessageBoxButtons.OK ,MessageBoxIcon.Error);
             }
             else
             {
@@ -139,12 +140,12 @@ namespace FP2ISW_411.Vista
                             }
                             else
                             {
-                                MessageBox.Show("El cliente no está registrado.");
+                                MessageBox.Show("El Cliente no esta Registrado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         catch
                         {
-                            MessageBox.Show("Verifique la información.");
+                            MessageBox.Show("Verifique la información!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
@@ -159,11 +160,11 @@ namespace FP2ISW_411.Vista
         {
             if (P.reservar(ced, DPE.Value, DPS.Value, Convert.ToInt32(CantA.Value + CantN.Value), Convert.ToInt32(comboBox_habitacion.Text)))
             {
-                MessageBox.Show("Se ha hecho la reserva exitosamente!!!");
+                MessageBox.Show("Se ha realizado la reserva exitosamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Verifique su información");
+                MessageBox.Show("Verifique la información", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void CantN_ValueChanged(object sender, EventArgs e)

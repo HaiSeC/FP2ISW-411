@@ -20,15 +20,15 @@ namespace FP2ISW_411.Vista
         public FrmCl()
         {
             InitializeComponent();
-            ChildForms(new FrmInicio());
+            //ChildForms(new FrmInicio());
         }
 
         public FrmCl(usuario u)
         {
             this.usuario = u;
             InitializeComponent();
-            LblUser.Text = LblUser.Text + " " + usuario.nombre+" "+usuario.Apellido1;
-            ChildForms(new FrmInicio());
+            LblUser.Text = LblUser.Text + " " + usuario.nombre + " " + usuario.Apellido1;
+           //ChildForms(new FrmInicio());
         }
 
         private void PBClose_Click(object sender, EventArgs e)
@@ -54,7 +54,10 @@ namespace FP2ISW_411.Vista
         }
         private void PBHome_Click(object sender, EventArgs e)
         {
-            ChildForms(new FrmInicio());
+            int r = 96;
+            int g = 73;
+            int b = 44;
+            ChildForms(new FrmInicio(r,g,b));           
         }
 
         private void PlnHead_MouseUp(object sender, MouseEventArgs e)
@@ -79,7 +82,10 @@ namespace FP2ISW_411.Vista
 
         private void BtnRes_Click(object sender, EventArgs e)
         {
-            ChildForms(new FrmRes(this.usuario));
+            int r = 96;
+            int g = 73;
+            int b = 44;
+            ChildForms(new FrmRes(this.usuario, r, g, b));
         }
 
         private void BtnLogOut_Click(object sender, EventArgs e)
@@ -96,42 +102,14 @@ namespace FP2ISW_411.Vista
             }           
         }
 
-        private void BtnReg_Click(object sender, EventArgs e)
+        private void BtnMV_Click(object sender, EventArgs e)
         {
-            ChildForms(new FrmReg());
-        }
-
-        private void BtnCRUDH_Click(object sender, EventArgs e)
-        {
-            ChildForms(new FrmCRUDH());
-        }
-
-        private void FrmTarifas_Click(object sender, EventArgs e)
-        {
-            ChildForms(new FrmTarifa());
-        }
-
-        private void BtnCRUDs_Click(object sender, EventArgs e)
-        {
-            if(PlnCRUDs.Visible == false)
-            {
-                PlnCRUDs.Visible = true;
-                BtnRes.Visible = false;
-            }
-            else if (PlnCRUDs.Visible == true)
-            {
-                PlnCRUDs.Visible = false;
-                BtnRes.Visible = true;
-            }
+            MessageBox.Show("Cris Tontito", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void PlnMenu_Click(object sender, EventArgs e)
         {
-            if (PlnCRUDs.Visible == true)
-            {
-                PlnCRUDs.Visible = false;
-                BtnRes.Visible = true;
-            }
+
         }
 
         private void FrmPrin_Load(object sender, EventArgs e)

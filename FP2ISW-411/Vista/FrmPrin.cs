@@ -20,14 +20,17 @@ namespace FP2ISW_411.Vista
         public FrmPrin()
         {
             InitializeComponent();
-            ChildForms(new FrmInicio());
+            //ChildForms(new FrmInicio());
         }
 
         public FrmPrin(usuario U)
         {
             InitializeComponent();
             LblUser.Text = LblUser.Text + " " + U.nombre+" "+U.Apellido1;
-            ChildForms(new FrmInicio());
+            int r = 0;
+            int g = 0;
+            int b = 0;
+            ChildForms(new FrmInicio(r, g, b));
             this.usuario = U;
         }
 
@@ -54,7 +57,10 @@ namespace FP2ISW_411.Vista
         }
         private void PBHome_Click(object sender, EventArgs e)
         {
-            ChildForms(new FrmInicio());
+            int r = 0;
+            int g = 0;
+            int b = 0;
+            ChildForms(new FrmInicio(r, g, b));
         }
 
         private void PlnHead_MouseUp(object sender, MouseEventArgs e)
@@ -79,7 +85,10 @@ namespace FP2ISW_411.Vista
 
         private void BtnRes_Click(object sender, EventArgs e)
         {
-            ChildForms(new FrmRes(this.usuario));
+            int r = 0;
+            int g = 0;
+            int b = 0;
+            ChildForms(new FrmRes(this.usuario, r, g, b));
         }
 
         private void BtnLogOut_Click(object sender, EventArgs e)

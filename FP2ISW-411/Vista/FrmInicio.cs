@@ -16,5 +16,10 @@ namespace FP2ISW_411
         {
             InitializeComponent();
         }
+        public FrmInicio(int r, int g, int b)
+        {
+            InitializeComponent();
+            this.BackColor = Color.FromArgb(r, g, b);
+        }
     }
 }
