@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FP2ISW_411.Modelos;
 
 namespace FP2ISW_411.Vista
 {
@@ -15,16 +16,18 @@ namespace FP2ISW_411.Vista
         bool drag = false;
         int mX = 0;
         int mY = 0;
+        usuario usuario = null;
         public FrmCl()
         {
             InitializeComponent();
             ChildForms(new FrmInicio());
         }
 
-        public FrmCl(string name)
+        public FrmCl(usuario u)
         {
+            this.usuario = u;
             InitializeComponent();
-            LblUser.Text = LblUser.Text + " " + name;
+            LblUser.Text = LblUser.Text + " " + usuario.nombre+" "+usuario.Apellido1;
             ChildForms(new FrmInicio());
         }
 
@@ -76,7 +79,7 @@ namespace FP2ISW_411.Vista
 
         private void BtnRes_Click(object sender, EventArgs e)
         {
-            ChildForms(new FrmRes());
+            ChildForms(new FrmRes(this.usuario));
         }
 
         private void BtnLogOut_Click(object sender, EventArgs e)

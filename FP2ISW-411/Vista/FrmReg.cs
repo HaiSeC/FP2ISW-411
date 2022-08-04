@@ -47,8 +47,8 @@ namespace FP2ISW_411.Vista
             try
             {
                 double e1 = (DateTime.Now.Subtract(DPN.Value).TotalDays) / 365;
-                //int edad = Convert.ToInt32(Convert.ToString(e1).Split(',')[0]);
-                int edad = Convert.ToInt32(Convert.ToString(e1).Split('.')[0]);
+                int edad = Convert.ToInt32(Convert.ToString(e1).Split(',')[0]);
+                //int edad = Convert.ToInt32(Convert.ToString(e1).Split('.')[0]);
                 encriptar E = new encriptar();
                 usuario usu = new usuario(Convert.ToInt64(TxtCed.Text),TxtName.Text,TxtApe1.Text,TxtApe2.Text,E.Encriptar(TxtPassword.Text),edad,DPN.Value,TxtPais.Text,TxtProvin.Text,TxtCan.Text,TxtDir.Text,DateTime.Now,P.codigo_puest(CBoxRol.Text),1);
                 if (P.insert_usuario(usu)&& P.insert_direc(usu))

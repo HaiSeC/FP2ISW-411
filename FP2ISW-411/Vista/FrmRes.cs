@@ -8,26 +8,58 @@ using System.Text;
 using System.Threading.Tasks;
 using FP2ISW_411.Procesos;
 using System.Windows.Forms;
+using FP2ISW_411.Modelos;
 
 namespace FP2ISW_411.Vista
 {
     public partial class FrmRes : Form
     {
+        usuario usuario;
         procesos P = new procesos();
-        public FrmRes()
+        public FrmRes(usuario usuario)
         {
+            this.usuario = usuario;
             InitializeComponent();
             CantA.Value = 1;
             CantA.Minimum = 1;
             DPE.MinDate = DateTime.Now.AddDays(1);
             UpdateTH();
             UpdatePrice();
+            update_disponibles();
+            text_ced.Enabled=des_ced();
+        }
+        public bool des_ced()
+        {
+            return this.usuario.Puesto != 2;
+            
+        }
+
+        public void update_disponibles()
+        {
+            comboBox_habitacion.Items.Clear();
+            List<int> disponibles = P.habi_disponibles(DPE.Value, P.cod_Hotel(comboBox_hotel.Text), P.cod_T_habi(CBoxTH.Text));
+            if(disponibles==null || disponibles.Count <= 0)
+            {
+                comboBox_habitacion.Text = "No hay habitaciones disponibles";
+                BtnRes.Enabled = false;
+            }
+            else
+            {
+                foreach (int item in disponibles)
+                {
+                    comboBox_habitacion.Items.Add(item);
+                }
+                comboBox_habitacion.SelectedIndex = 0;
+                BtnRes.Enabled = true;
+            }
+            
         }
 
         public void UpdateTH()
         {
             List<string> tipos = P.tipos_habi();
-            if (tipos == null)
+            List<string> hoteles = P.nombre_hoteles();
+            if (tipos == null || hoteles == null)
             {
                 MessageBox.Show("Error al ingresar a la base de datos");
             }
@@ -37,7 +69,12 @@ namespace FP2ISW_411.Vista
                 {
                     CBoxTH.Items.Add(tipo);
                 }
-                CBoxTH.SelectedItem = tipos[0];
+                CBoxTH.SelectedIndex=0;
+                foreach (string hotel in hoteles)
+                {
+                    comboBox_hotel.Items.Add(hotel);
+                }
+                comboBox_hotel.SelectedIndex = 0;
             }
             
         }
@@ -45,7 +82,7 @@ namespace FP2ISW_411.Vista
         {
             TimeSpan rest_tiempo = DPS.Value.Subtract(DPE.Value);
             int CantN = Convert.ToInt32(rest_tiempo.TotalDays);
-            double Tarifa =Convert.ToDouble(P.tarifa_hab(CBoxTH.Text));
+            double Tarifa =Convert.ToDouble(P.prec_tarifa(comboBox_hotel.Text,CBoxTH.Text));
             double t1 = Tarifa * CantN;
             double CostXN = (Tarifa * 0.15)* Convert.ToInt32(this.CantN.Value);
             double CostXA = (Tarifa * 0.30) * Convert.ToInt32(CantA.Value);
@@ -56,6 +93,7 @@ namespace FP2ISW_411.Vista
         private void CBoxTH_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdatePrice();
+            update_disponibles();
         }
 
         private void CantA_ValueChanged(object sender, EventArgs e)
@@ -67,11 +105,13 @@ namespace FP2ISW_411.Vista
         {
             DPS.MinDate = DPE.Value.AddDays(1);
             UpdatePrice();
+            update_disponibles();
         }
 
         private void DPS_ValueChanged(object sender, EventArgs e)
         {
             UpdatePrice();
+            update_disponibles();
         }
 
         private void BtnRes_Click(object sender, EventArgs e)
@@ -86,11 +126,54 @@ namespace FP2ISW_411.Vista
                 {
                     MessageBox.Show("La fecha de entrada y salida no coinciden,\nverifiquelas por favor.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                else
+                {
+                    if (des_ced())
+                    {
+                        try
+                        {
+                            long c = Convert.ToInt64(text_ced.Text);
+                            if (P.info_usu(c) != null)
+                            {
+                                reservar(c);
+                            }
+                            else
+                            {
+                                MessageBox.Show("El cliente no está registrado.");
+                            }
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Verifique la información.");
+                        }
+                    }
+                    else
+                    {
+                        reservar(this.usuario.Cedula);
+                    }
+                }
             }
         }
 
+        public void reservar(long ced)
+        {
+            if (P.reservar(ced, DPE.Value, DPS.Value, Convert.ToInt32(CantA.Value + CantN.Value), Convert.ToInt32(comboBox_habitacion.Text)))
+            {
+                MessageBox.Show("Se ha hecho la reserva exitosamente!!!");
+            }
+            else
+            {
+                MessageBox.Show("Verifique su información");
+            }
+        }
         private void CantN_ValueChanged(object sender, EventArgs e)
         {
+            UpdatePrice();
+        }
+
+        private void comboBox_hotel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            update_disponibles();
             UpdatePrice();
         }
     }

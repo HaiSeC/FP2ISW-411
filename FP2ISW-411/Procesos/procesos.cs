@@ -107,5 +107,14 @@ namespace FP2ISW_411.Procesos
         {
             return up.modificar_Tarifa(cod_Hotel(hotel),cod_T_habi(T_habi),precio);
         }
+
+        public List<int> habi_disponibles(DateTime entrada,int hotel,int T_habi)
+        {
+            return c.habitaciones_disponibles(entrada,hotel,T_habi);
+        }
+        public bool reservar(long ced, DateTime entrada, DateTime salida, int personas, int habitacion)
+        {
+            return inser.reservar(ced, entrada, salida, personas, habitacion);
+        }
     }
 }

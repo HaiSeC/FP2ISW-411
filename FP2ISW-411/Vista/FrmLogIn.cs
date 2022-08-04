@@ -70,13 +70,13 @@ namespace FP2ISW_411.Vista
                     
                     if (U.Puesto == 1)
                     {
-                        FrmPrin FP = new FrmPrin(U.nombre + " " + U.Apellido1);
+                        FrmPrin FP = new FrmPrin(P.info_usu(U.Cedula));
                         FP.Visible = true;
                         this.Dispose(false);
                     }
                     else if(U.Puesto == 2)
                     {
-                        FrmCl CL = new FrmCl(U.nombre + " " + U.Apellido1);
+                        FrmCl CL = new FrmCl(P.info_usu(U.Cedula));
                         CL.Visible = true;
                         this.Dispose(false);
                     } 

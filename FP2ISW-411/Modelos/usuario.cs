@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FP2ISW_411.Modelos
 {
-    internal class usuario
+    public class usuario
     {
         long cedula;
         string Nombre;

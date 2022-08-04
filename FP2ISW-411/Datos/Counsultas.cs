@@ -274,6 +274,28 @@ namespace FP2ISW_411.Datos
             }
             return codigo;
         }
+
+        public List<int> habitaciones_disponibles(DateTime entrada,int hotel,int t_habi)
+        {
+            List<int> tipos = new List<int>();
+            try
+            {
+                string sql = "SELECT h.hab_id FROM dbo.tb_Habitaciones AS h,dbo.tb_reservaciones AS r WHERE ((NOT h.hab_id  IN (SELECT hab_id FROM dbo.tb_reservaciones)) AND h.hab_type="+t_habi+" AND h.id_hotel="+hotel+") OR (h.hab_type=" + t_habi + " AND h.id_hotel=" + hotel + " AND h.hab_id=r.hab_id AND r.checkout< CAST('"+entrada.Year+"-"+entrada.Month+"-"+entrada.Day+"' AS date)) GROUP BY h.hab_id;";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    tipos.Add(dr.GetInt32(0));
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                tipos = null;
+                conex.Desconectar();
+            }
+            return tipos;
+        }
     }
 
 

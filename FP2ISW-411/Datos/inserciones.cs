@@ -113,5 +113,31 @@ namespace FP2ISW_411.Datos
                 return false;
             }
         }
+
+        public bool reservar(long ced, DateTime entrada, DateTime salida,int personas,int habitacion)
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "INSERT INTO dbo.tb_reservaciones VALUES("+ced+",CAST('"+entrada.Year+"-"+entrada.Month+"-"+entrada.Day+ "' AS date),CAST('" + salida.Year + "-" + salida.Month + "-" + salida.Day + "' AS date),"+personas+","+habitacion+");";
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
