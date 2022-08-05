@@ -71,6 +71,12 @@
     <Compile Include="Modelos\Hoteles.cs" />
     <Compile Include="Modelos\usuario.cs" />
     <Compile Include="Procesos\encriptar.cs" />
+    <Compile Include="Vista\FrmCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmCheck.Designer.cs">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmCl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
       <DependentUpon>FrmCl.cs</DependentUpon>
     </Compile>
     <Compile Include="Procesos\procesos.cs" />
+    <Compile Include="Vista\FrmCobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmCobro.Designer.cs">
+      <DependentUpon>FrmCobro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmCRUDH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +134,9 @@
     <Compile Include="Vista\FrmTarifa.Designer.cs">
       <DependentUpon>FrmTarifa.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\FrmCheck.resx">
+      <DependentUpon>FrmCheck.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCl.resx">
       <DependentUpon>FrmCl.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +149,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\FrmCobro.resx">
+      <DependentUpon>FrmCobro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCRUDH.resx">
       <DependentUpon>FrmCRUDH.cs</DependentUpon>
     </EmbeddedResource>

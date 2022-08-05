@@ -114,12 +114,12 @@ namespace FP2ISW_411.Datos
             }
         }
 
-        public bool reservar(long ced, DateTime entrada, DateTime salida,int personas,int habitacion)
+        public bool reservar(long ced, DateTime entrada, DateTime salida,int personas,int habitacion,int precio)
         {
             try
             {
                 Conexion conex = new Conexion();
-                string sql = "INSERT INTO dbo.tb_reservaciones VALUES("+ced+",CAST('"+entrada.Year+"-"+entrada.Month+"-"+entrada.Day+ "' AS date),CAST('" + salida.Year + "-" + salida.Month + "-" + salida.Day + "' AS date),"+personas+","+habitacion+");";
+                string sql = "INSERT INTO dbo.tb_reservaciones VALUES("+ced+",CAST('"+entrada.Year+"-"+entrada.Month+"-"+entrada.Day+ "' AS date),CAST('" + salida.Year + "-" + salida.Month + "-" + salida.Day + "' AS date),"+personas+","+habitacion+",null,null,1,"+precio+");";
                 SqlCommand comando = new
                 SqlCommand(sql, conex.Conectar());
                 int cantidad = comando.ExecuteNonQuery();

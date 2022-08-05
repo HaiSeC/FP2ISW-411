@@ -164,5 +164,81 @@ namespace FP2ISW_411.Datos
                 return false;
             }
         }
+
+        public bool modificar_status(int estado,int id)
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "UPDATE dbo.tb_reservaciones SET status="+estado+" WHERE id_reservacion="+id+";";
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool modificar_checkIn(int id)
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "UPDATE dbo.tb_reservaciones SET confirm_checkIn='" + DateTime.Now + "' WHERE id_reservacion=" + id + ";";
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool modificar_checkOut(int id)
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "UPDATE dbo.tb_reservaciones SET confirm_checkOut='" + DateTime.Now + "' WHERE id_reservacion=" + id + ";";
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

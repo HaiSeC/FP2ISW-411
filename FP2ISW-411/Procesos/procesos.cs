@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using FP2ISW_411.Modelos;
 using FP2ISW_411.Datos;
+using System.Data;
+
 namespace FP2ISW_411.Procesos
 {
     internal class procesos
@@ -110,11 +112,66 @@ namespace FP2ISW_411.Procesos
 
         public List<int> habi_disponibles(DateTime entrada,int hotel,int T_habi)
         {
-            return c.habitaciones_disponibles(entrada,hotel,T_habi);
+            List<int> t = new List<int>();
+            return c.habitaciones_disponibles_sin_reserva(c.habitaciones_disponibles(t,entrada,hotel,T_habi),hotel,T_habi);
         }
-        public bool reservar(long ced, DateTime entrada, DateTime salida, int personas, int habitacion)
+        public bool reservar(long ced, DateTime entrada, DateTime salida, int personas, int habitacion, int precio)
         {
-            return inser.reservar(ced, entrada, salida, personas, habitacion);
+            return inser.reservar(ced, entrada, salida, personas, habitacion,precio);
+        }
+        public DataTable informacion_reservacion(long id)
+        {
+            return c.informacion_reservacion(id);
+        }
+        public List<int> ids_reservas(long id)
+        {
+            return c.id_reservas(id);
+        }
+        public int status(int id)
+        {
+            return c.status(id);
+        }
+        public int total_reserva(int id)
+        {
+            return c.total_reserva(id);
+        }
+
+        public bool modificar_status(int estado, int id)
+        {
+            return up.modificar_status(estado, id);
+        }
+        public DataTable informacion_reservacion_Check(string T_check, long id)
+        {
+            if (T_check == "in")
+            {
+                return c.informacion_reservacion_Check_in(id);
+            }
+            else
+            {
+                return c.informacion_reservacion_Check_out(id);
+            }
+        }
+        public List<int> ids_reservas_check(long id, string T_check)
+        {
+            if (T_check == "in")
+            {
+                return c.id_reservas_check_in(id);
+            }
+            else
+            {
+                return c.id_reservas_check_out(id);
+            }
+        }
+        public bool Modificar_checks(int id, string T_check)
+        {
+            if (T_check == "in")
+            {
+                return up.modificar_checkIn(id);
+            }
+            else
+            {
+                return up.modificar_checkOut(id);
+            }
         }
     }
 }

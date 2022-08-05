@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using FP2ISW_411.Modelos;
+using System.Data;
+
 namespace FP2ISW_411.Datos
 {
     internal class Counsultas
@@ -275,12 +277,11 @@ namespace FP2ISW_411.Datos
             return codigo;
         }
 
-        public List<int> habitaciones_disponibles(DateTime entrada,int hotel,int t_habi)
+        public List<int> habitaciones_disponibles(List<int> tipos,DateTime entrada,int hotel,int t_habi)
         {
-            List<int> tipos = new List<int>();
             try
             {
-                string sql = "SELECT h.hab_id FROM dbo.tb_Habitaciones AS h,dbo.tb_reservaciones AS r WHERE ((NOT h.hab_id  IN (SELECT hab_id FROM dbo.tb_reservaciones)) AND h.hab_type="+t_habi+" AND h.id_hotel="+hotel+") OR (h.hab_type=" + t_habi + " AND h.id_hotel=" + hotel + " AND h.hab_id=r.hab_id AND r.checkout< CAST('"+entrada.Year+"-"+entrada.Month+"-"+entrada.Day+"' AS date)) GROUP BY h.hab_id;";
+                string sql = "SELECT h.hab_id FROM dbo.tb_Habitaciones AS h,dbo.tb_reservaciones AS r WHERE (h.hab_type=" + t_habi + " AND h.id_hotel=" + hotel + " AND h.hab_id=r.hab_id AND  (NOT h.hab_id IN (SELECT hab_id FROM  dbo.tb_reservaciones AS r WHERE R.checkout>= CAST('" + entrada.Year+"-"+entrada.Month+"-"+entrada.Day+"' AS date)))) GROUP BY h.hab_id;";
                 SqlCommand comando = new SqlCommand(sql, conex.Conectar());
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())
@@ -295,6 +296,191 @@ namespace FP2ISW_411.Datos
                 conex.Desconectar();
             }
             return tipos;
+        }
+
+        public List<int> habitaciones_disponibles_sin_reserva(List<int> tipos,int hotel, int t_habi)
+        { 
+            try
+            {
+                string sql = "SELECT h.hab_id FROM dbo.tb_Habitaciones AS h WHERE ((NOT h.hab_id  IN (SELECT hab_id FROM dbo.tb_reservaciones)) AND h.hab_type=" + t_habi + " AND h.id_hotel=" + hotel + ")";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    tipos.Add(dr.GetInt32(0));
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                tipos = null;
+                conex.Desconectar();
+            }
+            return tipos;
+        }
+        public DataTable informacion_reservacion(long id)
+        {
+            try
+            {
+                string sql = "SELECT id_reservacion,id_cliente,checkin,checkout,cantidad_personas,hab_id,total FROM dbo.tb_reservaciones WHERE id_cliente="+id+ " AND status!=3;";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                DataTable tabla = new DataTable();
+                tabla.Load(dr);
+                conex.Desconectar();
+                return tabla;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
+
+        public List<int> id_reservas(long id)
+        {
+            List<int> ids=new List<int>();
+            try
+            {
+                string sql = "SELECT id_reservacion FROM dbo.tb_reservaciones WHERE id_cliente=" + id + " AND status!=3;";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    ids.Add(dr.GetInt32(0));
+                }
+                conex.Desconectar();
+                return ids;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
+        public int status(int id)
+        {
+            try
+            {
+                string sql = "SELECT status FROM dbo.tb_reservaciones WHERE id_reservacion=" + id + ";";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                int x=0;
+                while (dr.Read())
+                {
+                    x = dr.GetInt32(0);
+                }
+                conex.Desconectar();
+                return x;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return 0;
+            }
+        }
+
+        public int total_reserva(int id)
+        {
+            try
+            {
+                string sql = "SELECT total FROM dbo.tb_reservaciones WHERE id_reservacion=" + id + ";";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                int total = 0;
+                while (dr.Read())
+                {
+                    total=dr.GetInt32(0);
+                }    
+                conex.Desconectar();
+                return total;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return 0;
+            }
+        }
+
+        public DataTable informacion_reservacion_Check_in(long id)
+        {
+            try
+            {
+                string sql = "SELECT id_reservacion,id_cliente,checkin,checkout,cantidad_personas,hab_id,total FROM dbo.tb_reservaciones WHERE id_cliente="+id+ " AND confirm_checkIn is null AND status =3;";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                DataTable tabla = new DataTable();
+                tabla.Load(dr);
+                conex.Desconectar();
+                return tabla;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
+
+        public List<int> id_reservas_check_in(long id)
+        {
+            List<int> ids = new List<int>();
+            try
+            {
+                string sql = "SELECT id_reservacion FROM dbo.tb_reservaciones WHERE id_cliente=" + id + " AND status =3 AND  confirm_checkIn is null GROUP BY id_reservacion;";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    ids.Add(dr.GetInt32(0));
+                }
+                conex.Desconectar();
+                return ids;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
+        public DataTable informacion_reservacion_Check_out(long id)
+        {
+            try
+            {
+                string sql = "SELECT id_reservacion,id_cliente,checkin,checkout,cantidad_personas,hab_id,total FROM dbo.tb_reservaciones WHERE id_cliente=" + id + " not(confirm_checkIn is null) AND confirm_checkOut is null AND status =3;";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                DataTable tabla = new DataTable();
+                tabla.Load(dr);
+                conex.Desconectar();
+                return tabla;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
+
+        public List<int> id_reservas_check_out(long id)
+        {
+            List<int> ids = new List<int>();
+            try
+            {
+                string sql = "SELECT id_reservacion FROM dbo.tb_reservaciones WHERE id_cliente=" + id + " AND status =3 AND  not(confirm_checkIn is null)  AND confirm_checkOut is null GROUP BY id_reservacion;";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    ids.Add(dr.GetInt32(0));
+                }
+                conex.Desconectar();
+                return ids;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
         }
     }
 

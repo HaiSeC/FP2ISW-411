@@ -158,9 +158,10 @@ namespace FP2ISW_411.Vista
 
         public void reservar(long ced)
         {
-            if (P.reservar(ced, DPE.Value, DPS.Value, Convert.ToInt32(CantA.Value + CantN.Value), Convert.ToInt32(comboBox_habitacion.Text)))
+            if (P.reservar(ced, DPE.Value, DPS.Value, Convert.ToInt32(CantA.Value + CantN.Value), Convert.ToInt32(comboBox_habitacion.Text), Convert.ToInt32(LblP.Text.Split('$')[1])))
             {
                 MessageBox.Show("Se ha realizado la reserva exitosamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                update_disponibles();
             }
             else
             {
