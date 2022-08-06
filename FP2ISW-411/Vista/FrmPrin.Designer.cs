@@ -43,6 +43,7 @@
             this.FrmTarifas = new System.Windows.Forms.Button();
             this.BtnCRUDH = new System.Windows.Forms.Button();
             this.PlnMain = new System.Windows.Forms.Panel();
+            this.BtnCheckIn = new System.Windows.Forms.Button();
             this.PlnHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBMini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBClose)).BeginInit();
@@ -104,6 +105,7 @@
             // PlnMenu
             // 
             this.PlnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.PlnMenu.Controls.Add(this.BtnCheckIn);
             this.PlnMenu.Controls.Add(this.BtnCRUDs);
             this.PlnMenu.Controls.Add(this.BtnLogOut);
             this.PlnMenu.Controls.Add(this.PBHome);
@@ -115,6 +117,7 @@
             this.PlnMenu.Size = new System.Drawing.Size(188, 546);
             this.PlnMenu.TabIndex = 1;
             this.PlnMenu.Click += new System.EventHandler(this.PlnMenu_Click);
+            this.PlnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PlnMenu_Paint);
             // 
             // BtnCRUDs
             // 
@@ -225,6 +228,19 @@
             this.PlnMain.Size = new System.Drawing.Size(902, 546);
             this.PlnMain.TabIndex = 2;
             // 
+            // BtnCheckIn
+            // 
+            this.BtnCheckIn.BackColor = System.Drawing.Color.DimGray;
+            this.BtnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCheckIn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCheckIn.Location = new System.Drawing.Point(0, 210);
+            this.BtnCheckIn.Name = "BtnCheckIn";
+            this.BtnCheckIn.Size = new System.Drawing.Size(188, 32);
+            this.BtnCheckIn.TabIndex = 7;
+            this.BtnCheckIn.Text = "Check In/Out";
+            this.BtnCheckIn.UseVisualStyleBackColor = false;
+            this.BtnCheckIn.Click += new System.EventHandler(this.BtnCheckIn_Click);
+            // 
             // FrmPrin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +281,7 @@
         private System.Windows.Forms.Button FrmTarifas;
         private System.Windows.Forms.Button BtnCRUDs;
         private System.Windows.Forms.Panel PlnCRUDs;
-        private System.Windows.Forms.Label LblUser;       
+        private System.Windows.Forms.Label LblUser;
+        private System.Windows.Forms.Button BtnCheckIn;
     }
 }

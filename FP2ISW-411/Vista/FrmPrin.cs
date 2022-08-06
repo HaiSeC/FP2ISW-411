@@ -126,11 +126,13 @@ namespace FP2ISW_411.Vista
             {
                 PlnCRUDs.Visible = true;
                 BtnRes.Visible = false;
+                BtnCheckIn.Visible = false;
             }
             else if (PlnCRUDs.Visible == true)
             {
                 PlnCRUDs.Visible = false;
                 BtnRes.Visible = true;
+                BtnCheckIn.Visible = true;
             }
         }
 
@@ -140,10 +142,21 @@ namespace FP2ISW_411.Vista
             {
                 PlnCRUDs.Visible = false;
                 BtnRes.Visible = true;
+                BtnCheckIn.Visible = true;
             }
         }
 
         private void FrmPrin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCheckIn_Click(object sender, EventArgs e)
+        {
+            ChildForms(new FrmCheck(this.usuario));
+        }
+
+        private void PlnMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }

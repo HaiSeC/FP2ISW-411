@@ -16,7 +16,15 @@ namespace FP2ISW_411.Datos
             try
             {
                 Conexion conex = new Conexion();
-                string sql = "INSERT INTO dbo.tb_usuarios VALUES(" + e.Cedula + ",'" + e.nombre + "','" + e.Apellido1 + "','" + e.Apellido2 + "'," + e.Edad + ",CAST('" + e.Fecha_nac.Year + "-" + e.Fecha_nac.Month + "-" + e.Fecha_nac.Day + "' AS date),CAST('" + e.Fecha_contratacion.Year + "-" + e.Fecha_contratacion.Month + "-" + e.Fecha_contratacion.Day + "' AS date)," + e.Puesto + ",'" + e.Password + "',1)";
+                string sql = "";
+                if (e.Cliente == 1)
+                {
+                    sql = "INSERT INTO dbo.tb_usuarios VALUES(" + e.Cedula + ",'" + e.nombre + "','" + e.Apellido1 + "','" + e.Apellido2 + "'," + e.Edad + ",CAST('" + e.Fecha_nac.Year + "-" + e.Fecha_nac.Month + "-" + e.Fecha_nac.Day + "' AS date),CAST('" + e.Fecha_contratacion.Year + "-" + e.Fecha_contratacion.Month + "-" + e.Fecha_contratacion.Day + "' AS date), 9,'" + e.Password + "',1,"+ e.Cliente +")";
+                }
+                else
+                {
+                    sql = "INSERT INTO dbo.tb_usuarios VALUES(" + e.Cedula + ",'" + e.nombre + "','" + e.Apellido1 + "','" + e.Apellido2 + "'," + e.Edad + ",CAST('" + e.Fecha_nac.Year + "-" + e.Fecha_nac.Month + "-" + e.Fecha_nac.Day + "' AS date),CAST('" + e.Fecha_contratacion.Year + "-" + e.Fecha_contratacion.Month + "-" + e.Fecha_contratacion.Day + "' AS date)," + e.Puesto + ",'" + e.Password + "',1," + e.Cliente + ")";
+                }
                 SqlCommand comando = new
                 SqlCommand(sql, conex.Conectar());
                 int cantidad = comando.ExecuteNonQuery();
@@ -119,7 +127,7 @@ namespace FP2ISW_411.Datos
             try
             {
                 Conexion conex = new Conexion();
-                string sql = "INSERT INTO dbo.tb_reservaciones VALUES("+ced+",CAST('"+entrada.Year+"-"+entrada.Month+"-"+entrada.Day+ "' AS date),CAST('" + salida.Year + "-" + salida.Month + "-" + salida.Day + "' AS date),"+personas+","+habitacion+",null,null,1,"+precio+");";
+                string sql = "INSERT INTO dbo.tb_reservaciones VALUES("+ced+",'"+entrada.Year+"-"+entrada.Month+"-"+entrada.Day+ "','" + salida.Year + "-" + salida.Month + "-" + salida.Day + "',"+personas+","+habitacion+",null,null,1,"+precio+");";
                 SqlCommand comando = new
                 SqlCommand(sql, conex.Conectar());
                 int cantidad = comando.ExecuteNonQuery();

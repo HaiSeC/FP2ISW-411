@@ -46,11 +46,20 @@ namespace FP2ISW_411.Vista
         {
             try
             {
+                int cli = 0;
+                if (ChkBoxCl.Checked)
+                {
+                    cli = 1;
+                }
+                else
+                {
+                    cli = 0;
+                }
                 double e1 = (DateTime.Now.Subtract(DPN.Value).TotalDays) / 365;
-                int edad = Convert.ToInt32(Convert.ToString(e1).Split(',')[0]);
-                //int edad = Convert.ToInt32(Convert.ToString(e1).Split('.')[0]);
+                //int edad = Convert.ToInt32(Convert.ToString(e1).Split(',')[0]);
+                int edad = Convert.ToInt32(Convert.ToString(e1).Split('.')[0]);
                 encriptar E = new encriptar();
-                usuario usu = new usuario(Convert.ToInt64(TxtCed.Text),TxtName.Text,TxtApe1.Text,TxtApe2.Text,E.Encriptar(TxtPassword.Text),edad,DPN.Value,TxtPais.Text,TxtProvin.Text,TxtCan.Text,TxtDir.Text,DateTime.Now,P.codigo_puest(CBoxRol.Text),1);
+                usuario usu = new usuario(Convert.ToInt64(TxtCed.Text),TxtName.Text,TxtApe1.Text,TxtApe2.Text,E.Encriptar(TxtPassword.Text),edad,DPN.Value,TxtPais.Text,TxtProvin.Text,TxtCan.Text,TxtDir.Text,DateTime.Now,P.codigo_puest(CBoxRol.Text), cli, 1);
                 if (P.insert_usuario(usu)&& P.insert_direc(usu))
                 {
                     MessageBox.Show("Se ha registrado exitosamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -80,6 +89,7 @@ namespace FP2ISW_411.Vista
             TxtProvin.Text = "";
             checkBox_act.Enabled = false;
             checkBox_act.Checked = false;
+            ChkBoxCl.Checked = false;
         }
         
         private void TxtCed_TextChanged(object sender, EventArgs e)
@@ -234,7 +244,15 @@ namespace FP2ISW_411.Vista
                         checkBox_act.Checked = false;
                         checkBox_act.Enabled = true;
                     }
-                    CBoxRol.SelectedItem = P.nombre_puesto(U.Puesto);
+                    if (U.Cliente == 1)
+                    {
+                        ChkBoxCl.Checked = true;
+                    }
+                    else
+                    {
+                        ChkBoxCl.Checked = false;
+                    }
+                    CBoxRol.SelectedItem = P.nombre_puesto((int)U.Puesto);
                 }
             }
             catch
@@ -268,10 +286,19 @@ namespace FP2ISW_411.Vista
             {
                 act = 0;
             }
+            int cli = 0;
+            if (ChkBoxCl.Checked)
+            {
+                cli = 1;
+            }
+            else
+            {
+                cli = 0;
+            }
             double e1 = (DateTime.Now.Subtract(DPN.Value).TotalDays) / 365;
             //int edad = Convert.ToInt32(Convert.ToString(e1).Split(',')[0]);
             int edad = Convert.ToInt32(Convert.ToString(e1).Split('.')[0]);//Esta linea la tengo que usar por algo de la region de Windows xd
-            usuario usu = new usuario(Convert.ToInt64(TxtCed.Text), TxtName.Text, TxtApe1.Text, TxtApe2.Text, "", edad, DPN.Value, TxtPais.Text, TxtProvin.Text, TxtCan.Text, TxtDir.Text, DateTime.Now, P.codigo_puest(CBoxRol.Text), act);
+            usuario usu = new usuario(Convert.ToInt64(TxtCed.Text), TxtName.Text, TxtApe1.Text, TxtApe2.Text, "", edad, DPN.Value, TxtPais.Text, TxtProvin.Text, TxtCan.Text, TxtDir.Text, DateTime.Now, P.codigo_puest(CBoxRol.Text), cli, act);
             if (P.modi_info(usu))
             {
                 MessageBox.Show("Se ha modificado la información exitosamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -298,6 +325,18 @@ namespace FP2ISW_411.Vista
         private void LblCan_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ChkBoxCl_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkBoxCl.Checked)
+            {
+                CBoxRol.Enabled = false;               
+            }
+            else
+            {
+                CBoxRol.Enabled = true;
+            }
         }
     }
 }

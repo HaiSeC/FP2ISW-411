@@ -104,15 +104,13 @@ namespace FP2ISW_411.Datos
             usuario U = null;
             try
             {
-                string sql = "SELECT nombre,apellido1,apellido2,edad,fecha_nacimiento,fecha_contratacion,user_type,pais,provincia,canton,direccion, activo FROM dbo.tb_usuarios,dbo.tb_direcciones WHERE dbo.tb_usuarios.identificador = " + id + " AND dbo.tb_direcciones.id_user = " + id + "";
+                string sql = "SELECT nombre,apellido1,apellido2,edad,fecha_nacimiento,fecha_contratacion,user_type,pais,provincia,canton,direccion, cliente, activo FROM dbo.tb_usuarios,dbo.tb_direcciones WHERE dbo.tb_usuarios.identificador = " + id + " AND dbo.tb_direcciones.id_user = " + id + "";
 
                 SqlCommand comando = new SqlCommand(sql, conex.Conectar());
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())
                 {
-                    
-                    U = new usuario(id, dr.GetString(0), dr.GetString(1), dr.GetString(2), "", dr.GetInt32(3), Convert.ToDateTime(dr.GetValue(4)), dr.GetString(7), dr.GetString(8), dr.GetString(9), dr.GetString(10), Convert.ToDateTime(dr.GetValue(5)), dr.GetInt32(6),Convert.ToInt32(dr.GetValue(11)));
-
+                    U = new usuario(id, dr.GetString(0), dr.GetString(1), dr.GetString(2), "", dr.GetInt32(3), Convert.ToDateTime(dr.GetValue(4)), dr.GetString(7), dr.GetString(8), dr.GetString(9), dr.GetString(10), Convert.ToDateTime(dr.GetValue(5)), dr.GetInt32(6),Convert.ToInt32(dr.GetValue(11)),Convert.ToInt32(dr.GetValue(12)));
                 }
                 conex.Desconectar();
             }
@@ -128,13 +126,13 @@ namespace FP2ISW_411.Datos
             usuario U = null;
             try
             {
-                string sql = "SELECT nombre, apellido1, passwor, user_type FROM dbo.tb_usuarios WHERE identificador = " + id + "AND activo = 1";
+                string sql = "SELECT nombre, apellido1, passwor, user_type FROM dbo.tb_usuarios WHERE identificador = " + id + "AND activo = 1 AND cliente != 1";
                 SqlCommand comando = new SqlCommand(sql, conex.Conectar());
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())
                 {
 
-                    U = new usuario(id, dr.GetString(0), dr.GetString(1), null, dr.GetString(2),0, DateTime.Now, null, null, null, null, DateTime.Now, dr.GetInt32(3), 1);
+                    U = new usuario(id, dr.GetString(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3));
 
                 }
                 conex.Desconectar();
@@ -406,7 +404,7 @@ namespace FP2ISW_411.Datos
         {
             try
             {
-                string sql = "SELECT id_reservacion,id_cliente,checkin,checkout,cantidad_personas,hab_id,total FROM dbo.tb_reservaciones WHERE id_cliente="+id+ " AND confirm_checkIn is null AND status =3;";
+                string sql = "SELECT id_reservacion AS ID_Reservacion,id_cliente AS ID_Cliente,checkin AS Fecha_Entrada,checkout AS Fecha_Salida,cantidad_personas AS Cant_Personas,hab_id AS Numero_Habitacion,total AS Total FROM dbo.tb_reservaciones WHERE id_cliente="+id+ " AND confirm_checkIn is null AND status =3;";
                 SqlCommand comando = new SqlCommand(sql, conex.Conectar());
                 SqlDataReader dr = comando.ExecuteReader();
                 DataTable tabla = new DataTable();

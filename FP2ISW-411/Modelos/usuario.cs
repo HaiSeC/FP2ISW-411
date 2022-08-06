@@ -21,8 +21,9 @@ namespace FP2ISW_411.Modelos
         string provincia;
         DateTime fecha_contratacion;
         int puesto;
+        int cliente;
         int activo;
-        public usuario(long cedula, string noombre, string apellido1,string apellido2, string password, int edad, DateTime fecha_nac,string pais, string provincia,string canton,string direccion, DateTime fecha_contratacion, int puesto,int activo)
+        public usuario(long cedula, string noombre, string apellido1,string apellido2, string password, int edad, DateTime fecha_nac, string pais, string provincia, string canton, string direccion, DateTime fecha_contratacion, int puesto, int cliente, int activo)
         {
             this.Cedula = cedula;
             this.Nombre = noombre;
@@ -34,10 +35,20 @@ namespace FP2ISW_411.Modelos
             this.Puesto = puesto;
             this.password = password;
             this.Canton = canton;
-            this.Pais=pais;
+            this.Pais = pais;
             this.Provincia = provincia;
-            this.edad= edad;
-            this.Activo = activo;
+            this.edad = edad;
+            this.cliente = cliente;
+            this.Activo = activo;           
+        }
+
+        public usuario(long cedula, string noombre, string apellido1, string password, int puesto)
+        {
+            this.Cedula = cedula;
+            this.Nombre = noombre;
+            this.Apellido1 = apellido1;
+            this.password = password;
+            this.Puesto = puesto;
         }
 
         public long Cedula { get => cedula; set => cedula = value; }
@@ -53,6 +64,7 @@ namespace FP2ISW_411.Modelos
         public string Canton { get => canton; set => canton = value; }
         public string Pais { get => pais; set => pais = value; }
         public string Provincia { get => provincia; set => provincia = value; }
+        public int Cliente { get => cliente; set => cliente = value; }
         public int Activo { get => activo; set => activo = value; }
     }
 }

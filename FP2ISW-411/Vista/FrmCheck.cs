@@ -7,17 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FP2ISW_411.Modelos;
 using FP2ISW_411.Procesos;
 
 namespace FP2ISW_411.Vista
 {
     public partial class FrmCheck : Form
     {
+        usuario usuario = null;
         procesos P = new procesos();
         public FrmCheck()
         {
             InitializeComponent();
             RB_in.Checked = true;
+        }
+        public FrmCheck(usuario U)
+        {
+            InitializeComponent();
+            this.usuario = U;
+            text_ced.Text = U.Cedula.ToString();
+            RB_in.Checked = true;                        
         }
         public void llenar_combo(List<int> ids)
         {
@@ -41,14 +50,14 @@ namespace FP2ISW_411.Vista
             }
             if (P.Modificar_checks(Convert.ToInt32(comboBox_ids.Text),estado))
             {
-                MessageBox.Show("Se ha realizado el ChecK"+estado+" correctamente");
+                MessageBox.Show("Se ha realizado el ChecK" + estado + " correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FrmCheck f = new FrmCheck();
                 f.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("Ha Ocurrido un Error", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -73,7 +82,7 @@ namespace FP2ISW_411.Vista
                 List<int> ids = P.ids_reservas_check(ced, tipoC);
                 if (ids.Count == 0)
                 {
-                    MessageBox.Show("El usuario no tiene reservas pendientes a hacer check" + tipoC + ".");
+                    MessageBox.Show("El usuario no tiene reservas pendientes a hacer check" + tipoC + ".", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -84,7 +93,7 @@ namespace FP2ISW_411.Vista
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Verifique la cedula.");
+                MessageBox.Show("Verifique la Cédula", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

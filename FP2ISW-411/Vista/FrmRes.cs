@@ -14,12 +14,13 @@ namespace FP2ISW_411.Vista
 {
     public partial class FrmRes : Form
     {
-        usuario usuario;
+        usuario usuario = null;
         procesos P = new procesos();
-        public FrmRes(usuario usuario, int r, int g, int b)
+        public FrmRes(usuario U, int r, int g, int b)
         {
-            this.usuario = usuario;
             InitializeComponent();
+            this.usuario = U;
+            text_ced.Text = U.Cedula.ToString();
             CantA.Value = 1;
             CantA.Minimum = 1;
             DPE.MinDate = DateTime.Now.AddDays(1);
@@ -31,8 +32,7 @@ namespace FP2ISW_411.Vista
         }
         public bool des_ced()
         {
-            return this.usuario.Puesto != 2;
-            
+            return this.usuario.Puesto != 2;           
         }
 
         public void update_disponibles()
@@ -62,7 +62,7 @@ namespace FP2ISW_411.Vista
             List<string> hoteles = P.nombre_hoteles();
             if (tipos == null || hoteles == null)
             {
-                MessageBox.Show("Error al ingresar a la base de datos");
+                MessageBox.Show("Error al Conectar con la Base de Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

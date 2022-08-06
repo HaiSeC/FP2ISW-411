@@ -57,6 +57,7 @@
             this.act = new System.Windows.Forms.Label();
             this.BtnClear = new System.Windows.Forms.Button();
             this.checkBox_act = new System.Windows.Forms.CheckBox();
+            this.ChkBoxCl = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // LblCed
@@ -382,14 +383,27 @@
             // checkBox_act
             // 
             this.checkBox_act.AutoSize = true;
-            this.checkBox_act.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_act.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox_act.ForeColor = System.Drawing.Color.Gray;
             this.checkBox_act.Location = new System.Drawing.Point(407, 311);
             this.checkBox_act.Name = "checkBox_act";
-            this.checkBox_act.Size = new System.Drawing.Size(96, 29);
+            this.checkBox_act.Size = new System.Drawing.Size(95, 34);
             this.checkBox_act.TabIndex = 16;
             this.checkBox_act.Text = "Activo";
             this.checkBox_act.UseVisualStyleBackColor = true;
+            // 
+            // ChkBoxCl
+            // 
+            this.ChkBoxCl.AutoSize = true;
+            this.ChkBoxCl.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkBoxCl.ForeColor = System.Drawing.Color.Gray;
+            this.ChkBoxCl.Location = new System.Drawing.Point(407, 346);
+            this.ChkBoxCl.Name = "ChkBoxCl";
+            this.ChkBoxCl.Size = new System.Drawing.Size(100, 34);
+            this.ChkBoxCl.TabIndex = 27;
+            this.ChkBoxCl.Text = "Cliente";
+            this.ChkBoxCl.UseVisualStyleBackColor = true;
+            this.ChkBoxCl.CheckedChanged += new System.EventHandler(this.ChkBoxCl_CheckedChanged);
             // 
             // FrmReg
             // 
@@ -397,6 +411,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(886, 507);
+            this.Controls.Add(this.ChkBoxCl);
             this.Controls.Add(this.checkBox_act);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.act);
@@ -467,5 +482,6 @@
         private System.Windows.Forms.Label act;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.CheckBox checkBox_act;
+        private System.Windows.Forms.CheckBox ChkBoxCl;
     }
 }

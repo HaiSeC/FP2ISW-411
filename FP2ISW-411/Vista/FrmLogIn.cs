@@ -65,7 +65,7 @@ namespace FP2ISW_411.Vista
             {
                 if (System.Text.RegularExpressions.Regex.IsMatch(TxtUser.Text, "^[a-zA-Z ]*$"))
                 {
-                    MessageBox.Show("No se permiten espacios o letras en la identificaión", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se permiten espacios o letras en la identificación", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 usuario U = P.user(Convert.ToInt64(TxtUser.Text));
                 if (U == null)
