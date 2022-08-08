@@ -317,21 +317,11 @@ namespace FP2ISW_411.Vista
             Clear();
         }
 
-        private void FrmReg_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblCan_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ChkBoxCl_CheckedChanged(object sender, EventArgs e)
         {
             if (ChkBoxCl.Checked)
             {
-                CBoxRol.Enabled = false;               
+                CBoxRol.Enabled = false;
             }
             else
             {

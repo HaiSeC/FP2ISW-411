@@ -34,6 +34,7 @@
             this.PBMini = new System.Windows.Forms.PictureBox();
             this.PBClose = new System.Windows.Forms.PictureBox();
             this.PlnMenu = new System.Windows.Forms.Panel();
+            this.BtnCheckIn = new System.Windows.Forms.Button();
             this.BtnCRUDs = new System.Windows.Forms.Button();
             this.BtnLogOut = new System.Windows.Forms.Button();
             this.PBHome = new System.Windows.Forms.PictureBox();
@@ -43,7 +44,6 @@
             this.FrmTarifas = new System.Windows.Forms.Button();
             this.BtnCRUDH = new System.Windows.Forms.Button();
             this.PlnMain = new System.Windows.Forms.Panel();
-            this.BtnCheckIn = new System.Windows.Forms.Button();
             this.PlnHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBMini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBClose)).BeginInit();
@@ -117,7 +117,19 @@
             this.PlnMenu.Size = new System.Drawing.Size(188, 546);
             this.PlnMenu.TabIndex = 1;
             this.PlnMenu.Click += new System.EventHandler(this.PlnMenu_Click);
-            this.PlnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PlnMenu_Paint);
+            // 
+            // BtnCheckIn
+            // 
+            this.BtnCheckIn.BackColor = System.Drawing.Color.DimGray;
+            this.BtnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCheckIn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCheckIn.Location = new System.Drawing.Point(0, 210);
+            this.BtnCheckIn.Name = "BtnCheckIn";
+            this.BtnCheckIn.Size = new System.Drawing.Size(188, 32);
+            this.BtnCheckIn.TabIndex = 7;
+            this.BtnCheckIn.Text = "Check In/Out";
+            this.BtnCheckIn.UseVisualStyleBackColor = false;
+            this.BtnCheckIn.Click += new System.EventHandler(this.BtnCheckIn_Click);
             // 
             // BtnCRUDs
             // 
@@ -228,19 +240,6 @@
             this.PlnMain.Size = new System.Drawing.Size(902, 546);
             this.PlnMain.TabIndex = 2;
             // 
-            // BtnCheckIn
-            // 
-            this.BtnCheckIn.BackColor = System.Drawing.Color.DimGray;
-            this.BtnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCheckIn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCheckIn.Location = new System.Drawing.Point(0, 210);
-            this.BtnCheckIn.Name = "BtnCheckIn";
-            this.BtnCheckIn.Size = new System.Drawing.Size(188, 32);
-            this.BtnCheckIn.TabIndex = 7;
-            this.BtnCheckIn.Text = "Check In/Out";
-            this.BtnCheckIn.UseVisualStyleBackColor = false;
-            this.BtnCheckIn.Click += new System.EventHandler(this.BtnCheckIn_Click);
-            // 
             // FrmPrin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,7 +253,6 @@
             this.Name = "FrmPrin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrin";
-            this.Load += new System.EventHandler(this.FrmPrin_Load);
             this.PlnHead.ResumeLayout(false);
             this.PlnHead.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBMini)).EndInit();

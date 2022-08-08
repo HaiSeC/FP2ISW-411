@@ -444,7 +444,7 @@ namespace FP2ISW_411.Datos
         {
             try
             {
-                string sql = "SELECT id_reservacion,id_cliente,checkin,checkout,cantidad_personas,hab_id,total FROM dbo.tb_reservaciones WHERE id_cliente=" + id + " not(confirm_checkIn is null) AND confirm_checkOut is null AND status =3;";
+                string sql = "SELECT id_reservacion,id_cliente,checkin,checkout,cantidad_personas,hab_id,total FROM dbo.tb_reservaciones WHERE id_cliente=" + id + " AND not(confirm_checkIn is null) AND confirm_checkOut is null AND status =3;";
                 SqlCommand comando = new SqlCommand(sql, conex.Conectar());
                 SqlDataReader dr = comando.ExecuteReader();
                 DataTable tabla = new DataTable();

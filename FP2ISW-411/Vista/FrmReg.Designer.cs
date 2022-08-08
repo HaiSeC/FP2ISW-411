@@ -313,7 +313,6 @@
             this.LblCan.Size = new System.Drawing.Size(63, 21);
             this.LblCan.TabIndex = 21;
             this.LblCan.Text = "Cantón:";
-            this.LblCan.Click += new System.EventHandler(this.LblCan_Click);
             // 
             // BtnS
             // 
@@ -445,7 +444,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmReg";
             this.Text = "registrar";
-            this.Load += new System.EventHandler(this.FrmReg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

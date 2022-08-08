@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FP2ISW_411.Modelos;
 using FP2ISW_411.Procesos;
+using Microsoft.VisualBasic;
 
 namespace FP2ISW_411.Vista
 {
@@ -22,7 +23,6 @@ namespace FP2ISW_411.Vista
         public FrmLogIn()
         {
             InitializeComponent();
-            TxtUser.Focus();
         }
 
         private void PBClose_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace FP2ISW_411.Vista
         {
             Login();  
         }
-        
+
         public void Login()
         {
             try

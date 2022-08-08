@@ -51,6 +51,7 @@
     <ApplicationIcon>resort.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -69,6 +70,7 @@
     <Compile Include="Datos\inserciones.cs" />
     <Compile Include="Datos\updates.cs" />
     <Compile Include="Modelos\Hoteles.cs" />
+    <Compile Include="Modelos\Situaciones.cs" />
     <Compile Include="Modelos\usuario.cs" />
     <Compile Include="Procesos\encriptar.cs" />
     <Compile Include="Vista\FrmCheck.cs">

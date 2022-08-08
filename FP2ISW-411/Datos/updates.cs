@@ -215,16 +215,25 @@ namespace FP2ISW_411.Datos
                 return false;
             }
         }
-        public bool modificar_checkOut(int id)
+        public bool modificar_checkOut(int id, Situaciones st)
         {
             try
             {
                 Conexion conex = new Conexion();
-                string sql = "UPDATE dbo.tb_reservaciones SET confirm_checkOut='" + DateTime.Now + "' WHERE id_reservacion=" + id + ";";
+                string sql = "";
+                if (st != null)
+                {
+                    sql = "UPDATE dbo.tb_reservaciones SET confirm_checkOut='" + DateTime.Now + "' WHERE id_reservacion=" + id + ";\nINSERT INTO dbo.tb_situaciones VALUES(" + id + "," + st.UsoBar + "," + st.UsoCF + ",'" + st.Desc +"');";
+
+                }
+                else
+                {
+                    sql = "UPDATE dbo.tb_reservaciones SET confirm_checkOut='" + DateTime.Now + "' WHERE id_reservacion=" + id + ";";
+                }                  
                 SqlCommand comando = new
                 SqlCommand(sql, conex.Conectar());
                 int cantidad = comando.ExecuteNonQuery();
-                if (cantidad == 1)
+                if (cantidad == 2 || cantidad == 1)
                 {
                     return true;
                 }

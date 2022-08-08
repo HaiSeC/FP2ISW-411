@@ -146,19 +146,9 @@ namespace FP2ISW_411.Vista
             }
         }
 
-        private void FrmPrin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnCheckIn_Click(object sender, EventArgs e)
         {
             ChildForms(new FrmCheck(this.usuario));
-        }
-
-        private void PlnMenu_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
