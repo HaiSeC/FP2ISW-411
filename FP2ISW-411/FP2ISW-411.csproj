@@ -73,6 +73,12 @@
     <Compile Include="Modelos\Situaciones.cs" />
     <Compile Include="Modelos\usuario.cs" />
     <Compile Include="Procesos\encriptar.cs" />
+    <Compile Include="Vista\FrmAdmPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmAdmPS.designer.cs">
+      <DependentUpon>FrmAdmPS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmCheck.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,12 @@
     <Compile Include="Vista\FrmLogIn.Designer.cs">
       <DependentUpon>FrmLogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmMiViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmMiViaje.Designer.cs">
+      <DependentUpon>FrmMiViaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmPrin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +148,9 @@
     <Compile Include="Vista\FrmTarifa.Designer.cs">
       <DependentUpon>FrmTarifa.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\FrmAdmPS.resx">
+      <DependentUpon>FrmAdmPS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCheck.resx">
       <DependentUpon>FrmCheck.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmLogIn.resx">
       <DependentUpon>FrmLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmMiViaje.resx">
+      <DependentUpon>FrmMiViaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmPrin.resx">
       <DependentUpon>FrmPrin.cs</DependentUpon>
