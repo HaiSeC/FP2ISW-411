@@ -69,6 +69,7 @@
     <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Datos\inserciones.cs" />
     <Compile Include="Datos\updates.cs" />
+    <Compile Include="Modelos\Habitaciones.cs" />
     <Compile Include="Modelos\Hoteles.cs" />
     <Compile Include="Modelos\Situaciones.cs" />
     <Compile Include="Modelos\usuario.cs" />
@@ -104,6 +105,12 @@
     <Compile Include="Vista\FrmCRUDH.Designer.cs">
       <DependentUpon>FrmCRUDH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmCrudHab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmCrudHab.Designer.cs">
+      <DependentUpon>FrmCrudHab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,12 +124,6 @@
     </Compile>
     <Compile Include="Vista\FrmLogIn.Designer.cs">
       <DependentUpon>FrmLogIn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\FrmMiViaje.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\FrmMiViaje.Designer.cs">
-      <DependentUpon>FrmMiViaje.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmPrin.cs">
       <SubType>Form</SubType>
@@ -172,14 +173,14 @@
     <EmbeddedResource Include="Vista\FrmCRUDH.resx">
       <DependentUpon>FrmCRUDH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmCrudHab.resx">
+      <DependentUpon>FrmCrudHab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmLogIn.resx">
       <DependentUpon>FrmLogIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\FrmMiViaje.resx">
-      <DependentUpon>FrmMiViaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmPrin.resx">
       <DependentUpon>FrmPrin.cs</DependentUpon>

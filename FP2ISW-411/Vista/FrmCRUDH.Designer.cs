@@ -214,6 +214,7 @@
             this.Controls.Add(this.LblCantHab);
             this.Controls.Add(this.LblName);
             this.Controls.Add(this.LblID);
+            this.ForeColor = System.Drawing.Color.Coral;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCRUDH";
             this.Text = "FrmCRUDH";

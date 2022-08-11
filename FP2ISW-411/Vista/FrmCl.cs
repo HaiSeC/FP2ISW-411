@@ -82,10 +82,7 @@ namespace FP2ISW_411.Vista
 
         private void BtnRes_Click(object sender, EventArgs e)
         {
-            int r = 96;
-            int g = 73;
-            int b = 44;
-            ChildForms(new FrmRes(this.usuario, r, g, b));
+           
         }
 
         private void BtnLogOut_Click(object sender, EventArgs e)
@@ -104,7 +101,10 @@ namespace FP2ISW_411.Vista
 
         private void BtnMV_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cris Tontito", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            int r = 96;
+            int g = 73;
+            int b = 44;
+            ChildForms(new FrmRes(this.usuario, r, g, b));
         }
 
         private void PlnMenu_Click(object sender, EventArgs e)

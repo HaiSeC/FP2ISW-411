@@ -82,7 +82,6 @@
             this.BtnRes.Name = "BtnRes";
             this.BtnRes.Size = new System.Drawing.Size(210, 45);
             this.BtnRes.TabIndex = 17;
-            this.BtnRes.Text = "Reservaciones";
             this.BtnRes.UseVisualStyleBackColor = false;
             // 
             // PlnCRUDs
@@ -161,7 +160,6 @@
             this.BtnCRUDs.Name = "BtnCRUDs";
             this.BtnCRUDs.Size = new System.Drawing.Size(210, 45);
             this.BtnCRUDs.TabIndex = 13;
-            this.BtnCRUDs.Text = "Administrar Puestos";
             this.BtnCRUDs.UseVisualStyleBackColor = false;
             this.BtnCRUDs.Click += new System.EventHandler(this.BtnCRUDs_Click);
             // 
@@ -198,7 +196,6 @@
             this.BtnLogOut.Name = "BtnLogOut";
             this.BtnLogOut.Size = new System.Drawing.Size(210, 45);
             this.BtnLogOut.TabIndex = 11;
-            this.BtnLogOut.Text = "Cerrar Sesión";
             this.BtnLogOut.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -214,6 +211,7 @@
             this.button1.Size = new System.Drawing.Size(210, 30);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // PlnHead
             // 
@@ -272,6 +270,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(880, 546);
             this.panel2.TabIndex = 4;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // FrmAdmPS
             // 

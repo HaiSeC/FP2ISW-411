@@ -70,6 +70,32 @@ namespace FP2ISW_411.Datos
             }
         }
 
+        public bool registrar_habitaH(Habitaciones h)
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "INSERT INTO dbo.tb_Habitaciones VALUES(" + h.Tipo + ",'" + h.Id_hotel +  "');";
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
         public bool registrar_hotel(Hoteles H)
         {
             try

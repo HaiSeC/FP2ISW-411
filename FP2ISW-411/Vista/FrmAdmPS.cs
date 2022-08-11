@@ -20,6 +20,7 @@ namespace FP2ISW_411.Vista
         public FrmAdmPS()
         {
             InitializeComponent();
+            PlnMenu.Width = 50;
         }
 
         private void PBClose_Click(object sender, EventArgs e)
@@ -61,6 +62,19 @@ namespace FP2ISW_411.Vista
             } else
             {
                 PlnCRUDs.Visible = true;
+                PlnMenu.Width = 210;
+                if (BtnCRUDs.Text == "")
+                {
+                    BtnCRUDs.Text = "Administrar Puestos";
+                    BtnRes.Text = "Reservaciones";
+                    BtnLogOut.Text = "Cerrar Sesión";
+                }
+                else
+                {
+                    BtnCRUDs.Text = "";
+                    BtnRes.Text = "";
+                    BtnLogOut.Text = "";
+                }
             }
         }
 
@@ -72,6 +86,34 @@ namespace FP2ISW_411.Vista
         private void FrmAdmPuestos_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (PlnMenu.Width == 50)
+            {
+                PlnMenu.Width = 210;
+            } else
+            {
+                PlnMenu.Width = 50;
+            }
+
+            if (BtnCRUDs.Text == "")
+            {
+                BtnCRUDs.Text = "Administrar Puestos";
+                BtnRes.Text = "Reservaciones";
+                BtnLogOut.Text = "Cerrar Sesión";
+            } else
+            {
+                BtnCRUDs.Text = "";
+                BtnRes.Text = "";
+                BtnLogOut.Text = "";
+            }
         }
     }
 }
