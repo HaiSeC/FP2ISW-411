@@ -61,6 +61,8 @@ namespace FP2ISW_411.Procesos
             return c.SelH(i);
         }
 
+        
+
         public usuario user(long i)
         {
             return c.user(i);
@@ -119,6 +121,12 @@ namespace FP2ISW_411.Procesos
         {
             return inser.reservar(ced, entrada, salida, personas, habitacion,precio);
         }
+
+        public DataTable informacion_reservaciones(long id)
+        {
+            return c.informacion_reservaciones(id);
+        }
+
         public DataTable informacion_reservacion(long id)
         {
             return c.informacion_reservacion(id);

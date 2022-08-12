@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdmPS));
             this.PlnMenu = new System.Windows.Forms.Panel();
-            this.BtnRes = new System.Windows.Forms.Button();
             this.PlnCRUDs = new System.Windows.Forms.Panel();
             this.BtnReg = new System.Windows.Forms.Button();
             this.FrmTarifas = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.PBMini = new System.Windows.Forms.PictureBox();
             this.PBClose = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnRes = new System.Windows.Forms.Button();
             this.PlnMenu.SuspendLayout();
             this.PlnCRUDs.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,21 +68,6 @@
             this.PlnMenu.Name = "PlnMenu";
             this.PlnMenu.Size = new System.Drawing.Size(210, 576);
             this.PlnMenu.TabIndex = 2;
-            // 
-            // BtnRes
-            // 
-            this.BtnRes.BackColor = System.Drawing.Color.DimGray;
-            this.BtnRes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnRes.FlatAppearance.BorderSize = 0;
-            this.BtnRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRes.Image = ((System.Drawing.Image)(resources.GetObject("BtnRes.Image")));
-            this.BtnRes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnRes.Location = new System.Drawing.Point(0, 246);
-            this.BtnRes.Name = "BtnRes";
-            this.BtnRes.Size = new System.Drawing.Size(210, 45);
-            this.BtnRes.TabIndex = 17;
-            this.BtnRes.UseVisualStyleBackColor = false;
             // 
             // PlnCRUDs
             // 
@@ -272,6 +257,21 @@
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // BtnRes
+            // 
+            this.BtnRes.BackColor = System.Drawing.Color.DimGray;
+            this.BtnRes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnRes.FlatAppearance.BorderSize = 0;
+            this.BtnRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRes.Image = ((System.Drawing.Image)(resources.GetObject("BtnRes.Image")));
+            this.BtnRes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnRes.Location = new System.Drawing.Point(0, 246);
+            this.BtnRes.Name = "BtnRes";
+            this.BtnRes.Size = new System.Drawing.Size(210, 45);
+            this.BtnRes.TabIndex = 17;
+            this.BtnRes.UseVisualStyleBackColor = false;
+            // 
             // FrmAdmPS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,7 +302,6 @@
         #endregion
 
         private System.Windows.Forms.Panel PlnMenu;
-        private System.Windows.Forms.Button BtnRes;
         private System.Windows.Forms.Panel PlnCRUDs;
         private System.Windows.Forms.Button BtnReg;
         private System.Windows.Forms.Button FrmTarifas;
@@ -317,5 +316,6 @@
         private System.Windows.Forms.PictureBox PBMini;
         private System.Windows.Forms.PictureBox PBClose;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button BtnRes;
     }
 }

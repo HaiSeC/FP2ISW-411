@@ -16,6 +16,9 @@ namespace FP2ISW_411.Vista
     {
         usuario usuario = null;
         procesos P = new procesos();
+        List<int> disponibles;
+        List<RadioButton> radioButtons = new List<RadioButton>();
+
         public FrmRes(usuario U, int r, int g, int b)
         {
             InitializeComponent();
@@ -38,7 +41,7 @@ namespace FP2ISW_411.Vista
         public void update_disponibles()
         {
             comboBox_habitacion.Items.Clear();
-            List<int> disponibles = P.habi_disponibles(DPE.Value, P.cod_Hotel(comboBox_hotel.Text), P.cod_T_habi(CBoxTH.Text));
+            disponibles = P.habi_disponibles(DPE.Value, P.cod_Hotel(comboBox_hotel.Text), P.cod_T_habi(CBoxTH.Text));
             if(disponibles==null || disponibles.Count <= 0)
             {
                 comboBox_habitacion.Text = "No hay habitaciones disponibles";
@@ -46,14 +49,48 @@ namespace FP2ISW_411.Vista
             }
             else
             {
-                foreach (int item in disponibles)
+                int isd = 1;
+                int isdY = 1;
+                IEnumerable<int> enumerableThing = disponibles;
+                foreach (int item in enumerableThing.Reverse())
                 {
                     comboBox_habitacion.Items.Add(item);
+                    RadioButton chb = new RadioButton();
+                    chb.SetBounds(isd * 50, isdY * 50, 50, 30);
+                    chb.Text = item.ToString();
+                    
+                    panel1.Controls.Add(chb);
+                    if (isd == 5)
+                    {
+                        isdY++;
+                        isd = 1;
+                    }
+                    else
+                    {
+                        isd++;
+                    }
+                    radioButtons.Add(chb);
                 }
                 comboBox_habitacion.SelectedIndex = 0;
-                BtnRes.Enabled = true;
+                //BtnRes.Enabled = true;
             }
             
+        }
+
+        public int getHab()
+        {
+            string habID = "";
+
+            foreach (var rbutton in radioButtons)
+            {
+                if (rbutton.Checked)
+                {
+                    habID = rbutton.Text;
+                    return Convert.ToInt32(habID);
+                }
+            }
+
+            return Convert.ToInt32(habID);
         }
 
         public void UpdateTH()
@@ -91,8 +128,21 @@ namespace FP2ISW_411.Vista
             LblP.Text = "Precio: $" + TTotal;
         }
 
+        void resetBTmS()
+        {
+            foreach (var item in radioButtons)
+            {
+                if (panel1.Controls.Contains(item))
+                {
+                    panel1.Controls.Remove(item);
+                }
+            }
+            radioButtons.Clear();
+        }
+
         private void CBoxTH_SelectedIndexChanged(object sender, EventArgs e)
         {
+            resetBTmS();
             UpdatePrice();
             update_disponibles();
         }
@@ -117,9 +167,13 @@ namespace FP2ISW_411.Vista
 
         private void BtnRes_Click(object sender, EventArgs e)
         {
+            bool checkedS = panel1.Controls.OfType<RadioButton>().Any(rb => rb.Checked);
             if (CantA.Value <= 0)
             {
-                MessageBox.Show("Digite la cantidad de personas", "Atención",MessageBoxButtons.OK ,MessageBoxIcon.Error);
+                MessageBox.Show("Digite la cantidad de personas", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!checkedS ) {
+                MessageBox.Show("Seleccione una habitacion", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -158,7 +212,7 @@ namespace FP2ISW_411.Vista
 
         public void reservar(long ced)
         {
-            if (P.reservar(ced, DPE.Value, DPS.Value, Convert.ToInt32(CantA.Value + CantN.Value), Convert.ToInt32(comboBox_habitacion.Text), Convert.ToInt32(LblP.Text.Split('$')[1])))
+            if (P.reservar(ced, DPE.Value, DPS.Value, Convert.ToInt32(CantA.Value + CantN.Value), getHab()/*Convert.ToInt32(comboBox_habitacion.Text)*/, Convert.ToInt32(LblP.Text.Split('$')[1])))
             {
                 MessageBox.Show("Se ha realizado la reserva exitosamente!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 update_disponibles();
@@ -175,8 +229,15 @@ namespace FP2ISW_411.Vista
 
         private void comboBox_hotel_SelectedIndexChanged(object sender, EventArgs e)
         {
+            resetBTmS();
             update_disponibles();
             UpdatePrice();
+            label4.Text = "HOTEL " + comboBox_hotel.Text.ToUpper();
+        }
+
+        private void comboBox_habitacion_SelectedValueChanged(object sender, EventArgs e)
+        {
+            BtnRes.Enabled = true;
         }
     }
 }

@@ -29,22 +29,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCl));
+            this.PlnMain = new System.Windows.Forms.Panel();
             this.PlnHead = new System.Windows.Forms.Panel();
             this.LblUser = new System.Windows.Forms.Label();
             this.PBMini = new System.Windows.Forms.PictureBox();
             this.PBClose = new System.Windows.Forms.PictureBox();
+            this.BtnLogOut = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.PBHome = new System.Windows.Forms.PictureBox();
             this.PlnMenu = new System.Windows.Forms.Panel();
             this.BtnMV = new System.Windows.Forms.Button();
-            this.BtnLogOut = new System.Windows.Forms.Button();
-            this.PBHome = new System.Windows.Forms.PictureBox();
             this.BtnRes = new System.Windows.Forms.Button();
-            this.PlnMain = new System.Windows.Forms.Panel();
             this.PlnHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBMini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBClose)).BeginInit();
-            this.PlnMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBHome)).BeginInit();
+            this.PlnMenu.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // PlnMain
+            // 
+            this.PlnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(73)))), ((int)(((byte)(44)))));
+            this.PlnMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlnMain.Location = new System.Drawing.Point(183, 0);
+            this.PlnMain.Name = "PlnMain";
+            this.PlnMain.Size = new System.Drawing.Size(907, 576);
+            this.PlnMain.TabIndex = 2;
             // 
             // PlnHead
             // 
@@ -54,13 +64,10 @@
             this.PlnHead.Controls.Add(this.PBClose);
             this.PlnHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.PlnHead.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.PlnHead.Location = new System.Drawing.Point(0, 0);
+            this.PlnHead.Location = new System.Drawing.Point(183, 0);
             this.PlnHead.Name = "PlnHead";
-            this.PlnHead.Size = new System.Drawing.Size(1090, 30);
-            this.PlnHead.TabIndex = 0;
-            this.PlnHead.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlnHead_MouseDown);
-            this.PlnHead.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PlnHead_MouseMove);
-            this.PlnHead.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PlnHead_MouseUp);
+            this.PlnHead.Size = new System.Drawing.Size(907, 30);
+            this.PlnHead.TabIndex = 3;
             // 
             // LblUser
             // 
@@ -77,107 +84,114 @@
             // 
             this.PBMini.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PBMini.Image = ((System.Drawing.Image)(resources.GetObject("PBMini.Image")));
-            this.PBMini.Location = new System.Drawing.Point(1032, 3);
+            this.PBMini.Location = new System.Drawing.Point(849, 3);
             this.PBMini.Name = "PBMini";
             this.PBMini.Size = new System.Drawing.Size(24, 24);
             this.PBMini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBMini.TabIndex = 2;
             this.PBMini.TabStop = false;
-            this.PBMini.Click += new System.EventHandler(this.PBMini_Click);
             // 
             // PBClose
             // 
             this.PBClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PBClose.Image = ((System.Drawing.Image)(resources.GetObject("PBClose.Image")));
-            this.PBClose.Location = new System.Drawing.Point(1062, 3);
+            this.PBClose.Location = new System.Drawing.Point(879, 3);
             this.PBClose.Name = "PBClose";
             this.PBClose.Size = new System.Drawing.Size(24, 24);
             this.PBClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBClose.TabIndex = 1;
             this.PBClose.TabStop = false;
-            this.PBClose.Click += new System.EventHandler(this.PBClose_Click);
+            // 
+            // BtnLogOut
+            // 
+            this.BtnLogOut.BackColor = System.Drawing.Color.DimGray;
+            this.BtnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogOut.Location = new System.Drawing.Point(0, 553);
+            this.BtnLogOut.Name = "BtnLogOut";
+            this.BtnLogOut.Size = new System.Drawing.Size(183, 23);
+            this.BtnLogOut.TabIndex = 1;
+            this.BtnLogOut.Text = "Cerrar Sesión";
+            this.BtnLogOut.UseVisualStyleBackColor = false;
+            this.BtnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.DimGray;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(183, 30);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // PBHome
+            // 
+            this.PBHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PBHome.Image = ((System.Drawing.Image)(resources.GetObject("PBHome.Image")));
+            this.PBHome.Location = new System.Drawing.Point(0, 30);
+            this.PBHome.Name = "PBHome";
+            this.PBHome.Size = new System.Drawing.Size(183, 53);
+            this.PBHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBHome.TabIndex = 4;
+            this.PBHome.TabStop = false;
             // 
             // PlnMenu
             // 
             this.PlnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(71)))), ((int)(((byte)(48)))));
             this.PlnMenu.Controls.Add(this.BtnMV);
-            this.PlnMenu.Controls.Add(this.BtnLogOut);
-            this.PlnMenu.Controls.Add(this.PBHome);
             this.PlnMenu.Controls.Add(this.BtnRes);
+            this.PlnMenu.Controls.Add(this.PBHome);
+            this.PlnMenu.Controls.Add(this.button1);
+            this.PlnMenu.Controls.Add(this.BtnLogOut);
             this.PlnMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PlnMenu.Location = new System.Drawing.Point(0, 30);
+            this.PlnMenu.Location = new System.Drawing.Point(0, 0);
             this.PlnMenu.Name = "PlnMenu";
-            this.PlnMenu.Size = new System.Drawing.Size(188, 546);
+            this.PlnMenu.Size = new System.Drawing.Size(183, 576);
             this.PlnMenu.TabIndex = 1;
             this.PlnMenu.Click += new System.EventHandler(this.PlnMenu_Click);
             // 
             // BtnMV
             // 
             this.BtnMV.BackColor = System.Drawing.Color.DimGray;
+            this.BtnMV.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnMV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMV.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMV.Location = new System.Drawing.Point(0, 172);
+            this.BtnMV.Location = new System.Drawing.Point(0, 131);
             this.BtnMV.Name = "BtnMV";
-            this.BtnMV.Size = new System.Drawing.Size(188, 32);
-            this.BtnMV.TabIndex = 2;
+            this.BtnMV.Size = new System.Drawing.Size(183, 47);
+            this.BtnMV.TabIndex = 6;
             this.BtnMV.Text = "Mi Viaje";
             this.BtnMV.UseVisualStyleBackColor = false;
             this.BtnMV.Click += new System.EventHandler(this.BtnMV_Click);
             // 
-            // BtnLogOut
-            // 
-            this.BtnLogOut.BackColor = System.Drawing.Color.DimGray;
-            this.BtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLogOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLogOut.Location = new System.Drawing.Point(0, 523);
-            this.BtnLogOut.Name = "BtnLogOut";
-            this.BtnLogOut.Size = new System.Drawing.Size(188, 23);
-            this.BtnLogOut.TabIndex = 1;
-            this.BtnLogOut.Text = "Cerrar Sesión";
-            this.BtnLogOut.UseVisualStyleBackColor = false;
-            this.BtnLogOut.Click += new System.EventHandler(this.BtnLogOut_Click);
-            // 
-            // PBHome
-            // 
-            this.PBHome.Image = ((System.Drawing.Image)(resources.GetObject("PBHome.Image")));
-            this.PBHome.Location = new System.Drawing.Point(0, 0);
-            this.PBHome.Name = "PBHome";
-            this.PBHome.Size = new System.Drawing.Size(188, 128);
-            this.PBHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBHome.TabIndex = 0;
-            this.PBHome.TabStop = false;
-            this.PBHome.Click += new System.EventHandler(this.PBHome_Click);
-            // 
             // BtnRes
             // 
             this.BtnRes.BackColor = System.Drawing.Color.DimGray;
+            this.BtnRes.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRes.Location = new System.Drawing.Point(0, 134);
+            this.BtnRes.Location = new System.Drawing.Point(0, 83);
             this.BtnRes.Name = "BtnRes";
-            this.BtnRes.Size = new System.Drawing.Size(188, 32);
-            this.BtnRes.TabIndex = 0;
+            this.BtnRes.Size = new System.Drawing.Size(183, 48);
+            this.BtnRes.TabIndex = 5;
             this.BtnRes.Text = "Reservaciones";
             this.BtnRes.UseVisualStyleBackColor = false;
             this.BtnRes.Click += new System.EventHandler(this.BtnRes_Click);
-            // 
-            // PlnMain
-            // 
-            this.PlnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(73)))), ((int)(((byte)(44)))));
-            this.PlnMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlnMain.Location = new System.Drawing.Point(188, 30);
-            this.PlnMain.Name = "PlnMain";
-            this.PlnMain.Size = new System.Drawing.Size(902, 546);
-            this.PlnMain.TabIndex = 2;
             // 
             // FrmCl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1090, 576);
+            this.Controls.Add(this.PlnHead);
             this.Controls.Add(this.PlnMain);
             this.Controls.Add(this.PlnMenu);
-            this.Controls.Add(this.PlnHead);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCl";
@@ -188,23 +202,23 @@
             this.PlnHead.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBMini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBClose)).EndInit();
-            this.PlnMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBHome)).EndInit();
+            this.PlnMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Windows.Forms.Panel PlnMain;
         private System.Windows.Forms.Panel PlnHead;
+        private System.Windows.Forms.Label LblUser;
         private System.Windows.Forms.PictureBox PBMini;
         private System.Windows.Forms.PictureBox PBClose;
-        private System.Windows.Forms.Panel PlnMenu;
-        private System.Windows.Forms.Button BtnRes;
-        private System.Windows.Forms.PictureBox PBHome;
         private System.Windows.Forms.Button BtnLogOut;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox PBHome;
+        private System.Windows.Forms.Panel PlnMenu;
         private System.Windows.Forms.Button BtnMV;
-        private System.Windows.Forms.Label LblUser;
-        private System.Windows.Forms.Panel PlnMain;
+        private System.Windows.Forms.Button BtnRes;
     }
 }

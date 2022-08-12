@@ -89,9 +89,9 @@ namespace FP2ISW_411.Datos
                 }
                 conex.Desconectar();
             }
-            catch (Exception)
+            catch (Exception e )
             {
-
+                Console.WriteLine(e.Message);
                 return false;
             }
         }

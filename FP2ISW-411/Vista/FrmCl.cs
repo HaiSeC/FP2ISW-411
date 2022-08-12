@@ -82,7 +82,8 @@ namespace FP2ISW_411.Vista
 
         private void BtnRes_Click(object sender, EventArgs e)
         {
-           
+
+            ChildForms(new FrmChRes(this.usuario.Cedula));
         }
 
         private void BtnLogOut_Click(object sender, EventArgs e)
@@ -113,6 +114,16 @@ namespace FP2ISW_411.Vista
         }
 
         private void FrmPrin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnMV_Click_1(object sender, EventArgs e)
         {
 
         }

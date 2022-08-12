@@ -167,6 +167,8 @@ namespace FP2ISW_411.Datos
             return H;
         }
 
+
+
         public string nombre_puesto(int t_h)
         {
             string n = "";
@@ -335,6 +337,25 @@ namespace FP2ISW_411.Datos
             }
         }
 
+        public DataTable informacion_reservaciones(long id)
+        {
+            try
+            {
+                string sql = "SELECT id_reservacion as Reservacion,id_cliente as ID_Cliente,checkin as Fecha_Entrada_Reservada,checkout as Fecha_Salida_Reservada,cantidad_personas as Personas,hab_id as Habitacion,total as Monto FROM dbo.tb_reservaciones WHERE id_cliente=" + id + ";";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                DataTable tabla = new DataTable();
+                tabla.Load(dr);
+                conex.Desconectar();
+                return tabla;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
+
         public List<int> id_reservas(long id)
         {
             List<int> ids=new List<int>();
@@ -424,7 +445,7 @@ namespace FP2ISW_411.Datos
             List<int> ids = new List<int>();
             try
             {
-                string sql = "SELECT id_reservacion FROM dbo.tb_reservaciones WHERE id_cliente=" + id + " AND status =3 AND  confirm_checkIn is null GROUP BY id_reservacion;";
+                string sql = "SELECT id_reservacion FROM dbo.tb_reservaciones WHERE id_cliente=" + id + " AND status !=1 AND  confirm_checkIn is null GROUP BY id_reservacion;";
                 SqlCommand comando = new SqlCommand(sql, conex.Conectar());
                 SqlDataReader dr = comando.ExecuteReader();
                 while (dr.Read())

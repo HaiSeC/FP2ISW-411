@@ -42,7 +42,7 @@ namespace FP2ISW_411.Vista
             {
                 foreach (string tipo in tipos)
                 {
-                    //CBoxTH.Items.Add(tipo);
+                    comboBox2.Items.Add(tipo);
                 }
                 //CBoxTH.SelectedIndex = 0;
                 foreach (string hotel in hoteles)
@@ -50,7 +50,7 @@ namespace FP2ISW_411.Vista
                     comboBox1.Items.Add(hotel);
                 }
                 comboBox1.SelectedIndex = 0;
-                //comboBox1.
+                comboBox2.SelectedIndex = 0;
             }
 
         }
@@ -59,7 +59,7 @@ namespace FP2ISW_411.Vista
         {
             for (int i = 0; i < 100; i++)
             {
-                Habitaciones hab = new Habitaciones(type_asig(),Convert.ToInt32(comboBox1.SelectedValue));
+                Habitaciones hab = new Habitaciones(type_asig(), (int)P.cod_Hotel((string)comboBox1.SelectedItem));
                 ins.registrar_habitaH(hab);
             }
 
@@ -86,5 +86,15 @@ namespace FP2ISW_411.Vista
             return type;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            aut_Hab();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Habitaciones hab = new Habitaciones((comboBox2.SelectedIndex + 1), P.cod_Hotel((string)comboBox1.SelectedItem));
+            ins.registrar_habitaH(hab);
+        }
     }
 }

@@ -86,6 +86,12 @@
     <Compile Include="Vista\FrmCheck.Designer.cs">
       <DependentUpon>FrmCheck.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmChRes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmChRes.Designer.cs">
+      <DependentUpon>FrmChRes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmCl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,12 @@
     <Compile Include="Vista\FrmReg.Designer.cs">
       <DependentUpon>FrmReg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmSituacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmSituacion.Designer.cs">
+      <DependentUpon>FrmSituacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmTarifa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCheck.resx">
       <DependentUpon>FrmCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmChRes.resx">
+      <DependentUpon>FrmChRes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCl.resx">
       <DependentUpon>FrmCl.cs</DependentUpon>
@@ -190,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmReg.resx">
       <DependentUpon>FrmReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmSituacion.resx">
+      <DependentUpon>FrmSituacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmTarifa.resx">
       <DependentUpon>FrmTarifa.cs</DependentUpon>

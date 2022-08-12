@@ -66,7 +66,7 @@ namespace FP2ISW_411.Vista
                 if (BtnCRUDs.Text == "")
                 {
                     BtnCRUDs.Text = "Administrar Puestos";
-                    BtnRes.Text = "Reservaciones";
+                    BtnRes.Text = "Reportar Situacion";
                     BtnLogOut.Text = "Cerrar Sesión";
                 }
                 else
