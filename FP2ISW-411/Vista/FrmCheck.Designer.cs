@@ -42,7 +42,6 @@
             this.text_ced = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ChkBoxS = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -209,28 +208,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(526, 265);
             this.dataGridView1.TabIndex = 26;
             // 
-            // ChkBoxS
-            // 
-            this.ChkBoxS.AutoSize = true;
-            this.ChkBoxS.Enabled = false;
-            this.ChkBoxS.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkBoxS.ForeColor = System.Drawing.Color.DarkGray;
-            this.ChkBoxS.Location = new System.Drawing.Point(218, 430);
-            this.ChkBoxS.Name = "ChkBoxS";
-            this.ChkBoxS.Size = new System.Drawing.Size(146, 21);
-            this.ChkBoxS.TabIndex = 34;
-            this.ChkBoxS.Text = "Hubo una Situación?";
-            this.ChkBoxS.UseVisualStyleBackColor = true;
-            this.ChkBoxS.Visible = false;
-            this.ChkBoxS.CheckedChanged += new System.EventHandler(this.ChkBoxS_CheckedChanged);
-            // 
             // FrmCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(880, 546);
-            this.Controls.Add(this.ChkBoxS);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBox_ids);
@@ -261,6 +244,5 @@
         private System.Windows.Forms.TextBox text_ced;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox ChkBoxS;
     }
 }

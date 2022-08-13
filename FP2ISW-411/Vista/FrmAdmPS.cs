@@ -33,7 +33,14 @@ namespace FP2ISW_411.Vista
 
         private void PBClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            string messag = "Esta Seguro de Cerrar Sesión?";
+            string titl = "Atención";
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            DialogResult resul = MessageBox.Show(messag, titl, button, MessageBoxIcon.Warning);
+            if (resul == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void ChildForms(object FrmChild)
@@ -97,6 +104,7 @@ namespace FP2ISW_411.Vista
         {
             ChildForms(new FrmInicio());
         }
+
         public void rol()
         {
             if (usuario.Puesto == 1)
@@ -125,13 +133,14 @@ namespace FP2ISW_411.Vista
             }
             else if (usuario.Puesto == 7)
             {
-                puesto = "JEFE_LIMPIEZA";
+                puesto = "JEFE LIMPIEZA";
             }
             else if (usuario.Puesto == 8)
             {
-                puesto = "JEFE_BOTTONES";
+                puesto = "JEFE BOTTONES";
             }
         }
+        
         private void FrmAdmPuestos_Load(object sender, EventArgs e)
         {
             rol();
@@ -144,6 +153,13 @@ namespace FP2ISW_411.Vista
             {
                 BtnCRUDs.Visible = false;
                 BtnSit.Visible = false;
+            }
+            if (puesto == "JEFE LIMPIEZA")
+            {
+                BtnCRUDs.Visible = false;
+                BtnPay.Visible = false;
+                BtnRes.Visible = false;
+                BtnCheck.Visible = false;
             }
         }
         private void BtnHead_Click(object sender, EventArgs e)
@@ -253,7 +269,5 @@ namespace FP2ISW_411.Vista
                 this.Dispose(false);
             }
         }
-
-
     }
 }

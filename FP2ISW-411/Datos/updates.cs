@@ -217,21 +217,13 @@ namespace FP2ISW_411.Datos
         }
 
 
-        public bool modificar_checkOut(int id, Situaciones st)
+        public bool modificar_checkOut(int id)
         {
             try
             {
                 Conexion conex = new Conexion();
                 string sql = "";
-                if (st != null)
-                {
-                    sql = "UPDATE dbo.tb_reservaciones SET confirm_checkOut='" + DateTime.Now + "' WHERE id_reservacion=" + id + ";\nINSERT INTO dbo.tb_situaciones VALUES(" + id + "," + st.UsoBar + "," + st.UsoCF + ",'" + st.Desc +"');";
-
-                }
-                else
-                {
-                    sql = "UPDATE dbo.tb_reservaciones SET confirm_checkOut='" + DateTime.Now + "' WHERE id_reservacion=" + id + ";";
-                }                  
+                sql = "UPDATE dbo.tb_reservaciones SET confirm_checkOut='" + DateTime.Now + "' WHERE id_reservacion=" + id + ";";                 
                 SqlCommand comando = new
                 SqlCommand(sql, conex.Conectar());
                 int cantidad = comando.ExecuteNonQuery();

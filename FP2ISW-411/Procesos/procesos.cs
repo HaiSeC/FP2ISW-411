@@ -177,7 +177,7 @@ namespace FP2ISW_411.Procesos
                 return c.id_reservas_check_out(id);
             }
         }
-        public bool Modificar_checks(int id, string T_check, Situaciones st)
+        public bool Modificar_checks(int id, string T_check)
         {
             if (T_check == "in")
             {
@@ -185,7 +185,7 @@ namespace FP2ISW_411.Procesos
             }
             else
             {
-                return up.modificar_checkOut(id, st);
+                return up.modificar_checkOut(id);
             }
         }
     }
