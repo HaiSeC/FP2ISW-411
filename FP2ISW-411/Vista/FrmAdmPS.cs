@@ -18,11 +18,7 @@ namespace FP2ISW_411.Vista
         int mX = 0;
         int mY = 0;
         string puesto = "";
-        public FrmAdmPS()
-        {
-            InitializeComponent();
-            PlnMenu.Width = 50;
-        }
+
         public FrmAdmPS(usuario U)
         {                      
             InitializeComponent();           
@@ -33,6 +29,7 @@ namespace FP2ISW_411.Vista
             ChildForms(new FrmInicio(r, g, b));
             PlnMenu.Width = 50;
         }
+
 
         private void PBClose_Click(object sender, EventArgs e)
         {
@@ -240,7 +237,7 @@ namespace FP2ISW_411.Vista
 
         private void BtnSit_Click(object sender, EventArgs e)
         {
-            ChildForms(new FrmSituacion());
+            ChildForms(new FrmSituacion((int)this.usuario.Cedula));
         }
 
         private void BtnLogOut_Click(object sender, EventArgs e)
@@ -256,5 +253,7 @@ namespace FP2ISW_411.Vista
                 this.Dispose(false);
             }
         }
+
+
     }
 }

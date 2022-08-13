@@ -96,6 +96,31 @@ namespace FP2ISW_411.Datos
             }
         }
 
+        public bool registrar_situacion(Situaciones st, int idres)
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "INSERT INTO dbo.tb_situaciones VALUES("+ idres +","+ st.EmplID + "," + st.UsoBar + "," + st.UsoCF + ",'" + st.Desc +"'); ";
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
         public bool registrar_hotel(Hoteles H)
         {
             try

@@ -76,6 +76,24 @@ namespace FP2ISW_411.Vista
                 }
                 if (U.Password == E.Encriptar(TxtPass.Text))
                 {
+                    switch (U.Puesto)
+                    {
+                        case 1:
+                        case 2:
+                            FrmPrin FP = new FrmPrin(P.info_usu(U.Cedula));
+                            FP.Visible = true;
+                            this.Dispose(false);
+                            break;
+                        case 6:
+                        case 7:
+                            FrmAdmPS CL = new FrmAdmPS(P.info_usu(U.Cedula));
+                            CL.Visible = true;
+                            //this.Dispose();
+                            break;
+
+                        default:
+                            break;
+                    }
 
                     if (U.Puesto != 9) //&& U.Cliente == 0
                     {

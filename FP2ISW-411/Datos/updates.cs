@@ -215,6 +215,8 @@ namespace FP2ISW_411.Datos
                 return false;
             }
         }
+
+
         public bool modificar_checkOut(int id, Situaciones st)
         {
             try

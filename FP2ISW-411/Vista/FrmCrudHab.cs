@@ -61,7 +61,9 @@ namespace FP2ISW_411.Vista
             {
                 Habitaciones hab = new Habitaciones(type_asig(), (int)P.cod_Hotel((string)comboBox1.SelectedItem));
                 ins.registrar_habitaH(hab);
+                Console.WriteLine(i);
             }
+           
 
         }
 

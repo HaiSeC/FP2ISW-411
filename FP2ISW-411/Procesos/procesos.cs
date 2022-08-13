@@ -56,12 +56,19 @@ namespace FP2ISW_411.Procesos
             return c.info_usu(i);
         }
 
+        public bool insert_situacion(Situaciones st, int id)
+        {
+            return inser.registrar_situacion(st, id);
+        }
         public Hoteles GetH(long i)
         {
             return c.SelH(i);
         }
 
-        
+        public int getResidHab(int id)
+        {
+            return c.id_reservaciones(id);
+        }
 
         public usuario user(long i)
         {

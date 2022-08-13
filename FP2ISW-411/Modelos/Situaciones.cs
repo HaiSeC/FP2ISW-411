@@ -11,6 +11,7 @@ namespace FP2ISW_411.Modelos
         int usoBar = 0;
         int usoCF = 0;
         string desc = "";
+        long emplID = 0;
 
         public Situaciones()
         {
@@ -30,6 +31,7 @@ namespace FP2ISW_411.Modelos
         public int UsoCF { get => usoCF; set => usoCF = value; }
         public string Desc { get => desc; set => desc = value; }
         public string GetAll { get => "Esta Información será a Almacenada\nDescripción de la Situación: " + desc + "\nUso del Bar: " + UsoBar + "\nUso de la Caja Fuerte: " + UsoCF; }
+        public long EmplID { get => emplID; set => emplID = value; }
     }
         
 }

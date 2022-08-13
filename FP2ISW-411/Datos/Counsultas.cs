@@ -356,6 +356,31 @@ namespace FP2ISW_411.Datos
             }
         }
 
+        public int id_reservaciones(long id)
+        {
+            try
+            {
+
+                string sql = "SELECT id_reservacion FROM dbo.tb_reservaciones WHERE hab_id = (SELECT id_hab FROM tb_asignaciones WHERE id_user = '" + id +"');";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                int x = 0;
+                while (dr.Read())
+                {
+                    x = dr.GetInt32(0);
+                }
+                conex.Desconectar();
+                return x;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return 0;
+            }
+        }
+
+        
+
         public List<int> id_reservas(long id)
         {
             List<int> ids=new List<int>();
