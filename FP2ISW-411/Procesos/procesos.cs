@@ -234,5 +234,36 @@ namespace FP2ISW_411.Procesos
                 return up.modificar_checkOut(id);
             }
         }
+
+        public DataTable report1(DateTime fecha1, DateTime fecha2)
+        {
+            return c.report_hoteles_temporada(fecha1, fecha2);
+        }
+
+        public DataTable report2( int anno)
+        {
+            return c.report_cantidad_personas_hotel( anno);
+        }
+
+        public DataTable report3()
+        {
+            return c.report_porcentaje_personas_hotel();
+        }
+
+        public List<int> report4(long id, DateTime fecha1, DateTime fecha2)
+        {
+            return c.report_data(id, fecha1);
+        }
+
+        public DataTable report5()
+        {
+            return c.report_data_users();
+        }
+
+        public List<string> report6()
+        {
+            return c.report_data_clients();
+        }
+
     }
 }

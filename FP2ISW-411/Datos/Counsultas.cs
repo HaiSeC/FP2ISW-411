@@ -662,6 +662,131 @@ namespace FP2ISW_411.Datos
                 return null;
             }
         }
+
+        public DataTable report_hoteles_temporada(DateTime fecha1, DateTime fecha2)
+        {
+            try
+            {
+                string sql = "SELECT th.nombre , COUNT(*) as cantidad FROM tb_hoteles th, tb_Habitaciones thb, tb_reservaciones tr WHERE th.identificador = thb.id_hotel AND thb.hab_id = tr.hab_id  AND tr.checkin BETWEEN '" + fecha1.Year + "-" + fecha1.Month + "-" + fecha1.Day + "' AND '" + fecha2.Year + "-" + fecha2.Month + "-" + fecha2.Day + "' GROUP BY th.nombre ORDER BY cantidad DESC";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                DataTable tabla = new DataTable();
+                tabla.Load(dr);
+                conex.Desconectar();
+                return tabla;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
+
+        public DataTable report_cantidad_personas_hotel( int anno)
+        {
+            try
+            {
+                string sql = "SELECT SUM(tr.cantidad_personas) as cantidad FROM tb_hoteles th, tb_Habitaciones thb, tb_reservaciones tr WHERE th.identificador = thb.id_hotel AND thb.hab_id = tr.hab_id  AND tr.checkin BETWEEN '" + anno+"-01-01' AND '"+anno+"-04-01'";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                DataTable tabla = new DataTable();
+                tabla.Load(dr);
+                conex.Desconectar();
+                return tabla;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
+
+        public DataTable report_porcentaje_personas_hotel()
+        {
+            try
+            {
+                string sql = "SELECT th.nombre as hotel, ((SUM(tr.cantidad_personas)*100)/(SELECT SUM(r.cantidad_personas) FROM tb_reservaciones r)) as porcentaje FROM tb_hoteles th, tb_Habitaciones thb, tb_reservaciones tr WHERE thb.id_hotel = th.identificador AND thb.hab_id = tr.hab_id GROUP BY th.nombre ";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                DataTable tabla = new DataTable();
+                tabla.Load(dr);
+                conex.Desconectar();
+                return tabla;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
+
+        public List<int> report_data(long id,DateTime fecha1)
+        {
+            
+            List<int> ids = new List<int>();
+            try
+            {
+                string sql = "SELECT* FROM tb_Habitaciones hb, tb_hoteles h WHERE NOT EXISTS(SELECT tr.hab_id FROM tb_reservaciones tr WHERE hb.hab_id = tr.hab_id AND tr.checkin = '" + fecha1.Year + "-" + fecha1.Month + "-" + fecha1.Day + "' ) AND hb.id_hotel = h.identificador AND h.identificador = '" + id+"';";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    ids.Add(dr.GetInt32(0));
+                }
+                conex.Desconectar();
+                return ids;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
+
+        public DataTable report_data_users()
+        {
+
+            try
+            {
+                string sql = "SELECT tus.nombre as Clientes_Frecuentes FROM tb_reservaciones r, tb_usuarios tus WHERE r.id_cliente = tus.identificador GROUP BY r.id_cliente, tus.nombre ORDER BY r.id_cliente DESC";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                DataTable tabla = new DataTable();
+                tabla.Load(dr);
+                conex.Desconectar();
+                return tabla;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
+
+        public List<string> report_data_clients()
+        {
+
+            List<string> ids = new List<string>();
+            try
+            {
+                //string sql = "SELECT h.nombre FROM tb_hoteles h WHERE h.localidad ='"+idHotel+"' GROUP BY h.localidad, h.nombre";
+                string sql = "SELECT h.nombre, h.localidad FROM tb_hoteles h  GROUP BY h.localidad, h.nombre";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    ids.Add(dr.GetString(0));
+                }
+                conex.Desconectar();
+                return ids;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
+
     }
 
 

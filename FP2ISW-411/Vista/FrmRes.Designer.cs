@@ -266,6 +266,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel1.Location = new System.Drawing.Point(552, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(328, 546);

@@ -205,9 +205,12 @@ namespace FP2ISW_411.Vista
                     else
                     {
                         reservar(this.usuario.Cedula);
+  
                     }
                 }
             }
+            resetBTmS();
+            update_disponibles();
         }
 
         public void reservar(long ced)

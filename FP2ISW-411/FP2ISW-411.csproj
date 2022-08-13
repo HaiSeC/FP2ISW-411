@@ -144,6 +144,12 @@
     <Compile Include="Vista\FrmPrin.Designer.cs">
       <DependentUpon>FrmPrin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmReportes.Designer.cs">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmRes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmPrin.resx">
       <DependentUpon>FrmPrin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmReportes.resx">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmRes.resx">
       <DependentUpon>FrmRes.cs</DependentUpon>
