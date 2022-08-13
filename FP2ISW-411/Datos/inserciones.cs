@@ -70,6 +70,32 @@ namespace FP2ISW_411.Datos
             }
         }
 
+        public bool registrar_asignacion(long idus, int idhot, int idhab)
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "INSERT INTO dbo.tb_asignaciones VALUES(" + idhot + ",'" + idhab + "','" + idus + "');";
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public bool registrar_habitaH(Habitaciones h)
         {
             try

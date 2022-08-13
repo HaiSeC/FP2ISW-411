@@ -153,6 +153,8 @@ namespace FP2ISW_411.Vista
             {
                 BtnCRUDs.Visible = false;
                 BtnSit.Visible = false;
+
+                button1.Visible = true;
             }
             if (puesto == "JEFE LIMPIEZA")
             {
@@ -160,6 +162,15 @@ namespace FP2ISW_411.Vista
                 BtnPay.Visible = false;
                 BtnRes.Visible = false;
                 BtnCheck.Visible = false;
+                button1.Visible = true;
+            }
+            if (puesto == "CAMARERO")
+            {
+                BtnCRUDs.Visible = false;
+                BtnPay.Visible = false;
+                BtnRes.Visible = false;
+                BtnCheck.Visible = false;
+                button1.Visible = false;
             }
         }
         private void BtnHead_Click(object sender, EventArgs e)
@@ -170,12 +181,13 @@ namespace FP2ISW_411.Vista
             }
             if (BtnCRUDs.Text == "")
             {
-                BtnCRUDs.Text = "Administrar Puestos";
+                BtnCRUDs.Text = "CRUDS";
                 BtnSit.Text = "Situaciones";
                 BtnPay.Text = "Cobros";
                 BtnRes.Text = "Reservaciones";
                 BtnCheck.Text = "Check In/Out";
-                BtnLogOut.Text = "Cerrar Sesión";              
+                BtnLogOut.Text = "Cerrar Sesión";
+                button1.Text = "Administrar Puestos";
             }
             else if (BtnCRUDs.Text != "" || PlnCRUDs.Visible == true)
             {
@@ -185,6 +197,7 @@ namespace FP2ISW_411.Vista
                 BtnRes.Text = "";
                 BtnCheck.Text = "";
                 BtnLogOut.Text = "";
+                button1.Text = "";
             }
             if (PlnMenu.Width == 50)
             {
@@ -268,6 +281,11 @@ namespace FP2ISW_411.Vista
                 FLI.Visible = true;
                 this.Dispose(false);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ChildForms(new FrmCRUDPuestos(this.usuario));
         }
     }
 }

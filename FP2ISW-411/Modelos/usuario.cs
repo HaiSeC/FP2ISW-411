@@ -51,6 +51,16 @@ namespace FP2ISW_411.Modelos
             this.Puesto = puesto;
         }
 
+        public usuario(long cedula, string noombre, string apellido1, string apellido2, int puesto, int activo)
+        {
+            this.Cedula = cedula;
+            this.Nombre = noombre;
+            this.Apellido1 = apellido1;
+            this.Apellido2 = apellido2;
+            this.Activo = activo;
+            this.Puesto = puesto;
+        }
+
         public long Cedula { get => cedula; set => cedula = value; }
         public string nombre { get => Nombre; set => Nombre = value; }
         public string Apellido1 { get => apellido1; set => apellido1 = value; }

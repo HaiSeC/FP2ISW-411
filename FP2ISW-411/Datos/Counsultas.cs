@@ -77,6 +77,75 @@ namespace FP2ISW_411.Datos
             return tipos;
         }
 
+        public int consultar_codigoH(long id)
+        {
+            int codigo = 0;
+            
+            try
+            {
+                string sql = "SELECT codigo_hotel FROM tb_asignaciones WHERE id_user = '"+ id +"'";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    codigo = dr.GetInt32(0);
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                conex.Desconectar();
+            }
+            return codigo;
+        }
+
+        public int consultar_codigoHN(string name)
+        {
+            int codigo = 0;
+
+            try
+            {
+                string sql = "SELECT identificador FROM tb_hoteles WHERE nombre= '" + name + "'";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    codigo = dr.GetInt32(0);
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                conex.Desconectar();
+            }
+            return codigo;
+        }
+
+
+        public List<usuario> Consultar_Usuarios()
+        {
+            List<usuario> Lusers = new List<usuario>();
+            try
+            {
+                string sql = "SELECT identificador, nombre, apellido1, apellido2, user_type, activo FROM dbo.tb_usuarios WHERE user_type != 9 ORDER BY nombre";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    Lusers.Add(new usuario(dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetString(3), dr.GetInt32(4), Convert.ToInt32(dr.GetValue(5))));
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                Lusers = null;
+                conex.Desconectar();
+            }
+
+
+            return Lusers;
+        }
+
 
         public int codigo_puesto(string t_h)
         {
@@ -186,6 +255,28 @@ namespace FP2ISW_411.Datos
             catch
             {
                 n= "";
+                conex.Desconectar();
+            }
+            return n;
+        }
+
+        public string nombre_hotel(int t_h)
+        {
+            string n = "";
+            try
+            {
+                string sql = "SELECT nombre FROM dbo.tb_hoteles WHERE identificador='" + t_h + "';";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    n = dr.GetString(0);
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                n = "";
                 conex.Desconectar();
             }
             return n;
@@ -318,6 +409,51 @@ namespace FP2ISW_411.Datos
             }
             return tipos;
         }
+
+        public bool checkASIG(long ID)
+        {
+            bool s = false;
+            try
+            {
+                string sql = "SELECT* FROM tb_asignaciones WHERE id_user = '"+ ID +"';";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                if (dr.Read())
+                {
+                    s = true;
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                s = false;
+                conex.Desconectar();
+            }
+            return s;
+        }
+
+
+        public List<int> habitaciones(List<int> tipos, int hotel)
+        {
+            try
+            {
+                string sql = "SELECT h.hab_id FROM dbo.tb_Habitaciones AS h WHERE h.id_hotel=" + hotel + ";";
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                while (dr.Read())
+                {
+                    tipos.Add(dr.GetInt32(0));
+                }
+                conex.Desconectar();
+            }
+            catch
+            {
+                tipos = null;
+                conex.Desconectar();
+            }
+            return tipos;
+        }
+
         public DataTable informacion_reservacion(long id)
         {
             try

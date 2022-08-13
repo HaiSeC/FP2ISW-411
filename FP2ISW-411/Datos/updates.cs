@@ -89,6 +89,33 @@ namespace FP2ISW_411.Datos
             }
         }
 
+        public bool modificar_puesto(int puesto, long user )
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "UPDATE dbo.tb_usuarios SET user_type = "+puesto+" WHERE identificador = " + user + "";
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
         public bool modificar_usu(usuario U)
         {
             try
@@ -243,5 +270,33 @@ namespace FP2ISW_411.Datos
                 return false;
             }
         }
+
+        public bool modificar_asignaciont(long idus, int idhot, int idhab)
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                string sql = "";
+                sql = "UPDATE dbo.tb_asignaciones SET codigo_hotel='" + idhot + "', id_hab ='" + idhab + "' WHERE id_user=" + idus + ";";
+                SqlCommand comando = new
+                SqlCommand(sql, conex.Conectar());
+                int cantidad = comando.ExecuteNonQuery();
+                if (cantidad == 2 || cantidad == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                conex.Desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
     }
 }

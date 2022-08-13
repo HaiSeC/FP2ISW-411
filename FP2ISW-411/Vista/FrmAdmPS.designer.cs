@@ -48,6 +48,7 @@
             this.PBMini = new System.Windows.Forms.PictureBox();
             this.PBClose = new System.Windows.Forms.PictureBox();
             this.PlnMain = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.PlnMenu.SuspendLayout();
             this.PlnCRUDs.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             this.PlnMenu.BackColor = System.Drawing.Color.Black;
             this.PlnMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PlnMenu.Controls.Add(this.button1);
             this.PlnMenu.Controls.Add(this.BtnRes);
             this.PlnMenu.Controls.Add(this.BtnPay);
             this.PlnMenu.Controls.Add(this.BtnCheck);
@@ -335,6 +337,22 @@
             this.PlnMain.Size = new System.Drawing.Size(880, 546);
             this.PlnMain.TabIndex = 4;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.DimGray;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 426);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(208, 45);
+            this.button1.TabIndex = 21;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmAdmPS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,5 +401,6 @@
         private System.Windows.Forms.Button BtnCheck;
         private System.Windows.Forms.Button BtnPay;
         private System.Windows.Forms.Button BtnRes;
+        private System.Windows.Forms.Button button1;
     }
 }

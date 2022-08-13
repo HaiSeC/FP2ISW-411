@@ -38,6 +38,20 @@ namespace FP2ISW_411.Procesos
             int P = c.codigo_puesto(T);
             return P;
         }
+
+        public List<usuario> getEmpleados()
+        {
+            return c.Consultar_Usuarios();
+        }
+
+        public int getCode_H(long id)
+        {
+            return c.consultar_codigoH(id);
+        }
+        public int getCode_HN(string name)
+        {
+            return c.consultar_codigoHN(name);
+        }
         public bool insert_usuario(usuario U)
         {
             return inser.registrar_usu(U);
@@ -78,6 +92,12 @@ namespace FP2ISW_411.Procesos
         {
             return c.nombre_puesto(i);
         }
+
+        public string nombre_hotel(int i)
+        {
+            return c.nombre_puesto(i);
+        }
+
         public bool desac_usu(long id)
         {
             return up.desactivar_usu(id);
@@ -123,6 +143,32 @@ namespace FP2ISW_411.Procesos
         {
             List<int> t = new List<int>();
             return c.habitaciones_disponibles_sin_reserva(c.habitaciones_disponibles(t,entrada,hotel,T_habi),hotel,T_habi);
+        }
+
+        public List<int> habs(int hotel)
+        {
+            List<int> t = new List<int>();
+            return c.habitaciones(t, hotel);
+        }
+
+        public bool agregar_asignacion(long idus, int idhot, int idhab)
+        {
+            return inser.registrar_asignacion(idus, idhot, idhab);
+        }
+
+        public bool cambiar_asignacion(long idus, int idhot, int idhab)
+        {
+            return up.modificar_asignaciont(idus, idhot, idhab);
+        }
+
+        public bool cambiar_puesto(int puesto, long user)
+        {
+            return up.modificar_puesto(puesto, user);
+        }
+
+        public bool CASS(long ID)
+        {
+            return c.checkASIG(ID);
         }
         public bool reservar(long ced, DateTime entrada, DateTime salida, int personas, int habitacion, int precio)
         {

@@ -39,10 +39,14 @@ namespace FP2ISW_411.Vista
                 } else
                 {
                     ss.Desc = textBox1.Text;
+                    ps.insert_situacion(ss, ps.getResidHab(id));
                 }
+            }else
+            {
+                ps.insert_situacion(ss, ps.getResidHab(id));
             }
 
-            ps.insert_situacion(ss, ps.getResidHab(id));
+           
 
         }
 

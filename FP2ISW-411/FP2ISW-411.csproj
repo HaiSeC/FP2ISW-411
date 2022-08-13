@@ -118,6 +118,12 @@
     <Compile Include="Vista\FrmCrudHab.Designer.cs">
       <DependentUpon>FrmCrudHab.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FrmCRUDPuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FrmCRUDPuestos.Designer.cs">
+      <DependentUpon>FrmCRUDPuestos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmCrudHab.resx">
       <DependentUpon>FrmCrudHab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FrmCRUDPuestos.resx">
+      <DependentUpon>FrmCRUDPuestos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
