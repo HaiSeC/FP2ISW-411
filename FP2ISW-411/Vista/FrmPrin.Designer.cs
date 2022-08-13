@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrin));
             this.PlnHead = new System.Windows.Forms.Panel();
-            this.LblUser = new System.Windows.Forms.Label();
             this.PBMini = new System.Windows.Forms.PictureBox();
             this.PBClose = new System.Windows.Forms.PictureBox();
+            this.LblUser = new System.Windows.Forms.Label();
             this.PlnMenu = new System.Windows.Forms.Panel();
+            this.BtnPay = new System.Windows.Forms.Button();
             this.BtnCheckIn = new System.Windows.Forms.Button();
             this.BtnCRUDs = new System.Windows.Forms.Button();
             this.BtnLogOut = new System.Windows.Forms.Button();
@@ -55,9 +56,9 @@
             // PlnHead
             // 
             this.PlnHead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.PlnHead.Controls.Add(this.LblUser);
             this.PlnHead.Controls.Add(this.PBMini);
             this.PlnHead.Controls.Add(this.PBClose);
+            this.PlnHead.Controls.Add(this.LblUser);
             this.PlnHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.PlnHead.Location = new System.Drawing.Point(0, 0);
             this.PlnHead.Name = "PlnHead";
@@ -66,17 +67,6 @@
             this.PlnHead.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlnHead_MouseDown);
             this.PlnHead.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PlnHead_MouseMove);
             this.PlnHead.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PlnHead_MouseUp);
-            // 
-            // LblUser
-            // 
-            this.LblUser.AutoSize = true;
-            this.LblUser.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUser.ForeColor = System.Drawing.Color.DimGray;
-            this.LblUser.Location = new System.Drawing.Point(3, 3);
-            this.LblUser.Name = "LblUser";
-            this.LblUser.Size = new System.Drawing.Size(177, 20);
-            this.LblUser.TabIndex = 3;
-            this.LblUser.Text = "Bienvenidx Adminstradxr,";
             // 
             // PBMini
             // 
@@ -102,9 +92,24 @@
             this.PBClose.TabStop = false;
             this.PBClose.Click += new System.EventHandler(this.PBClose_Click);
             // 
+            // LblUser
+            // 
+            this.LblUser.AutoSize = true;
+            this.LblUser.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUser.ForeColor = System.Drawing.Color.DimGray;
+            this.LblUser.Location = new System.Drawing.Point(3, 3);
+            this.LblUser.Name = "LblUser";
+            this.LblUser.Size = new System.Drawing.Size(177, 20);
+            this.LblUser.TabIndex = 3;
+            this.LblUser.Text = "Bienvenidx Adminstradxr,";
+            this.LblUser.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblUser_MouseDown);
+            this.LblUser.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LblUser_MouseMove);
+            this.LblUser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LblUser_MouseUp);
+            // 
             // PlnMenu
             // 
             this.PlnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.PlnMenu.Controls.Add(this.BtnPay);
             this.PlnMenu.Controls.Add(this.BtnCheckIn);
             this.PlnMenu.Controls.Add(this.BtnCRUDs);
             this.PlnMenu.Controls.Add(this.BtnLogOut);
@@ -118,11 +123,26 @@
             this.PlnMenu.TabIndex = 1;
             this.PlnMenu.Click += new System.EventHandler(this.PlnMenu_Click);
             // 
+            // BtnPay
+            // 
+            this.BtnPay.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPay.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPay.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnPay.Location = new System.Drawing.Point(0, 248);
+            this.BtnPay.Name = "BtnPay";
+            this.BtnPay.Size = new System.Drawing.Size(188, 32);
+            this.BtnPay.TabIndex = 8;
+            this.BtnPay.Text = "Cobros";
+            this.BtnPay.UseVisualStyleBackColor = false;
+            this.BtnPay.Click += new System.EventHandler(this.BtnPay_Click);
+            // 
             // BtnCheckIn
             // 
-            this.BtnCheckIn.BackColor = System.Drawing.Color.DimGray;
+            this.BtnCheckIn.BackColor = System.Drawing.Color.Transparent;
             this.BtnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCheckIn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCheckIn.ForeColor = System.Drawing.Color.DimGray;
             this.BtnCheckIn.Location = new System.Drawing.Point(0, 210);
             this.BtnCheckIn.Name = "BtnCheckIn";
             this.BtnCheckIn.Size = new System.Drawing.Size(188, 32);
@@ -133,9 +153,10 @@
             // 
             // BtnCRUDs
             // 
-            this.BtnCRUDs.BackColor = System.Drawing.Color.DimGray;
+            this.BtnCRUDs.BackColor = System.Drawing.Color.Transparent;
             this.BtnCRUDs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCRUDs.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCRUDs.ForeColor = System.Drawing.Color.DimGray;
             this.BtnCRUDs.Location = new System.Drawing.Point(0, 134);
             this.BtnCRUDs.Name = "BtnCRUDs";
             this.BtnCRUDs.Size = new System.Drawing.Size(188, 32);
@@ -146,12 +167,13 @@
             // 
             // BtnLogOut
             // 
-            this.BtnLogOut.BackColor = System.Drawing.Color.DimGray;
+            this.BtnLogOut.BackColor = System.Drawing.Color.Transparent;
             this.BtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLogOut.Location = new System.Drawing.Point(0, 523);
+            this.BtnLogOut.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnLogOut.Location = new System.Drawing.Point(0, 494);
             this.BtnLogOut.Name = "BtnLogOut";
-            this.BtnLogOut.Size = new System.Drawing.Size(188, 23);
+            this.BtnLogOut.Size = new System.Drawing.Size(188, 52);
             this.BtnLogOut.TabIndex = 1;
             this.BtnLogOut.Text = "Cerrar Sesión";
             this.BtnLogOut.UseVisualStyleBackColor = false;
@@ -159,6 +181,7 @@
             // 
             // PBHome
             // 
+            this.PBHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PBHome.Image = ((System.Drawing.Image)(resources.GetObject("PBHome.Image")));
             this.PBHome.Location = new System.Drawing.Point(0, 0);
             this.PBHome.Name = "PBHome";
@@ -170,9 +193,10 @@
             // 
             // BtnRes
             // 
-            this.BtnRes.BackColor = System.Drawing.Color.DimGray;
+            this.BtnRes.BackColor = System.Drawing.Color.Transparent;
             this.BtnRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRes.ForeColor = System.Drawing.Color.DimGray;
             this.BtnRes.Location = new System.Drawing.Point(0, 172);
             this.BtnRes.Name = "BtnRes";
             this.BtnRes.Size = new System.Drawing.Size(188, 32);
@@ -188,15 +212,16 @@
             this.PlnCRUDs.Controls.Add(this.BtnCRUDH);
             this.PlnCRUDs.Location = new System.Drawing.Point(0, 172);
             this.PlnCRUDs.Name = "PlnCRUDs";
-            this.PlnCRUDs.Size = new System.Drawing.Size(188, 110);
+            this.PlnCRUDs.Size = new System.Drawing.Size(188, 117);
             this.PlnCRUDs.TabIndex = 5;
             this.PlnCRUDs.Visible = false;
             // 
             // BtnReg
             // 
-            this.BtnReg.BackColor = System.Drawing.Color.DimGray;
+            this.BtnReg.BackColor = System.Drawing.Color.Transparent;
             this.BtnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReg.ForeColor = System.Drawing.Color.DimGray;
             this.BtnReg.Location = new System.Drawing.Point(0, 0);
             this.BtnReg.Name = "BtnReg";
             this.BtnReg.Size = new System.Drawing.Size(188, 32);
@@ -207,9 +232,10 @@
             // 
             // FrmTarifas
             // 
-            this.FrmTarifas.BackColor = System.Drawing.Color.DimGray;
+            this.FrmTarifas.BackColor = System.Drawing.Color.Transparent;
             this.FrmTarifas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FrmTarifas.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FrmTarifas.ForeColor = System.Drawing.Color.DimGray;
             this.FrmTarifas.Location = new System.Drawing.Point(0, 76);
             this.FrmTarifas.Name = "FrmTarifas";
             this.FrmTarifas.Size = new System.Drawing.Size(188, 32);
@@ -220,9 +246,10 @@
             // 
             // BtnCRUDH
             // 
-            this.BtnCRUDH.BackColor = System.Drawing.Color.DimGray;
+            this.BtnCRUDH.BackColor = System.Drawing.Color.Transparent;
             this.BtnCRUDH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCRUDH.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCRUDH.ForeColor = System.Drawing.Color.DimGray;
             this.BtnCRUDH.Location = new System.Drawing.Point(0, 38);
             this.BtnCRUDH.Name = "BtnCRUDH";
             this.BtnCRUDH.Size = new System.Drawing.Size(188, 32);
@@ -281,5 +308,6 @@
         private System.Windows.Forms.Panel PlnCRUDs;
         private System.Windows.Forms.Label LblUser;
         private System.Windows.Forms.Button BtnCheckIn;
+        private System.Windows.Forms.Button BtnPay;
     }
 }

@@ -77,13 +77,13 @@ namespace FP2ISW_411.Vista
                 if (U.Password == E.Encriptar(TxtPass.Text))
                 {
 
-                    if (U.Puesto == 1)
+                    if (U.Puesto != 9) //&& U.Cliente == 0
                     {
-                        FrmPrin FP = new FrmPrin(P.info_usu(U.Cedula));
+                        FrmAdmPS FP = new FrmAdmPS(P.info_usu(U.Cedula));
                         FP.Visible = true;
                         this.Dispose(false);
                     }
-                    else if (U.Puesto == 2)
+                    else if (U.Puesto == 9)
                     {
                         FrmCl CL = new FrmCl(P.info_usu(U.Cedula));
                         CL.Visible = true;
@@ -102,6 +102,26 @@ namespace FP2ISW_411.Vista
                 TxtPass.Text = "";
             }
         }
+        private void LblHead_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            mX = Cursor.Position.X - this.Left;
+            mY = Cursor.Position.Y - this.Top;
+        }
+
+        private void LblHead_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                this.Top = Cursor.Position.Y - mY;
+                this.Left = Cursor.Position.X - mX;
+            }
+        }
+
+        private void LblHead_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
 
         private void TxtPass_KeyDown(object sender, KeyEventArgs e)
         {
@@ -109,11 +129,6 @@ namespace FP2ISW_411.Vista
             {
                 Login();
             }
-        }
-
-        private void TxtPass_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -127,12 +127,14 @@ namespace FP2ISW_411.Vista
                 PlnCRUDs.Visible = true;
                 BtnRes.Visible = false;
                 BtnCheckIn.Visible = false;
+                BtnPay.Visible = false;
             }
             else if (PlnCRUDs.Visible == true)
             {
                 PlnCRUDs.Visible = false;
                 BtnRes.Visible = true;
                 BtnCheckIn.Visible = true;
+                BtnPay.Visible = true;
             }
         }
 
@@ -143,12 +145,39 @@ namespace FP2ISW_411.Vista
                 PlnCRUDs.Visible = false;
                 BtnRes.Visible = true;
                 BtnCheckIn.Visible = true;
+                BtnPay.Visible = true;
             }
         }
 
         private void BtnCheckIn_Click(object sender, EventArgs e)
         {
             ChildForms(new FrmCheck(this.usuario));
+        }
+
+        private void LblUser_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            mX = Cursor.Position.X - this.Left;
+            mY = Cursor.Position.Y - this.Top;
+        }
+
+        private void LblUser_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                this.Top = Cursor.Position.Y - mY;
+                this.Left = Cursor.Position.X - mX;
+            }
+        }
+
+        private void LblUser_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+
+        private void BtnPay_Click(object sender, EventArgs e)
+        {
+            ChildForms(new FrmCobro(this.usuario));
         }
     }
 }

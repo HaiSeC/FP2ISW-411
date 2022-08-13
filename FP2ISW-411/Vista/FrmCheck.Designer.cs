@@ -49,11 +49,11 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkGray;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(110, 356);
+            this.button2.ForeColor = System.Drawing.Color.Gray;
+            this.button2.Location = new System.Drawing.Point(83, 326);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 33);
             this.button2.TabIndex = 33;
@@ -68,7 +68,7 @@
             this.groupBox1.Controls.Add(this.RB_in);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.DarkGray;
-            this.groupBox1.Location = new System.Drawing.Point(110, 178);
+            this.groupBox1.Location = new System.Drawing.Point(58, 179);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(188, 70);
             this.groupBox1.TabIndex = 32;
@@ -102,12 +102,13 @@
             // 
             this.comboBox_ids.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBox_ids.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_ids.BackColor = System.Drawing.Color.DarkGray;
+            this.comboBox_ids.BackColor = System.Drawing.Color.Black;
             this.comboBox_ids.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_ids.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_ids.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_ids.ForeColor = System.Drawing.Color.Black;
+            this.comboBox_ids.ForeColor = System.Drawing.Color.DimGray;
             this.comboBox_ids.FormattingEnabled = true;
-            this.comboBox_ids.Location = new System.Drawing.Point(508, 306);
+            this.comboBox_ids.Location = new System.Drawing.Point(549, 335);
             this.comboBox_ids.Name = "comboBox_ids";
             this.comboBox_ids.Size = new System.Drawing.Size(199, 29);
             this.comboBox_ids.TabIndex = 31;
@@ -117,19 +118,19 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(388, 306);
+            this.label1.Location = new System.Drawing.Point(427, 338);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 21);
+            this.label1.Size = new System.Drawing.Size(116, 21);
             this.label1.TabIndex = 30;
-            this.label1.Text = "Identificador:";
+            this.label1.Text = "ID Reservación:";
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkGray;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(110, 306);
+            this.button1.ForeColor = System.Drawing.Color.Gray;
+            this.button1.Location = new System.Drawing.Point(83, 276);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 33);
             this.button1.TabIndex = 29;
@@ -139,10 +140,11 @@
             // 
             // text_ced
             // 
-            this.text_ced.BackColor = System.Drawing.Color.DarkGray;
+            this.text_ced.BackColor = System.Drawing.Color.Black;
+            this.text_ced.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.text_ced.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_ced.ForeColor = System.Drawing.Color.Black;
-            this.text_ced.Location = new System.Drawing.Point(179, 133);
+            this.text_ced.ForeColor = System.Drawing.Color.DimGray;
+            this.text_ced.Location = new System.Drawing.Point(85, 64);
             this.text_ced.Name = "text_ced";
             this.text_ced.Size = new System.Drawing.Size(199, 29);
             this.text_ced.TabIndex = 28;
@@ -152,7 +154,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(106, 133);
+            this.label3.Location = new System.Drawing.Point(12, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 21);
             this.label3.TabIndex = 27;
@@ -168,7 +170,7 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Black;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
@@ -187,7 +189,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Location = new System.Drawing.Point(392, 133);
+            this.dataGridView1.Location = new System.Drawing.Point(319, 66);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -204,7 +206,7 @@
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(372, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(526, 265);
             this.dataGridView1.TabIndex = 26;
             // 
             // ChkBoxS
@@ -213,7 +215,7 @@
             this.ChkBoxS.Enabled = false;
             this.ChkBoxS.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkBoxS.ForeColor = System.Drawing.Color.DarkGray;
-            this.ChkBoxS.Location = new System.Drawing.Point(110, 262);
+            this.ChkBoxS.Location = new System.Drawing.Point(218, 430);
             this.ChkBoxS.Name = "ChkBoxS";
             this.ChkBoxS.Size = new System.Drawing.Size(146, 21);
             this.ChkBoxS.TabIndex = 34;
@@ -227,7 +229,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(886, 507);
+            this.ClientSize = new System.Drawing.Size(880, 546);
             this.Controls.Add(this.ChkBoxS);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);

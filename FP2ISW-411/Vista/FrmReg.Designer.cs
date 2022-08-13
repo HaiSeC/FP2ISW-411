@@ -117,6 +117,11 @@
             // 
             // DPN
             // 
+            this.DPN.CalendarForeColor = System.Drawing.Color.DimGray;
+            this.DPN.CalendarMonthBackground = System.Drawing.Color.Black;
+            this.DPN.CalendarTitleBackColor = System.Drawing.Color.DarkGray;
+            this.DPN.CalendarTitleForeColor = System.Drawing.Color.DimGray;
+            this.DPN.CalendarTrailingForeColor = System.Drawing.Color.DimGray;
             this.DPN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DPN.Location = new System.Drawing.Point(597, 134);
             this.DPN.Name = "DPN";
@@ -136,9 +141,10 @@
             // 
             // TxtCed
             // 
-            this.TxtCed.BackColor = System.Drawing.Color.Gray;
+            this.TxtCed.BackColor = System.Drawing.Color.Black;
             this.TxtCed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtCed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCed.ForeColor = System.Drawing.Color.DimGray;
             this.TxtCed.Location = new System.Drawing.Point(115, 90);
             this.TxtCed.Name = "TxtCed";
             this.TxtCed.Size = new System.Drawing.Size(266, 29);
@@ -147,9 +153,10 @@
             // 
             // TxtName
             // 
-            this.TxtName.BackColor = System.Drawing.Color.Gray;
+            this.TxtName.BackColor = System.Drawing.Color.Black;
             this.TxtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtName.ForeColor = System.Drawing.Color.DimGray;
             this.TxtName.Location = new System.Drawing.Point(115, 132);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(266, 29);
@@ -158,9 +165,10 @@
             // 
             // TxtApe1
             // 
-            this.TxtApe1.BackColor = System.Drawing.Color.Gray;
+            this.TxtApe1.BackColor = System.Drawing.Color.Black;
             this.TxtApe1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtApe1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtApe1.ForeColor = System.Drawing.Color.DimGray;
             this.TxtApe1.Location = new System.Drawing.Point(115, 220);
             this.TxtApe1.Name = "TxtApe1";
             this.TxtApe1.Size = new System.Drawing.Size(266, 29);
@@ -169,9 +177,10 @@
             // 
             // TxtDir
             // 
-            this.TxtDir.BackColor = System.Drawing.Color.Gray;
+            this.TxtDir.BackColor = System.Drawing.Color.Black;
             this.TxtDir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtDir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDir.ForeColor = System.Drawing.Color.DimGray;
             this.TxtDir.Location = new System.Drawing.Point(597, 264);
             this.TxtDir.Name = "TxtDir";
             this.TxtDir.Size = new System.Drawing.Size(267, 29);
@@ -180,9 +189,10 @@
             // 
             // TxtPassword
             // 
-            this.TxtPassword.BackColor = System.Drawing.Color.Gray;
+            this.TxtPassword.BackColor = System.Drawing.Color.Black;
             this.TxtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPassword.ForeColor = System.Drawing.Color.DimGray;
             this.TxtPassword.Location = new System.Drawing.Point(115, 175);
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '*';
@@ -192,11 +202,11 @@
             // 
             // BtnReg
             // 
-            this.BtnReg.BackColor = System.Drawing.Color.Gray;
+            this.BtnReg.BackColor = System.Drawing.Color.Transparent;
             this.BtnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReg.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnReg.Location = new System.Drawing.Point(301, 398);
+            this.BtnReg.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnReg.Location = new System.Drawing.Point(307, 399);
             this.BtnReg.Name = "BtnReg";
             this.BtnReg.Size = new System.Drawing.Size(101, 36);
             this.BtnReg.TabIndex = 11;
@@ -217,9 +227,11 @@
             // 
             // CBoxRol
             // 
-            this.CBoxRol.BackColor = System.Drawing.Color.Gray;
+            this.CBoxRol.BackColor = System.Drawing.Color.Black;
             this.CBoxRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBoxRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CBoxRol.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBoxRol.ForeColor = System.Drawing.Color.DimGray;
             this.CBoxRol.FormattingEnabled = true;
             this.CBoxRol.Location = new System.Drawing.Point(597, 178);
             this.CBoxRol.Name = "CBoxRol";
@@ -228,9 +240,10 @@
             // 
             // TxtApe2
             // 
-            this.TxtApe2.BackColor = System.Drawing.Color.Gray;
+            this.TxtApe2.BackColor = System.Drawing.Color.Black;
             this.TxtApe2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtApe2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtApe2.ForeColor = System.Drawing.Color.DimGray;
             this.TxtApe2.Location = new System.Drawing.Point(597, 90);
             this.TxtApe2.Name = "TxtApe2";
             this.TxtApe2.Size = new System.Drawing.Size(267, 29);
@@ -250,9 +263,10 @@
             // 
             // TxtPais
             // 
-            this.TxtPais.BackColor = System.Drawing.Color.Gray;
+            this.TxtPais.BackColor = System.Drawing.Color.Black;
             this.TxtPais.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtPais.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPais.ForeColor = System.Drawing.Color.DimGray;
             this.TxtPais.Location = new System.Drawing.Point(597, 220);
             this.TxtPais.Name = "TxtPais";
             this.TxtPais.Size = new System.Drawing.Size(267, 29);
@@ -272,9 +286,10 @@
             // 
             // TxtProvin
             // 
-            this.TxtProvin.BackColor = System.Drawing.Color.Gray;
+            this.TxtProvin.BackColor = System.Drawing.Color.Black;
             this.TxtProvin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtProvin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtProvin.ForeColor = System.Drawing.Color.DimGray;
             this.TxtProvin.Location = new System.Drawing.Point(115, 264);
             this.TxtProvin.Name = "TxtProvin";
             this.TxtProvin.Size = new System.Drawing.Size(266, 29);
@@ -294,9 +309,10 @@
             // 
             // TxtCan
             // 
-            this.TxtCan.BackColor = System.Drawing.Color.Gray;
+            this.TxtCan.BackColor = System.Drawing.Color.Black;
             this.TxtCan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtCan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCan.ForeColor = System.Drawing.Color.DimGray;
             this.TxtCan.Location = new System.Drawing.Point(115, 307);
             this.TxtCan.Name = "TxtCan";
             this.TxtCan.Size = new System.Drawing.Size(266, 29);
@@ -316,11 +332,11 @@
             // 
             // BtnS
             // 
-            this.BtnS.BackColor = System.Drawing.Color.Gray;
+            this.BtnS.BackColor = System.Drawing.Color.Transparent;
             this.BtnS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnS.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnS.Location = new System.Drawing.Point(648, 356);
+            this.BtnS.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnS.Location = new System.Drawing.Point(674, 346);
             this.BtnS.Name = "BtnS";
             this.BtnS.Size = new System.Drawing.Size(101, 36);
             this.BtnS.TabIndex = 12;
@@ -330,11 +346,11 @@
             // 
             // BtnDel
             // 
-            this.BtnDel.BackColor = System.Drawing.Color.Gray;
+            this.BtnDel.BackColor = System.Drawing.Color.Transparent;
             this.BtnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnDel.Location = new System.Drawing.Point(194, 398);
+            this.BtnDel.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnDel.Location = new System.Drawing.Point(200, 399);
             this.BtnDel.Name = "BtnDel";
             this.BtnDel.Size = new System.Drawing.Size(101, 36);
             this.BtnDel.TabIndex = 14;
@@ -344,11 +360,11 @@
             // 
             // BtnE
             // 
-            this.BtnE.BackColor = System.Drawing.Color.Gray;
+            this.BtnE.BackColor = System.Drawing.Color.Transparent;
             this.BtnE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnE.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnE.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnE.Location = new System.Drawing.Point(648, 398);
+            this.BtnE.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnE.Location = new System.Drawing.Point(674, 388);
             this.BtnE.Name = "BtnE";
             this.BtnE.Size = new System.Drawing.Size(101, 36);
             this.BtnE.TabIndex = 13;
@@ -367,11 +383,11 @@
             // 
             // BtnClear
             // 
-            this.BtnClear.BackColor = System.Drawing.Color.Gray;
+            this.BtnClear.BackColor = System.Drawing.Color.Transparent;
             this.BtnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnClear.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnClear.Location = new System.Drawing.Point(87, 398);
+            this.BtnClear.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnClear.Location = new System.Drawing.Point(93, 399);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(101, 36);
             this.BtnClear.TabIndex = 15;
@@ -409,7 +425,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(886, 507);
+            this.ClientSize = new System.Drawing.Size(880, 546);
             this.Controls.Add(this.ChkBoxCl);
             this.Controls.Add(this.checkBox_act);
             this.Controls.Add(this.BtnClear);
@@ -440,7 +456,8 @@
             this.Controls.Add(this.LblApe1);
             this.Controls.Add(this.LblName);
             this.Controls.Add(this.LblCed);
-            this.ForeColor = System.Drawing.Color.Gray;
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DimGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmReg";
             this.Text = "registrar";

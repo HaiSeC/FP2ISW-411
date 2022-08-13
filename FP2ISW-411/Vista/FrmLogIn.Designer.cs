@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogIn));
             this.PlnHead = new System.Windows.Forms.Panel();
+            this.LblHead = new System.Windows.Forms.Label();
             this.PBMini = new System.Windows.Forms.PictureBox();
             this.PBMax = new System.Windows.Forms.PictureBox();
             this.PBClose = new System.Windows.Forms.PictureBox();
@@ -51,6 +52,7 @@
             // PlnHead
             // 
             this.PlnHead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.PlnHead.Controls.Add(this.LblHead);
             this.PlnHead.Controls.Add(this.PBMini);
             this.PlnHead.Controls.Add(this.PBMax);
             this.PlnHead.Controls.Add(this.PBClose);
@@ -62,6 +64,21 @@
             this.PlnHead.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlnHead_MouseDown);
             this.PlnHead.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PlnHead_MouseMove);
             this.PlnHead.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PlnHead_MouseUp);
+            // 
+            // LblHead
+            // 
+            this.LblHead.AutoSize = true;
+            this.LblHead.BackColor = System.Drawing.Color.Transparent;
+            this.LblHead.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblHead.ForeColor = System.Drawing.Color.Gray;
+            this.LblHead.Location = new System.Drawing.Point(3, 3);
+            this.LblHead.Name = "LblHead";
+            this.LblHead.Size = new System.Drawing.Size(144, 21);
+            this.LblHead.TabIndex = 3;
+            this.LblHead.Text = "Hoteles MarParaiso";
+            this.LblHead.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblHead_MouseDown);
+            this.LblHead.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LblHead_MouseMove);
+            this.LblHead.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LblHead_MouseUp);
             // 
             // PBMini
             // 
@@ -124,15 +141,15 @@
             // 
             // TxtPass
             // 
-            this.TxtPass.BackColor = System.Drawing.Color.Gray;
+            this.TxtPass.BackColor = System.Drawing.Color.Black;
             this.TxtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtPass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPass.ForeColor = System.Drawing.Color.DimGray;
             this.TxtPass.Location = new System.Drawing.Point(40, 246);
             this.TxtPass.Name = "TxtPass";
             this.TxtPass.PasswordChar = '*';
             this.TxtPass.Size = new System.Drawing.Size(173, 25);
             this.TxtPass.TabIndex = 4;
-            this.TxtPass.TextChanged += new System.EventHandler(this.TxtPass_TextChanged);
             this.TxtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPass_KeyDown);
             // 
             // LblPass
@@ -149,9 +166,10 @@
             // 
             // TxtUser
             // 
-            this.TxtUser.BackColor = System.Drawing.Color.Gray;
+            this.TxtUser.BackColor = System.Drawing.Color.Black;
             this.TxtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtUser.ForeColor = System.Drawing.Color.DimGray;
             this.TxtUser.Location = new System.Drawing.Point(40, 169);
             this.TxtUser.Name = "TxtUser";
             this.TxtUser.Size = new System.Drawing.Size(173, 25);
@@ -171,9 +189,10 @@
             // 
             // BtnLog
             // 
-            this.BtnLog.BackColor = System.Drawing.Color.Gray;
+            this.BtnLog.BackColor = System.Drawing.Color.Transparent;
             this.BtnLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLog.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLog.ForeColor = System.Drawing.Color.DimGray;
             this.BtnLog.Location = new System.Drawing.Point(70, 289);
             this.BtnLog.Name = "BtnLog";
             this.BtnLog.Size = new System.Drawing.Size(108, 39);
@@ -195,6 +214,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogIn";
             this.PlnHead.ResumeLayout(false);
+            this.PlnHead.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBMini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBClose)).EndInit();
@@ -218,5 +238,6 @@
         private System.Windows.Forms.TextBox TxtUser;
         private System.Windows.Forms.Label LblUser;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label LblHead;
     }
 }

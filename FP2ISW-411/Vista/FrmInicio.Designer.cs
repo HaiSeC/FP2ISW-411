@@ -37,7 +37,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(268, 48);
+            this.pictureBox1.Location = new System.Drawing.Point(252, 48);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(363, 362);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -50,7 +50,7 @@
             this.LblLogo.BackColor = System.Drawing.Color.Transparent;
             this.LblLogo.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblLogo.ForeColor = System.Drawing.Color.DimGray;
-            this.LblLogo.Location = new System.Drawing.Point(233, 427);
+            this.LblLogo.Location = new System.Drawing.Point(217, 427);
             this.LblLogo.Name = "LblLogo";
             this.LblLogo.Size = new System.Drawing.Size(435, 65);
             this.LblLogo.TabIndex = 1;
@@ -61,7 +61,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(902, 546);
+            this.ClientSize = new System.Drawing.Size(880, 546);
             this.Controls.Add(this.LblLogo);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

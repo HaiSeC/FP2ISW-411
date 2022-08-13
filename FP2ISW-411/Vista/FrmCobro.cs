@@ -8,26 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using FP2ISW_411.Procesos;
 using System.Windows.Forms;
-
+using FP2ISW_411.Modelos;
 
 namespace FP2ISW_411.Vista
 {
     public partial class FrmCobro : Form
     {
+        usuario usuario = null;
         procesos P = new procesos();
         public FrmCobro()
         {
             InitializeComponent();
-            button2.Enabled = false;
-            
+            BtnPay.Enabled = false;           
+        }
+        public FrmCobro(usuario U)
+        {
+            InitializeComponent();
+            BtnPay.Enabled = false;
+            this.usuario = U;
+            text_ced.Text = U.Cedula.ToString();
         }
 
         private void FrmCobro_Load(object sender, EventArgs e)
         {
   
         }
+        
         public void llenar_combo(List<int> ids)
         {
+            comboBox_ids.Items.Clear();
             foreach (int id in ids)
             {
                 comboBox_ids.Items.Add(id);
@@ -35,15 +44,17 @@ namespace FP2ISW_411.Vista
             comboBox_ids.SelectedIndex = 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnS_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = default;
             try
             {
                 long ced = Convert.ToInt64(text_ced.Text);
                 List<int> ids = P.ids_reservas(ced);
                 if (ids.Count == 0)
                 {
-                    MessageBox.Show("El usuario no tiene reservas pendientes a cancelar.");
+                    comboBox_ids.Items.Clear();
+                    MessageBox.Show("El cliente no tiene reservaciones a pagar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -54,7 +65,7 @@ namespace FP2ISW_411.Vista
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Verifique la cedula.");
+                MessageBox.Show("Verifique la Cédula", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void update_precio()
@@ -87,19 +98,37 @@ namespace FP2ISW_411.Vista
             {
                 RB_40.Enabled = true;
             }
-            button2.Enabled = true;
+            BtnPay.Enabled = true;
             RB100.Checked = true;
             update_precio();
         }
 
         private void RB_40_CheckedChanged(object sender, EventArgs e)
         {
-            update_precio();
-        }
+            if (RB_40.Checked == true)
+            {
+                if (BtnPay.Enabled == false)
+                {
+                    MessageBox.Show("Busque una reserveación primero", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-        private void RB100_CheckedChanged(object sender, EventArgs e)
-        {
-            update_precio();
+                }
+                else
+                {
+                    update_precio();
+                }
+            }
+            if (RB100.Checked == true)
+            {
+                if (BtnPay.Enabled == false)
+                {
+                    MessageBox.Show("Busque una reserveación primero", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    update_precio();
+                }
+            }            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -115,14 +144,11 @@ namespace FP2ISW_411.Vista
             }
             if (P.modificar_status(estado, Convert.ToInt32(comboBox_ids.Text)))
             {
-                MessageBox.Show("Se ha realizado el cobro correctamente");
-                FrmCobro f = new FrmCobro();
-                f.Show();
-                this.Hide();
+                MessageBox.Show("Se la realizado el Pago Exitosamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("Ha ocurrido un error", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

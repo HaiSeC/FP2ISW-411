@@ -48,7 +48,7 @@
             this.ChkBxAc.AutoSize = true;
             this.ChkBxAc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkBxAc.ForeColor = System.Drawing.Color.Gray;
-            this.ChkBxAc.Location = new System.Drawing.Point(578, 269);
+            this.ChkBxAc.Location = new System.Drawing.Point(594, 310);
             this.ChkBxAc.Name = "ChkBxAc";
             this.ChkBxAc.Size = new System.Drawing.Size(96, 29);
             this.ChkBxAc.TabIndex = 38;
@@ -57,11 +57,11 @@
             // 
             // BtnClear
             // 
-            this.BtnClear.BackColor = System.Drawing.Color.Gray;
+            this.BtnClear.BackColor = System.Drawing.Color.Transparent;
             this.BtnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnClear.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnClear.Location = new System.Drawing.Point(253, 341);
+            this.BtnClear.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnClear.Location = new System.Drawing.Point(269, 382);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(101, 36);
             this.BtnClear.TabIndex = 37;
@@ -71,40 +71,44 @@
             // 
             // TxtLoc
             // 
-            this.TxtLoc.BackColor = System.Drawing.Color.Gray;
+            this.TxtLoc.BackColor = System.Drawing.Color.Black;
             this.TxtLoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtLoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtLoc.Location = new System.Drawing.Point(293, 168);
+            this.TxtLoc.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtLoc.Location = new System.Drawing.Point(309, 209);
             this.TxtLoc.Name = "TxtLoc";
             this.TxtLoc.Size = new System.Drawing.Size(266, 29);
             this.TxtLoc.TabIndex = 36;
             // 
             // TxtCH
             // 
-            this.TxtCH.BackColor = System.Drawing.Color.Gray;
+            this.TxtCH.BackColor = System.Drawing.Color.Black;
             this.TxtCH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtCH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCH.Location = new System.Drawing.Point(293, 213);
+            this.TxtCH.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtCH.Location = new System.Drawing.Point(309, 254);
             this.TxtCH.Name = "TxtCH";
             this.TxtCH.Size = new System.Drawing.Size(266, 29);
             this.TxtCH.TabIndex = 35;
             // 
             // TxtName
             // 
-            this.TxtName.BackColor = System.Drawing.Color.Gray;
+            this.TxtName.BackColor = System.Drawing.Color.Black;
             this.TxtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtName.Location = new System.Drawing.Point(293, 125);
+            this.TxtName.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtName.Location = new System.Drawing.Point(309, 166);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(266, 29);
             this.TxtName.TabIndex = 34;
             // 
             // TxtID
             // 
-            this.TxtID.BackColor = System.Drawing.Color.Gray;
+            this.TxtID.BackColor = System.Drawing.Color.Black;
             this.TxtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtID.Location = new System.Drawing.Point(293, 83);
+            this.TxtID.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtID.Location = new System.Drawing.Point(309, 124);
             this.TxtID.Name = "TxtID";
             this.TxtID.Size = new System.Drawing.Size(266, 29);
             this.TxtID.TabIndex = 33;
@@ -114,7 +118,7 @@
             this.LblLoc.AutoSize = true;
             this.LblLoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblLoc.ForeColor = System.Drawing.Color.Gray;
-            this.LblLoc.Location = new System.Drawing.Point(146, 176);
+            this.LblLoc.Location = new System.Drawing.Point(162, 217);
             this.LblLoc.Name = "LblLoc";
             this.LblLoc.Size = new System.Drawing.Size(79, 21);
             this.LblLoc.TabIndex = 32;
@@ -125,7 +129,7 @@
             this.LblCantHab.AutoSize = true;
             this.LblCantHab.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCantHab.ForeColor = System.Drawing.Color.Gray;
-            this.LblCantHab.Location = new System.Drawing.Point(146, 221);
+            this.LblCantHab.Location = new System.Drawing.Point(162, 262);
             this.LblCantHab.Name = "LblCantHab";
             this.LblCantHab.Size = new System.Drawing.Size(141, 21);
             this.LblCantHab.TabIndex = 31;
@@ -136,7 +140,7 @@
             this.LblName.AutoSize = true;
             this.LblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblName.ForeColor = System.Drawing.Color.Gray;
-            this.LblName.Location = new System.Drawing.Point(146, 133);
+            this.LblName.Location = new System.Drawing.Point(162, 174);
             this.LblName.Name = "LblName";
             this.LblName.Size = new System.Drawing.Size(71, 21);
             this.LblName.TabIndex = 30;
@@ -147,7 +151,7 @@
             this.LblID.AutoSize = true;
             this.LblID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblID.ForeColor = System.Drawing.Color.Gray;
-            this.LblID.Location = new System.Drawing.Point(146, 91);
+            this.LblID.Location = new System.Drawing.Point(162, 132);
             this.LblID.Name = "LblID";
             this.LblID.Size = new System.Drawing.Size(100, 21);
             this.LblID.TabIndex = 29;
@@ -155,11 +159,11 @@
             // 
             // BtnReg
             // 
-            this.BtnReg.BackColor = System.Drawing.Color.Gray;
+            this.BtnReg.BackColor = System.Drawing.Color.Transparent;
             this.BtnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnReg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReg.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnReg.Location = new System.Drawing.Point(360, 341);
+            this.BtnReg.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnReg.Location = new System.Drawing.Point(376, 382);
             this.BtnReg.Name = "BtnReg";
             this.BtnReg.Size = new System.Drawing.Size(101, 36);
             this.BtnReg.TabIndex = 39;
@@ -169,11 +173,11 @@
             // 
             // BtnE
             // 
-            this.BtnE.BackColor = System.Drawing.Color.Gray;
+            this.BtnE.BackColor = System.Drawing.Color.Transparent;
             this.BtnE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnE.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnE.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnE.Location = new System.Drawing.Point(467, 341);
+            this.BtnE.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnE.Location = new System.Drawing.Point(483, 382);
             this.BtnE.Name = "BtnE";
             this.BtnE.Size = new System.Drawing.Size(101, 36);
             this.BtnE.TabIndex = 40;
@@ -183,11 +187,11 @@
             // 
             // BtnS
             // 
-            this.BtnS.BackColor = System.Drawing.Color.Gray;
+            this.BtnS.BackColor = System.Drawing.Color.Transparent;
             this.BtnS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnS.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BtnS.Location = new System.Drawing.Point(360, 299);
+            this.BtnS.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnS.Location = new System.Drawing.Point(376, 340);
             this.BtnS.Name = "BtnS";
             this.BtnS.Size = new System.Drawing.Size(101, 36);
             this.BtnS.TabIndex = 41;
@@ -200,7 +204,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(870, 468);
+            this.ClientSize = new System.Drawing.Size(880, 546);
             this.Controls.Add(this.BtnS);
             this.Controls.Add(this.BtnE);
             this.Controls.Add(this.BtnReg);

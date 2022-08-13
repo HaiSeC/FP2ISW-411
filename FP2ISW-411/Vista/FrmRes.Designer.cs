@@ -266,7 +266,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(574, 0);
+            this.panel1.Location = new System.Drawing.Point(552, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(328, 546);
             this.panel1.TabIndex = 18;
@@ -299,7 +299,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(902, 546);
+            this.ClientSize = new System.Drawing.Size(880, 546);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.text_ced);
             this.Controls.Add(this.label3);

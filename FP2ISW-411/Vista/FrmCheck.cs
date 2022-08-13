@@ -30,6 +30,7 @@ namespace FP2ISW_411.Vista
         }
         public void llenar_combo(List<int> ids)
         {
+            comboBox_ids.Items.Clear();
             foreach (int id in ids)
             {
                 comboBox_ids.Items.Add(id);
@@ -55,9 +56,6 @@ namespace FP2ISW_411.Vista
             if (P.Modificar_checks(Convert.ToInt32(comboBox_ids.Text),estado, st))
             {
                 MessageBox.Show("Se ha realizado el ChecK" + estado + " correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FrmCheck f = new FrmCheck();
-                f.Show();
-                this.Hide();
             }
             else
             {
@@ -87,7 +85,8 @@ namespace FP2ISW_411.Vista
                 List<int> ids = P.ids_reservas_check(ced, tipoC);
                 if (ids.Count == 0)
                 {
-                    MessageBox.Show("El usuario no tiene reservaciones pendientes a hacer check" + tipoC + ".", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    comboBox_ids.Items.Clear();
+                    MessageBox.Show("El usuario no tiene reservaciones pendientes a hacer check" + tipoC + ".", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);                   
                 }
                 else
                 {

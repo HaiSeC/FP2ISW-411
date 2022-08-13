@@ -68,6 +68,9 @@
             this.PlnHead.Name = "PlnHead";
             this.PlnHead.Size = new System.Drawing.Size(907, 30);
             this.PlnHead.TabIndex = 3;
+            this.PlnHead.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PlnHead_MouseDown_1);
+            this.PlnHead.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PlnHead_MouseMove_1);
+            this.PlnHead.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PlnHead_MouseUp_1);
             // 
             // LblUser
             // 
@@ -79,6 +82,9 @@
             this.LblUser.Size = new System.Drawing.Size(134, 20);
             this.LblUser.TabIndex = 3;
             this.LblUser.Text = "Bienvenidx Cliente,";
+            this.LblUser.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LblUser_MouseDown);
+            this.LblUser.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LblUser_MouseMove);
+            this.LblUser.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LblUser_MouseUp);
             // 
             // PBMini
             // 
@@ -90,6 +96,7 @@
             this.PBMini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBMini.TabIndex = 2;
             this.PBMini.TabStop = false;
+            this.PBMini.Click += new System.EventHandler(this.PBMini_Click_1);
             // 
             // PBClose
             // 
@@ -101,16 +108,18 @@
             this.PBClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBClose.TabIndex = 1;
             this.PBClose.TabStop = false;
+            this.PBClose.Click += new System.EventHandler(this.PBClose_Click_1);
             // 
             // BtnLogOut
             // 
-            this.BtnLogOut.BackColor = System.Drawing.Color.DimGray;
+            this.BtnLogOut.BackColor = System.Drawing.Color.Transparent;
             this.BtnLogOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BtnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLogOut.Location = new System.Drawing.Point(0, 553);
+            this.BtnLogOut.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnLogOut.Location = new System.Drawing.Point(0, 530);
             this.BtnLogOut.Name = "BtnLogOut";
-            this.BtnLogOut.Size = new System.Drawing.Size(183, 23);
+            this.BtnLogOut.Size = new System.Drawing.Size(183, 46);
             this.BtnLogOut.TabIndex = 1;
             this.BtnLogOut.Text = "Cerrar Sesión";
             this.BtnLogOut.UseVisualStyleBackColor = false;
@@ -129,6 +138,7 @@
             this.button1.Size = new System.Drawing.Size(183, 30);
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // PBHome
             // 
@@ -158,10 +168,11 @@
             // 
             // BtnMV
             // 
-            this.BtnMV.BackColor = System.Drawing.Color.DimGray;
+            this.BtnMV.BackColor = System.Drawing.Color.Transparent;
             this.BtnMV.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnMV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMV.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMV.ForeColor = System.Drawing.Color.DimGray;
             this.BtnMV.Location = new System.Drawing.Point(0, 131);
             this.BtnMV.Name = "BtnMV";
             this.BtnMV.Size = new System.Drawing.Size(183, 47);
@@ -172,10 +183,11 @@
             // 
             // BtnRes
             // 
-            this.BtnRes.BackColor = System.Drawing.Color.DimGray;
+            this.BtnRes.BackColor = System.Drawing.Color.Transparent;
             this.BtnRes.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRes.ForeColor = System.Drawing.Color.DimGray;
             this.BtnRes.Location = new System.Drawing.Point(0, 83);
             this.BtnRes.Name = "BtnRes";
             this.BtnRes.Size = new System.Drawing.Size(183, 48);

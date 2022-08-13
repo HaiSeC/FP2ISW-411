@@ -31,16 +31,6 @@ namespace FP2ISW_411.Vista
            //ChildForms(new FrmInicio());
         }
 
-        private void PBClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void PBMini_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void ChildForms(object FrmChild)
         {
             if (this.PlnMain.Controls.Count > 0)                          
@@ -58,26 +48,6 @@ namespace FP2ISW_411.Vista
             int g = 73;
             int b = 44;
             ChildForms(new FrmInicio(r,g,b));           
-        }
-
-        private void PlnHead_MouseUp(object sender, MouseEventArgs e)
-        {
-            drag = false;
-        }
-
-        private void PlnHead_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (drag)
-            {
-                this.Top = Cursor.Position.Y - mY;
-                this.Left = Cursor.Position.X - mX;
-            }
-        }
-        private void PlnHead_MouseDown(object sender, MouseEventArgs e)
-        {
-            drag = true;
-            mX = Cursor.Position.X - this.Left;
-            mY = Cursor.Position.Y - this.Top;
         }
 
         private void BtnRes_Click(object sender, EventArgs e)
@@ -126,6 +96,83 @@ namespace FP2ISW_411.Vista
         private void BtnMV_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void PBClose_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void PBMini_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void PlnHead_MouseUp_1(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+
+        private void PlnHead_MouseMove_1(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                this.Top = Cursor.Position.Y - mY;
+                this.Left = Cursor.Position.X - mX;
+            }
+        }
+
+        private void PlnHead_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            mX = Cursor.Position.X - this.Left;
+            mY = Cursor.Position.Y - this.Top;
+        }
+
+        private void LblUser_MouseUp(object sender, MouseEventArgs e)
+        {
+            drag = false;
+        }
+
+        private void LblUser_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drag)
+            {
+                this.Top = Cursor.Position.Y - mY;
+                this.Left = Cursor.Position.X - mX;
+            }
+        }
+
+        private void LblUser_MouseDown(object sender, MouseEventArgs e)
+        {
+            drag = true;
+            mX = Cursor.Position.X - this.Left;
+            mY = Cursor.Position.Y - this.Top;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (PlnMenu.Width == 50)
+            {
+                PlnMenu.Width = 210;
+            }
+            else
+            {
+                PlnMenu.Width = 50;
+            }
+
+            if (BtnRes.Text == "")
+            {
+                BtnRes.Text = "Reservaciones";
+                BtnMV.Text = "Mi Viaje";
+                BtnLogOut.Text = "Cerrar Sesión";
+            }
+            else
+            {
+                BtnRes.Text = "";
+                BtnMV.Text = "";
+                BtnLogOut.Text = "";
+            }
         }
     }
 }
