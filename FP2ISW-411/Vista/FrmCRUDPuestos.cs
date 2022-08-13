@@ -102,7 +102,6 @@ namespace FP2ISW_411.Vista
                 habs = P.habs(coded);
             } else
             {
-
                 habs = P.habs(code);
             }
             if (puestos == null)
@@ -115,8 +114,7 @@ namespace FP2ISW_411.Vista
                 {
                     comboBox2.Items.Add(hab);
                 }
-                comboBox2.SelectedIndex = 0;
-
+                //comboBox2.SelectedIndex = 0;
             }
         }
 
@@ -140,7 +138,6 @@ namespace FP2ISW_411.Vista
             } else
             {
                 panel2.Visible = false;
- 
             }
         }
 

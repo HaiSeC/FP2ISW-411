@@ -27,7 +27,14 @@ namespace FP2ISW_411.Vista
 
         private void PBClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            string messag = "Esta Seguro de Salir?";
+            string titl = "Atención";
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            DialogResult resul = MessageBox.Show(messag, titl, button, MessageBoxIcon.Warning);
+            if (resul == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void PBMini_Click(object sender, EventArgs e)
@@ -127,6 +134,20 @@ namespace FP2ISW_411.Vista
             if (e.KeyCode == Keys.Enter)
             {
                 Login();
+            }
+        }
+
+        private void LBtn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string messag = "Esta Seguro de Crear una Cuenta?";
+            string titl = "Atención";
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            DialogResult resul = MessageBox.Show(messag, titl, button, MessageBoxIcon.Warning);
+            if (resul == DialogResult.Yes)
+            {
+                FrmAdmPS FP = new FrmAdmPS(null);
+                FP.Visible = true;
+                this.Dispose(false);
             }
         }
     }

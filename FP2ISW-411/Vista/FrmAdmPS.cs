@@ -33,7 +33,7 @@ namespace FP2ISW_411.Vista
 
         private void PBClose_Click(object sender, EventArgs e)
         {
-            string messag = "Esta Seguro de Cerrar Sesión?";
+            string messag = "Esta Seguro de Salir?";
             string titl = "Atención";
             MessageBoxButtons button = MessageBoxButtons.YesNo;
             DialogResult resul = MessageBox.Show(messag, titl, button, MessageBoxIcon.Warning);
@@ -86,12 +86,14 @@ namespace FP2ISW_411.Vista
             if (PlnCRUDs.Visible == false)
             {
                 PlnCRUDs.Visible = true;
-                BtnCRUDs.Text = "Administrar Puestos";
+                BtnCRUDs.Text = "CRUDS";
                 BtnSit.Text = "Situaciones";
                 BtnPay.Text = "Cobros";
                 BtnRes.Text = "Reservaciones";
                 BtnCheck.Text = "Check In/Out";
                 BtnLogOut.Text = "Cerrar Sesión";
+                BtnAD.Text = "Administrar Puestos";
+                BtnAddA.Text = "Crear Cuenta";
                 PlnMenu.Width = 210;
             }
             else if (PlnCRUDs.Visible == true)
@@ -143,18 +145,36 @@ namespace FP2ISW_411.Vista
         
         private void FrmAdmPuestos_Load(object sender, EventArgs e)
         {
-            rol();
+            if (usuario == null)
+            {
+                LblUser.Text = LblUser.Text + " Invitado";
+
+            }
+            else
+            {
+                rol();
+               
+                LblUser.Text = LblUser.Text + " " + puesto + " " + usuario.nombre + " " + usuario.Apellido1;
+            }
             Buttons();
-            LblUser.Text = LblUser.Text + " " + puesto + " " + usuario.nombre + " " + usuario.Apellido1;
         }
         public void Buttons()
         {
+            if (puesto == "")
+            {
+                BtnAddA.Visible = true;
+                BtnCRUDs.Visible = false;
+                BtnPay.Visible = false;
+                BtnRes.Visible = false;
+                BtnCheck.Visible = false;
+                BtnAD.Visible = false;
+                BtnSit.Visible = false;
+            }
             if (puesto == "RECEPCIONISTA")
             {
                 BtnCRUDs.Visible = false;
                 BtnSit.Visible = false;
-
-                button1.Visible = true;
+                BtnAD.Visible = true;
             }
             if (puesto == "JEFE LIMPIEZA")
             {
@@ -162,7 +182,7 @@ namespace FP2ISW_411.Vista
                 BtnPay.Visible = false;
                 BtnRes.Visible = false;
                 BtnCheck.Visible = false;
-                button1.Visible = true;
+                BtnAD.Visible = true;
             }
             if (puesto == "CAMARERO")
             {
@@ -170,7 +190,7 @@ namespace FP2ISW_411.Vista
                 BtnPay.Visible = false;
                 BtnRes.Visible = false;
                 BtnCheck.Visible = false;
-                button1.Visible = false;
+                BtnAD.Visible = false;
             }
         }
         private void BtnHead_Click(object sender, EventArgs e)
@@ -187,7 +207,8 @@ namespace FP2ISW_411.Vista
                 BtnRes.Text = "Reservaciones";
                 BtnCheck.Text = "Check In/Out";
                 BtnLogOut.Text = "Cerrar Sesión";
-                button1.Text = "Administrar Puestos";
+                BtnAD.Text = "Administrar Puestos";
+                BtnAddA.Text = "Crear Cuenta";
             }
             else if (BtnCRUDs.Text != "" || PlnCRUDs.Visible == true)
             {
@@ -197,7 +218,8 @@ namespace FP2ISW_411.Vista
                 BtnRes.Text = "";
                 BtnCheck.Text = "";
                 BtnLogOut.Text = "";
-                button1.Text = "";
+                BtnAD.Text = "";
+                BtnAddA.Text = "";
             }
             if (PlnMenu.Width == 50)
             {
@@ -210,7 +232,7 @@ namespace FP2ISW_411.Vista
 
         private void BtnReg_Click(object sender, EventArgs e)
         {
-            ChildForms(new FrmReg());
+            ChildForms(new FrmReg(this.usuario));
         }
 
         private void LblUser_MouseUp(object sender, MouseEventArgs e)
@@ -286,6 +308,11 @@ namespace FP2ISW_411.Vista
         private void button1_Click(object sender, EventArgs e)
         {
             ChildForms(new FrmCRUDPuestos(this.usuario));
+        }
+
+        private void BtnAddA_Click(object sender, EventArgs e)
+        {
+            ChildForms(new FrmReg(this.usuario));
         }
     }
 }

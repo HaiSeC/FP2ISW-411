@@ -58,6 +58,7 @@
             this.BtnClear = new System.Windows.Forms.Button();
             this.checkBox_act = new System.Windows.Forms.CheckBox();
             this.ChkBoxCl = new System.Windows.Forms.CheckBox();
+            this.PlnCl = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // LblCed
@@ -420,12 +421,22 @@
             this.ChkBoxCl.UseVisualStyleBackColor = true;
             this.ChkBoxCl.CheckedChanged += new System.EventHandler(this.ChkBoxCl_CheckedChanged);
             // 
+            // PlnCl
+            // 
+            this.PlnCl.BackColor = System.Drawing.Color.Transparent;
+            this.PlnCl.Location = new System.Drawing.Point(407, 309);
+            this.PlnCl.Name = "PlnCl";
+            this.PlnCl.Size = new System.Drawing.Size(200, 80);
+            this.PlnCl.TabIndex = 28;
+            this.PlnCl.Visible = false;
+            // 
             // FrmReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(880, 546);
+            this.Controls.Add(this.PlnCl);
             this.Controls.Add(this.ChkBoxCl);
             this.Controls.Add(this.checkBox_act);
             this.Controls.Add(this.BtnClear);
@@ -461,6 +472,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmReg";
             this.Text = "registrar";
+            this.Load += new System.EventHandler(this.FrmReg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,5 +510,6 @@
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.CheckBox checkBox_act;
         private System.Windows.Forms.CheckBox ChkBoxCl;
+        private System.Windows.Forms.Panel PlnCl;
     }
 }

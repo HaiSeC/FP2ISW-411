@@ -35,6 +35,7 @@
             this.PBMax = new System.Windows.Forms.PictureBox();
             this.PBClose = new System.Windows.Forms.PictureBox();
             this.PlnMain = new System.Windows.Forms.Panel();
+            this.LBtn = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TxtPass = new System.Windows.Forms.TextBox();
             this.LblPass = new System.Windows.Forms.Label();
@@ -117,6 +118,7 @@
             // PlnMain
             // 
             this.PlnMain.BackColor = System.Drawing.Color.Black;
+            this.PlnMain.Controls.Add(this.LBtn);
             this.PlnMain.Controls.Add(this.pictureBox1);
             this.PlnMain.Controls.Add(this.TxtPass);
             this.PlnMain.Controls.Add(this.LblPass);
@@ -128,6 +130,20 @@
             this.PlnMain.Name = "PlnMain";
             this.PlnMain.Size = new System.Drawing.Size(249, 355);
             this.PlnMain.TabIndex = 2;
+            // 
+            // LBtn
+            // 
+            this.LBtn.ActiveLinkColor = System.Drawing.Color.Blue;
+            this.LBtn.AutoSize = true;
+            this.LBtn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBtn.LinkColor = System.Drawing.Color.Transparent;
+            this.LBtn.Location = new System.Drawing.Point(102, 262);
+            this.LBtn.Name = "LBtn";
+            this.LBtn.Size = new System.Drawing.Size(113, 13);
+            this.LBtn.TabIndex = 6;
+            this.LBtn.TabStop = true;
+            this.LBtn.Text = "Crear Cuenta Cliente";
+            this.LBtn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LBtn_LinkClicked);
             // 
             // pictureBox1
             // 
@@ -145,7 +161,7 @@
             this.TxtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtPass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPass.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtPass.Location = new System.Drawing.Point(40, 246);
+            this.TxtPass.Location = new System.Drawing.Point(40, 234);
             this.TxtPass.Name = "TxtPass";
             this.TxtPass.PasswordChar = '*';
             this.TxtPass.Size = new System.Drawing.Size(173, 25);
@@ -158,7 +174,7 @@
             this.LblPass.BackColor = System.Drawing.Color.Transparent;
             this.LblPass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblPass.ForeColor = System.Drawing.Color.Gray;
-            this.LblPass.Location = new System.Drawing.Point(37, 216);
+            this.LblPass.Location = new System.Drawing.Point(37, 204);
             this.LblPass.Name = "LblPass";
             this.LblPass.Size = new System.Drawing.Size(67, 17);
             this.LblPass.TabIndex = 3;
@@ -239,5 +255,6 @@
         private System.Windows.Forms.Label LblUser;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LblHead;
+        private System.Windows.Forms.LinkLabel LBtn;
     }
 }

@@ -88,19 +88,16 @@ namespace FP2ISW_411.Vista
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnMV_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void PBClose_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            string messag = "Esta Seguro de Salir?";
+            string titl = "Atención";
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            DialogResult resul = MessageBox.Show(messag, titl, button, MessageBoxIcon.Warning);
+            if (resul == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void PBMini_Click_1(object sender, EventArgs e)

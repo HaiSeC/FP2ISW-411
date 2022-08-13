@@ -7,6 +7,7 @@ namespace FP2ISW_411.Vista
 {
     public partial class FrmReg : Form
     {
+        usuario usuario = null;
         procesos P = new procesos();
         bool Id = false;
         bool N = false;
@@ -17,6 +18,15 @@ namespace FP2ISW_411.Vista
         bool Pro = false;
         bool Can = false;
         bool D = false;
+        public FrmReg(usuario U)
+        {
+            InitializeComponent();
+            FillCBox();
+            DPN.MaxDate = DateTime.Now - (DateTime.Now.AddYears(18) - DateTime.Now);
+            vainaDeBotones();
+            checkBox_act.Enabled = false;
+            this.usuario = U;    
+        }
         public FrmReg()
         {
             InitializeComponent();
@@ -34,6 +44,7 @@ namespace FP2ISW_411.Vista
         }
         public void FillCBox()
         {
+            CBoxRol.Items.Clear();
             List<string> puestos = P.tipo_puestos();
             foreach (string i in puestos)
             {
@@ -89,7 +100,11 @@ namespace FP2ISW_411.Vista
             TxtProvin.Text = "";
             checkBox_act.Enabled = false;
             checkBox_act.Checked = false;
-            ChkBoxCl.Checked = false;
+            
+            if (usuario != null)
+            {
+                ChkBoxCl.Checked = false;
+            }         
         }
         
         private void TxtCed_TextChanged(object sender, EventArgs e)
@@ -277,7 +292,7 @@ namespace FP2ISW_411.Vista
 
         private void BtnE_Click(object sender, EventArgs e)
         {
-            int act=0;
+            int act = 0;
             if (checkBox_act.Checked)
             {
                 act = 1;
@@ -322,10 +337,26 @@ namespace FP2ISW_411.Vista
             if (ChkBoxCl.Checked)
             {
                 CBoxRol.Enabled = false;
+                CBoxRol.SelectedIndex = 6;
             }
             else
             {
                 CBoxRol.Enabled = true;
+                CBoxRol.SelectedIndex = 1;
+            }
+        }
+
+        private void FrmReg_Load(object sender, EventArgs e)
+        {
+            if (usuario == null)
+            {
+                PlnCl.Visible = true;
+                BtnDel.Visible = false;
+                BtnS.Visible = false;
+                BtnE.Visible = false;
+                ChkBoxCl.Checked = true;
+                checkBox_act.Checked = true;
+
             }
         }
     }
