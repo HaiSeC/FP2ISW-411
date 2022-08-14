@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdmPS));
             this.PlnMenu = new System.Windows.Forms.Panel();
+            this.BtnAddA = new System.Windows.Forms.Button();
             this.BtnAD = new System.Windows.Forms.Button();
             this.BtnRes = new System.Windows.Forms.Button();
             this.BtnPay = new System.Windows.Forms.Button();
@@ -49,7 +50,7 @@
             this.PBMini = new System.Windows.Forms.PictureBox();
             this.PBClose = new System.Windows.Forms.PictureBox();
             this.PlnMain = new System.Windows.Forms.Panel();
-            this.BtnAddA = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.PlnMenu.SuspendLayout();
             this.PlnCRUDs.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             this.PlnMenu.BackColor = System.Drawing.Color.Black;
             this.PlnMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PlnMenu.Controls.Add(this.button1);
             this.PlnMenu.Controls.Add(this.BtnAddA);
             this.PlnMenu.Controls.Add(this.BtnAD);
             this.PlnMenu.Controls.Add(this.BtnRes);
@@ -79,6 +81,22 @@
             this.PlnMenu.Name = "PlnMenu";
             this.PlnMenu.Size = new System.Drawing.Size(210, 576);
             this.PlnMenu.TabIndex = 2;
+            // 
+            // BtnAddA
+            // 
+            this.BtnAddA.BackColor = System.Drawing.Color.Transparent;
+            this.BtnAddA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAddA.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAddA.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnAddA.Image = ((System.Drawing.Image)(resources.GetObject("BtnAddA.Image")));
+            this.BtnAddA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnAddA.Location = new System.Drawing.Point(0, 105);
+            this.BtnAddA.Name = "BtnAddA";
+            this.BtnAddA.Size = new System.Drawing.Size(208, 45);
+            this.BtnAddA.TabIndex = 22;
+            this.BtnAddA.UseVisualStyleBackColor = false;
+            this.BtnAddA.Visible = false;
+            this.BtnAddA.Click += new System.EventHandler(this.BtnAddA_Click);
             // 
             // BtnAD
             // 
@@ -355,21 +373,21 @@
             this.PlnMain.Size = new System.Drawing.Size(880, 546);
             this.PlnMain.TabIndex = 4;
             // 
-            // BtnAddA
+            // button1
             // 
-            this.BtnAddA.BackColor = System.Drawing.Color.Transparent;
-            this.BtnAddA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAddA.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAddA.ForeColor = System.Drawing.Color.DimGray;
-            this.BtnAddA.Image = ((System.Drawing.Image)(resources.GetObject("BtnAddA.Image")));
-            this.BtnAddA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAddA.Location = new System.Drawing.Point(0, 105);
-            this.BtnAddA.Name = "BtnAddA";
-            this.BtnAddA.Size = new System.Drawing.Size(208, 45);
-            this.BtnAddA.TabIndex = 22;
-            this.BtnAddA.UseVisualStyleBackColor = false;
-            this.BtnAddA.Visible = false;
-            this.BtnAddA.Click += new System.EventHandler(this.BtnAddA_Click);
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.DimGray;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 471);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(208, 45);
+            this.button1.TabIndex = 23;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // FrmAdmPS
             // 
@@ -421,5 +439,6 @@
         private System.Windows.Forms.Button BtnRes;
         private System.Windows.Forms.Button BtnAD;
         private System.Windows.Forms.Button BtnAddA;
+        private System.Windows.Forms.Button button1;
     }
 }

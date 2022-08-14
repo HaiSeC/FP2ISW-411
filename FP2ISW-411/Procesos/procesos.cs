@@ -260,7 +260,7 @@ namespace FP2ISW_411.Procesos
             return c.report_data_users();
         }
 
-        public List<string> report6()
+        public DataTable report6()
         {
             return c.report_data_clients();
         }

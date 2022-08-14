@@ -37,27 +37,41 @@ namespace FP2ISW_411.Vista
                 listView1.Items.Add(item);
             }
 
-            List<string> hoteles = P.nombre_hoteles();
-            if ( hoteles == null)
-            {
-                MessageBox.Show("Error al Conectar con la Base de Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                foreach (string hotel in hoteles)
-                {
-                    comboBox1.Items.Add(hotel);
-                }
-                comboBox1.SelectedIndex = 0;
-            }
-            DataTable data1 = P.report3();
+
+            report1load();
+            report2load();
+            report3load();
+            report6load();
+        }
+
+        void report1load()
+        {
+            DataTable data1 = P.report1(dateTimePicker2.Value.Date, dateTimePicker3.Value.Date);
             chart2.DataSource = data1;
-            chart1.ChartAreas[0].AxisX.Interval = 1;
-            chart1.Series.Clear();
+            chart2.ChartAreas[0].AxisX.Interval = 1;
+            chart2.Series.Clear();
             for (int i = 1; i < data1.Columns.Count; i++)
             {
                 Series series = new Series();
-                series.XValueMember = data1.Columns[0].ColumnName;
+                series.YValueMembers = data1.Columns[i].ColumnName;
+                series.ChartType = SeriesChartType.Line;
+                series.IsVisibleInLegend = true;
+                series.IsValueShownAsLabel = true;
+                series.BorderWidth = 3;
+                series.LegendText = data1.Columns[i].ColumnName;
+                chart2.Series.Add(series);
+            }
+        }
+
+        void report2load()
+        {
+            DataTable data1 = P.report2(Convert.ToInt32(dateTimePicker1.Text));
+            chart1.DataSource = data1;
+            chart1.ChartAreas[0].AxisX.Interval = 1;
+            chart1.Series.Clear();
+            for (int i = 0; i < data1.Columns.Count; i++)
+            {
+                Series series = new Series();
                 series.YValueMembers = data1.Columns[i].ColumnName;
                 series.ChartType = SeriesChartType.Line;
                 series.IsVisibleInLegend = true;
@@ -66,25 +80,65 @@ namespace FP2ISW_411.Vista
                 series.LegendText = data1.Columns[i].ColumnName;
                 chart1.Series.Add(series);
             }
-            DataTable data2 = P.report2(Convert.ToInt32(dateTimePicker1.Text));
-            var enumerableTable2 = (data2 as System.ComponentModel.IListSource).GetList();
-            try
+        }
+
+        void report3load()
+        {
+            DataTable data1 = P.report3();
+            chart4.DataSource = data1;
+            chart4.ChartAreas[0].AxisX.Interval = 1;
+            chart4.Series.Clear();
+            for (int i =1; i < data1.Columns.Count; i++)
             {
-                chart4.DataBindTable(enumerableTable2, "s");
-
+                Series series = new Series();
+                series.YValueMembers = data1.Columns[i].ColumnName;
+                series.ChartType = SeriesChartType.Column;
+                series.IsVisibleInLegend = true;
+                series.IsValueShownAsLabel = true;
+                series.BorderWidth = 3;
+                series.LegendText = data1.Columns[i].ColumnName;
+                chart4.Series.Add(series);
             }
-            catch (Exception)
+        }
+
+        void report6load()
+        {
+            DataTable data1 = P.report6();
+            chart3.DataSource = data1;
+            chart3.ChartAreas[0].AxisX.Interval = 1;
+            chart3.Series.Clear();
+            for (int i = 1; i < data1.Columns.Count; i++)
             {
-
+                Series series = new Series();
+                series.XValueMember = data1.Columns[0].ColumnName;
+                series.YValueMembers = data1.Columns[i].ColumnName;
+                series.ChartType = SeriesChartType.Column;
+                series.IsVisibleInLegend = true;
+                series.IsValueShownAsLabel = true;
+                series.BorderWidth = 3;
+                series.LegendText = data1.Columns[i].ColumnName;
+                chart3.Series.Add(series);
             }
-            chart1.DataSource = P.report6();
-
-
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            report1load();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            report2load();
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+            report1load();
         }
     }
 }

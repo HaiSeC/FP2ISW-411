@@ -763,22 +763,19 @@ namespace FP2ISW_411.Datos
             }
         }
 
-        public List<string> report_data_clients()
+        public DataTable report_data_clients()
         {
 
-            List<string> ids = new List<string>();
             try
             {
                 //string sql = "SELECT h.nombre FROM tb_hoteles h WHERE h.localidad ='"+idHotel+"' GROUP BY h.localidad, h.nombre";
-                string sql = "SELECT h.nombre, h.localidad FROM tb_hoteles h  GROUP BY h.localidad, h.nombre";
+                string sql = "SELECT h.localidad as localidad, COUNT(h.localidad) as cantidad  FROM tb_hoteles h  GROUP BY h.localidad, h.nombre";
                 SqlCommand comando = new SqlCommand(sql, conex.Conectar());
                 SqlDataReader dr = comando.ExecuteReader();
-                while (dr.Read())
-                {
-                    ids.Add(dr.GetString(0));
-                }
+                DataTable tabla = new DataTable();
+                tabla.Load(dr);
                 conex.Desconectar();
-                return ids;
+                return tabla;
             }
             catch
             {

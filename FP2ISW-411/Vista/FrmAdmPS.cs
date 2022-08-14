@@ -314,5 +314,10 @@ namespace FP2ISW_411.Vista
         {
             ChildForms(new FrmReg(this.usuario));
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ChildForms(new FrmReportes());
+        }
     }
 }
