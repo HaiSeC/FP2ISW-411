@@ -95,7 +95,7 @@ namespace FP2ISW_411.Procesos
 
         public string nombre_hotel(int i)
         {
-            return c.nombre_puesto(i);
+            return c.nombre_hotel(i);
         }
 
         public bool desac_usu(long id)

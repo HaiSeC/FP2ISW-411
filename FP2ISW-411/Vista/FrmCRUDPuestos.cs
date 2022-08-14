@@ -26,7 +26,6 @@ namespace FP2ISW_411.Vista
         {
             User = Us;
             InitializeComponent();
-            listView1.Visible = false;
             panel2.Visible = false;
             comboBox1.Enabled = false;
         }
@@ -51,7 +50,6 @@ namespace FP2ISW_411.Vista
             }
             if (User.Puesto == 1 || User.Puesto == 2)
             {
-                listView1.Visible = true;
                 if (usuarios == null)
                 {
                     MessageBox.Show("Error al Conectar con la Base de Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -82,9 +80,26 @@ namespace FP2ISW_411.Vista
             }
             else
             {
+                if (usuarios == null)
+                {
+                    MessageBox.Show("Error al Conectar con la Base de Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    foreach (usuario empleado in usuarios)
+                    {
+                       // if (empleado.Puesto == 6 || empleado.Puesto == 7)
+                       // {
+                            listView1.Items.Add(empleado.nombre);
+                       // }
+                    }
+                }
+                comboBox1.Enabled = false;
+                comboBox3.Enabled = false;
+
                 code = P.getCode_H(User.Cedula);
-                comboBox1.Items.Add(P.nombre_hotel(code));
-                comboBox2.SelectedIndex = (User.Puesto - 1);
+                comboBox1.Text = (P.nombre_hotel(code));
+                comboBox3.Text = P.nombre_puesto(User.Puesto);
                 fillh();
             }
         }
