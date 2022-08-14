@@ -94,6 +94,7 @@ namespace FP2ISW_411.Vista
                 BtnLogOut.Text = "Cerrar Sesión";
                 BtnAD.Text = "Administrar Puestos";
                 BtnAddA.Text = "Crear Cuenta";
+                BtnRepo.Text = "Reportes";
                 PlnMenu.Width = 210;
             }
             else if (PlnCRUDs.Visible == true)
@@ -148,12 +149,10 @@ namespace FP2ISW_411.Vista
             if (usuario == null)
             {
                 LblUser.Text = LblUser.Text + " Invitado";
-
             }
             else
             {
-                rol();
-               
+                rol();              
                 LblUser.Text = LblUser.Text + " " + puesto + " " + usuario.nombre + " " + usuario.Apellido1;
             }
             Buttons();
@@ -169,12 +168,13 @@ namespace FP2ISW_411.Vista
                 BtnCheck.Visible = false;
                 BtnAD.Visible = false;
                 BtnSit.Visible = false;
+                BtnRepo.Visible = false;
             }
             if (puesto == "RECEPCIONISTA")
             {
                 BtnCRUDs.Visible = false;
                 BtnSit.Visible = false;
-                BtnAD.Visible = true;
+                BtnAD.Visible = false;
             }
             if (puesto == "JEFE LIMPIEZA")
             {
@@ -183,6 +183,7 @@ namespace FP2ISW_411.Vista
                 BtnRes.Visible = false;
                 BtnCheck.Visible = false;
                 BtnAD.Visible = true;
+                BtnRepo.Visible = false;
             }
             if (puesto == "CAMARERO")
             {
@@ -191,6 +192,16 @@ namespace FP2ISW_411.Vista
                 BtnRes.Visible = false;
                 BtnCheck.Visible = false;
                 BtnAD.Visible = false;
+                BtnRepo.Visible = false;
+            }
+            if (puesto == "SECRETARIO")
+            {
+                BtnCRUDs.Visible = false;
+                BtnPay.Visible = false;
+                BtnRes.Visible = false;
+                BtnCheck.Visible = false;
+                BtnAD.Visible = true;
+                BtnRepo.Visible = true;
             }
         }
         private void BtnHead_Click(object sender, EventArgs e)
@@ -209,6 +220,7 @@ namespace FP2ISW_411.Vista
                 BtnLogOut.Text = "Cerrar Sesión";
                 BtnAD.Text = "Administrar Puestos";
                 BtnAddA.Text = "Crear Cuenta";
+                BtnRepo.Text = "Reportes";
             }
             else if (BtnCRUDs.Text != "" || PlnCRUDs.Visible == true)
             {
@@ -220,6 +232,7 @@ namespace FP2ISW_411.Vista
                 BtnLogOut.Text = "";
                 BtnAD.Text = "";
                 BtnAddA.Text = "";
+                BtnRepo.Text = "";
             }
             if (PlnMenu.Width == 50)
             {
@@ -315,9 +328,19 @@ namespace FP2ISW_411.Vista
             ChildForms(new FrmReg(this.usuario));
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void BtnRepo_Click_1(object sender, EventArgs e)
         {
             ChildForms(new FrmReportes());
+        }
+
+        private void PlnMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BtnCRUDR_Click(object sender, EventArgs e)
+        {
+            ChildForms(new FrmCrudHab());
         }
     }
 }

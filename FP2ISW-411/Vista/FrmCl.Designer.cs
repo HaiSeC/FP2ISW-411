@@ -49,11 +49,11 @@
             // 
             // PlnMain
             // 
+            this.PlnMain.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PlnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(73)))), ((int)(((byte)(44)))));
-            this.PlnMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlnMain.Location = new System.Drawing.Point(183, 0);
+            this.PlnMain.Location = new System.Drawing.Point(183, 30);
             this.PlnMain.Name = "PlnMain";
-            this.PlnMain.Size = new System.Drawing.Size(907, 576);
+            this.PlnMain.Size = new System.Drawing.Size(907, 546);
             this.PlnMain.TabIndex = 2;
             // 
             // PlnHead

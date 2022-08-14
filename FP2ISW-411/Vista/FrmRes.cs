@@ -124,7 +124,7 @@ namespace FP2ISW_411.Vista
             double t1 = Tarifa * CantN;
             double CostXN = (Tarifa * 0.15)* Convert.ToInt32(this.CantN.Value);
             double CostXA = (Tarifa * 0.30) * Convert.ToInt32(CantA.Value);
-            double TTotal = t1 + CostXA + CostXN;
+            int TTotal = Convert.ToInt32(t1 + CostXA + CostXN);
             LblP.Text = "Precio: $" + TTotal;
         }
 
