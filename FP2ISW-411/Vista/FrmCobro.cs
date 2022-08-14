@@ -150,6 +150,7 @@ namespace FP2ISW_411.Vista
             {
                 MessageBox.Show("Ha ocurrido un error", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            dataGridView1.DataSource = default;
         }
     }
 }

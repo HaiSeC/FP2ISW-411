@@ -186,14 +186,15 @@
             // 
             this.listView1.AutoArrange = false;
             this.listView1.BackColor = System.Drawing.Color.Black;
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Right;
             this.listView1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.ForeColor = System.Drawing.Color.DimGray;
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(561, 12);
+            this.listView1.Location = new System.Drawing.Point(596, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(384, 496);
+            this.listView1.Size = new System.Drawing.Size(361, 520);
             this.listView1.TabIndex = 11;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;

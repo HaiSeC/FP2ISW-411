@@ -38,6 +38,7 @@
             this.BtnCheck = new System.Windows.Forms.Button();
             this.BtnSit = new System.Windows.Forms.Button();
             this.PlnCRUDs = new System.Windows.Forms.Panel();
+            this.BtnCRUDR = new System.Windows.Forms.Button();
             this.BtnReg = new System.Windows.Forms.Button();
             this.FrmTarifas = new System.Windows.Forms.Button();
             this.BtnCRUDH = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.PBMini = new System.Windows.Forms.PictureBox();
             this.PBClose = new System.Windows.Forms.PictureBox();
             this.PlnMain = new System.Windows.Forms.Panel();
-            this.BtnCRUDR = new System.Windows.Forms.Button();
             this.PlnMenu.SuspendLayout();
             this.PlnCRUDs.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -208,6 +208,23 @@
             this.PlnCRUDs.Size = new System.Drawing.Size(208, 118);
             this.PlnCRUDs.TabIndex = 16;
             this.PlnCRUDs.Visible = false;
+            // 
+            // BtnCRUDR
+            // 
+            this.BtnCRUDR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.BtnCRUDR.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnCRUDR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCRUDR.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCRUDR.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnCRUDR.Location = new System.Drawing.Point(0, 90);
+            this.BtnCRUDR.Name = "BtnCRUDR";
+            this.BtnCRUDR.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.BtnCRUDR.Size = new System.Drawing.Size(208, 30);
+            this.BtnCRUDR.TabIndex = 24;
+            this.BtnCRUDR.Text = "CRUD Habitaciones";
+            this.BtnCRUDR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCRUDR.UseVisualStyleBackColor = false;
+            this.BtnCRUDR.Click += new System.EventHandler(this.BtnCRUDR_Click);
             // 
             // BtnReg
             // 
@@ -390,23 +407,6 @@
             this.PlnMain.Name = "PlnMain";
             this.PlnMain.Size = new System.Drawing.Size(880, 546);
             this.PlnMain.TabIndex = 4;
-            // 
-            // BtnCRUDR
-            // 
-            this.BtnCRUDR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.BtnCRUDR.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnCRUDR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCRUDR.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCRUDR.ForeColor = System.Drawing.Color.DimGray;
-            this.BtnCRUDR.Location = new System.Drawing.Point(0, 90);
-            this.BtnCRUDR.Name = "BtnCRUDR";
-            this.BtnCRUDR.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.BtnCRUDR.Size = new System.Drawing.Size(208, 30);
-            this.BtnCRUDR.TabIndex = 24;
-            this.BtnCRUDR.Text = "CRUD Habitaciones";
-            this.BtnCRUDR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCRUDR.UseVisualStyleBackColor = false;
-            this.BtnCRUDR.Click += new System.EventHandler(this.BtnCRUDR_Click);
             // 
             // FrmAdmPS
             // 

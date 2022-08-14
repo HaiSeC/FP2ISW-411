@@ -175,6 +175,7 @@ namespace FP2ISW_411.Vista
                 BtnCRUDs.Visible = false;
                 BtnSit.Visible = false;
                 BtnAD.Visible = false;
+                BtnRepo.Visible = false;
             }
             if (puesto == "JEFE LIMPIEZA")
             {
@@ -187,6 +188,7 @@ namespace FP2ISW_411.Vista
             }
             if (puesto == "CAMARERO")
             {
+                BtnSit.Visible = false;
                 BtnCRUDs.Visible = false;
                 BtnPay.Visible = false;
                 BtnRes.Visible = false;
@@ -196,7 +198,7 @@ namespace FP2ISW_411.Vista
             }
             if (puesto == "SECRETARIO")
             {
-                BtnCRUDs.Visible = false;
+                BtnSit.Visible = false;
                 BtnPay.Visible = false;
                 BtnRes.Visible = false;
                 BtnCheck.Visible = false;

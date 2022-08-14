@@ -581,7 +581,24 @@ namespace FP2ISW_411.Datos
                 return 0;
             }
         }
-
+        public DataTable SituacionesOut(int hab)
+        {
+            try
+            {
+                string sql = "SELECT idus as ID_Empleado, uso_bar as Uso_de_Bar, uso_caja_fuerte as Uso_de_Caja_Fuerte, descripcion as Descripcion from dbo.tb_situaciones where idres = " + hab;
+                SqlCommand comando = new SqlCommand(sql, conex.Conectar());
+                SqlDataReader dr = comando.ExecuteReader();
+                DataTable tabla = new DataTable();
+                tabla.Load(dr);
+                conex.Desconectar();
+                return tabla;
+            }
+            catch
+            {
+                conex.Desconectar();
+                return null;
+            }
+        }
         public DataTable informacion_reservacion_Check_in(long id)
         {
             try

@@ -59,6 +59,7 @@
             this.checkBox_act = new System.Windows.Forms.CheckBox();
             this.ChkBoxCl = new System.Windows.Forms.CheckBox();
             this.PlnCl = new System.Windows.Forms.Panel();
+            this.PlnPu = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // LblCed
@@ -430,12 +431,22 @@
             this.PlnCl.TabIndex = 28;
             this.PlnCl.Visible = false;
             // 
+            // PlnPu
+            // 
+            this.PlnPu.BackColor = System.Drawing.Color.Transparent;
+            this.PlnPu.Location = new System.Drawing.Point(407, 175);
+            this.PlnPu.Name = "PlnPu";
+            this.PlnPu.Size = new System.Drawing.Size(461, 36);
+            this.PlnPu.TabIndex = 29;
+            this.PlnPu.Visible = false;
+            // 
             // FrmReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(880, 546);
+            this.Controls.Add(this.PlnPu);
             this.Controls.Add(this.PlnCl);
             this.Controls.Add(this.ChkBoxCl);
             this.Controls.Add(this.checkBox_act);
@@ -511,5 +522,6 @@
         private System.Windows.Forms.CheckBox checkBox_act;
         private System.Windows.Forms.CheckBox ChkBoxCl;
         private System.Windows.Forms.Panel PlnCl;
+        private System.Windows.Forms.Panel PlnPu;
     }
 }

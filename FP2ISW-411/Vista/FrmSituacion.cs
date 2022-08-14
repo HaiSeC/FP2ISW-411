@@ -34,23 +34,21 @@ namespace FP2ISW_411.Vista
             {
                 if (textBox1.Text == "")
                 {
-                    MessageBox.Show("Ingrese detalles de la situacion", "Atencion");
+                    MessageBox.Show("Ingrese los detalles de la situación", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 } else
                 {
                     ss.Desc = textBox1.Text;
                     ps.insert_situacion(ss, ps.getResidHab(id));
+                    MessageBox.Show("La información ha sido cargada exitosamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }else
             {
                 ps.insert_situacion(ss, ps.getResidHab(id));
+                MessageBox.Show("La información ha sido cargada exitosamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-           
-
         }
 
- 
         private void checkBox_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked || checkBox2.Checked || checkBox3.Checked)
@@ -59,6 +57,14 @@ namespace FP2ISW_411.Vista
             } else
             {
                 button1.Enabled = false;
+            }
+            if (checkBox3.Checked)
+            {
+                textBox1.Enabled = true;
+            }
+            else
+            {
+                textBox1.Enabled = false;
             }
         }
     }

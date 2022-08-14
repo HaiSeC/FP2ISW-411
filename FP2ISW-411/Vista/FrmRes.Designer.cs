@@ -102,7 +102,7 @@
             // 
             // CantA
             // 
-            this.CantA.BackColor = System.Drawing.Color.Gray;
+            this.CantA.BackColor = System.Drawing.Color.Black;
             this.CantA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CantA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CantA.Location = new System.Drawing.Point(208, 99);
@@ -134,8 +134,11 @@
             // 
             this.CBoxTH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.CBoxTH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CBoxTH.BackColor = System.Drawing.Color.Black;
             this.CBoxTH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBoxTH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CBoxTH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBoxTH.ForeColor = System.Drawing.Color.DimGray;
             this.CBoxTH.FormattingEnabled = true;
             this.CBoxTH.Location = new System.Drawing.Point(208, 328);
             this.CBoxTH.Name = "CBoxTH";
@@ -145,9 +148,10 @@
             // 
             // BtnRes
             // 
-            this.BtnRes.BackColor = System.Drawing.Color.Silver;
+            this.BtnRes.BackColor = System.Drawing.Color.Transparent;
             this.BtnRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRes.ForeColor = System.Drawing.Color.DimGray;
             this.BtnRes.Location = new System.Drawing.Point(208, 489);
             this.BtnRes.Name = "BtnRes";
             this.BtnRes.Size = new System.Drawing.Size(148, 39);
@@ -169,9 +173,10 @@
             // 
             // CantN
             // 
-            this.CantN.BackColor = System.Drawing.Color.Gray;
+            this.CantN.BackColor = System.Drawing.Color.Black;
             this.CantN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CantN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CantN.ForeColor = System.Drawing.Color.DimGray;
             this.CantN.Location = new System.Drawing.Point(208, 142);
             this.CantN.Name = "CantN";
             this.CantN.ReadOnly = true;
@@ -194,8 +199,11 @@
             // 
             this.comboBox_hotel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBox_hotel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_hotel.BackColor = System.Drawing.Color.Black;
             this.comboBox_hotel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_hotel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_hotel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_hotel.ForeColor = System.Drawing.Color.DimGray;
             this.comboBox_hotel.FormattingEnabled = true;
             this.comboBox_hotel.Location = new System.Drawing.Point(208, 270);
             this.comboBox_hotel.Name = "comboBox_hotel";
@@ -218,8 +226,11 @@
             // 
             this.comboBox_habitacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBox_habitacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_habitacion.BackColor = System.Drawing.Color.Black;
             this.comboBox_habitacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_habitacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_habitacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_habitacion.ForeColor = System.Drawing.Color.DimGray;
             this.comboBox_habitacion.FormattingEnabled = true;
             this.comboBox_habitacion.Location = new System.Drawing.Point(208, 383);
             this.comboBox_habitacion.Name = "comboBox_habitacion";
@@ -253,7 +264,9 @@
             // 
             // text_ced
             // 
+            this.text_ced.BackColor = System.Drawing.Color.Black;
             this.text_ced.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_ced.ForeColor = System.Drawing.Color.DimGray;
             this.text_ced.Location = new System.Drawing.Point(208, 50);
             this.text_ced.Name = "text_ced";
             this.text_ced.Size = new System.Drawing.Size(277, 29);

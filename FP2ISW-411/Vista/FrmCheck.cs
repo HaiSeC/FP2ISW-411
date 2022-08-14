@@ -57,6 +57,7 @@ namespace FP2ISW_411.Vista
             {
                 MessageBox.Show("Ha Ocurrido un Error", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            dataGridView1.DataSource = default;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,6 +90,8 @@ namespace FP2ISW_411.Vista
                     llenar_combo(ids);
                     DataTable informacion = P.informacion_reservacion_Check(tipoC, ced);
                     dataGridView1.DataSource = informacion.DefaultView;
+                    DataTable Sit = P.SituacionesOut(Convert.ToInt32(comboBox_ids.Text));
+                    DGVSit.DataSource = Sit.DefaultView;
                 }
             }
             catch (Exception ex)
@@ -128,6 +131,12 @@ namespace FP2ISW_411.Vista
             {
 
             }
+        }
+
+        private void comboBox_ids_TextChanged(object sender, EventArgs e)
+        {
+            DataTable Sit = P.SituacionesOut(Convert.ToInt32(comboBox_ids.Text));
+            DGVSit.DataSource = Sit.DefaultView;
         }
     }
 }

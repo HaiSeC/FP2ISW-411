@@ -201,6 +201,12 @@ namespace FP2ISW_411.Procesos
         {
             return up.modificar_status(estado, id);
         }
+
+        public DataTable SituacionesOut(int hab)
+        {
+            return c.SituacionesOut(hab);
+        }
+        
         public DataTable informacion_reservacion_Check(string T_check, long id)
         {
             if (T_check == "in")

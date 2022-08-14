@@ -351,6 +351,7 @@ namespace FP2ISW_411.Vista
             if (usuario == null)
             {
                 PlnCl.Visible = true;
+                PlnPu.Visible = true;
                 BtnDel.Visible = false;
                 BtnS.Visible = false;
                 BtnE.Visible = false;
